@@ -12,3 +12,4 @@ chnage start event and boss event
 rename the "Rebel Strongold" sector
 change the flagship layout
 change humans ennemys color "blue"
+change the credits
