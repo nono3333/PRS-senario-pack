@@ -13,3 +13,4 @@ rename the "Rebel Strongold" sector.
 change the flagship layout.
 change humans ennemys color "blue".
 change the credits.
+finish metadata file.
