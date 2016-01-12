@@ -1,1 +1,182 @@
+<!-- 
+
+		*********************
+		   CREW BLUEPRINTS 
+		*********************
+-->
+<crewBlueprint name="human">
+	<desc>Humans are common and uninteresting.</desc>
+	<cost>45</cost>
+	<!--was 40-->
+	<bp>2</bp>
+	<title>Human</title>
+	<short>Human</short>
+	<rarity>1</rarity>
+	<powerList>
+		<power>Skills improve slightly faster</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - Shirt -->
+			<color r="248" g="229" b="203" a="0.7" />
+			<!--
+			<color r="255" g="200" b="130" a="0.7"/>-->
+		</layer>
+		<layer>
+			<!-- Layer 2 - Hair/Face -->
+			<color r="255" g="150" b="150" a="0.4" />
+			<color r="90" g="60" b="40" a="0.7" />
+			<color r="255" g="124" b="89" a="0" />
+			<color r="140" g="140" b="255" a="0.2" />
+		</layer>
+	</colorList>
+</crewBlueprint>
+<crewBlueprint name="engi">
+	<desc>It's unclear if the 'Engi' are partly organic or entirely mechanical, but it's well known that they make exceptional engineers.</desc>
+	<cost>50</cost>
+	<bp>2</bp>
+	<title>Engi</title>
+	<short>Engi</short>
+	<rarity>2</rarity>
+	<powerList>
+		<power>Repair speed is doubled</power>
+		<power>Combat damage inflicted is halved</power>
+	</powerList>
+</crewBlueprint>
+<crewBlueprint name="mantis">
+	<desc>The Mantis disregard for individual lives led to their evolution as a vicious warrior race.</desc>
+	<title>Mantis</title>
+	<short>Mantis</short>
+	<cost>55</cost>
+	<!--was 45-->
+	<bp>2</bp>
+	<rarity>2</rarity>
+	<powerList>
+		<power>Inflict 1.5x damage in combat</power>
+		<power>1.2x move speed</power>
+		<power>Halved repair speed</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color 
+			<color r="17" g="103" b="100" a="0.7"/>
+			<color r="223" g="95" b="2" a="0.5"/>
+			<color r="119" g="200" b="45" a="0.6"/>-->
+			<color r="119" g="165" b="45" a="0" />
+			<color r="156" g="156" b="35" a="0.5" />
+			<!--
+			<color r="80" g="98" b="33" a="0.7"/> -->
+			<color r="51" g="241" b="0" a="0.9" />
+			<color r="111" g="241" b="207" a="0.9" />
+			<color r="255" g="0" b="0" a="0.2" />
+		</layer>
+	</colorList>
+</crewBlueprint>
+<crewBlueprint name="slug">
+	<desc>These telepathic Slugs were shunned in the Galactic Federation for their constant thievery and attempts at manipulation.</desc>
+	<title>Slug</title>
+	<short>Slug</short>
+	<cost>45</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<powerList>
+		<power>Telepathic powers reveal rooms and lifeforms even when sensors are down.</power>
+		<power>Immune to mind control.</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color 
+			<color r="227" g="172" b="39" a="0.1"/>
+			<color r="227" g="172" b="39" a="0.7"/>-->
+			<color r="255" g="230" b="175" a="0.8" />
+			<!-- pale -->
+			<color r="120" g="240" b="60" a="0.6" />
+			<!-- green -->
+			<color r="255" g="241" b="0" a="1" />
+			<color r="255" g="170" b="0" a="1" />
+			<!-- orange -->
+			<color r="0" g="0" b="0" a="0" />
+			<!--  -->
+			<color r="140" g="140" b="200" a="0.5" />
+			<!--blu  -->
+		        <color r="28" g="217" b="239" a="0.5" />
+                </layer>
+	</colorList>
+</crewBlueprint>
+<crewBlueprint name="rock">
+	<desc>The 'Rockmen' of Vrachos IV are rarely seen and are known for their fortitude.</desc>
+	<title>Rockman</title>
+	<short>Rockman</short>
+	<cost>55</cost>
+	<!--was 65-->
+	<bp>4</bp>
+	<rarity>3</rarity>
+	<powerList>
+		<power>Immune to fire</power>
+		<power>Movement speed is halved</power>
+		<power>Health is increased to 150</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color 
+			<color r="106" g="51" b="37" a="0.5"/>
+			<color r="116" g="152" b="182" a="0.2"/>
+			<color r="116" g="152" b="182" a="0.5"/>-->
+			<color r="76" g="42" b="31" a="0.7" />
+			<color r="120" g="80" b="35" a="0.2" />
+			<color r="140" g="100" b="220" a="0.7" />
+			<!-- purplish -->
+			<color r="240" g="111" b="64" a="0.7" />
+			<!-- red -->
+		</layer>
+	</colorList>
+</crewBlueprint>
+<crewBlueprint name="crystal">
+	<desc>Ancient ancestors of the Rockmen.</desc>
+	<title>Crystal</title>
+	<short>Crystal</short>
+	<cost>60</cost>
+	<!--was 65-->
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Lockdown power (activate in crew box)</power>
+		<power>Reduced suffocation damage</power>
+		<power>Movement speed reduced by 20 percent</power>
+		<power>Health is increased to 125</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color -->
+			<color r="40" g="187" b="255" a="0.5" />
+			<color r="55" g="40" b="255" a="0.4" />
+			<color r="55" g="40" b="255" a="0.2" />
+			<color r="115" g="131" b="138" a="0.1" />
+		</layer>
+	</colorList>
+</crewBlueprint>
+<crewBlueprint name="energy">
+	<desc>The 'Zoltan' are allies of the 'Engi.' Their innate energy can power systems.</desc>
+	<title>Zoltan</title>
+	<short>Zoltan</short>
+	<cost>60</cost>
+	<!--was 65-->
+	<bp>4</bp>
+	<rarity>5</rarity>
+	<powerList>
+		<power>Provides power to occupied system</power>
+		<power>Maximum health is reduced</power>
+		<power>Explodes on death, damaging enemy crew</power>
+	</powerList>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color -->
+			<color r="249" g="255" b="147" a="1" />
+			<color r="212" g="241" b="161" a="0.8" />
+			<color r="79" g="255" b="87" a="1" />
+			<color r="99" g="133" b="109" a="0.6" />
+			<color r="240" g="255" b="200" a="0.1" />
+		</layer>
+	</colorList>
+</crewBlueprint>
 
