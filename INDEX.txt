@@ -1,15 +1,15 @@
 # PRS-senario-pack
 
 Finished :
-change the color of the humans to orange
+change the color of the humans to orange.
 
 WIP :
-switch words "federations" and "rebels" in events
+switch words "federations" and "rebels" in events.
 
 Not started :
-change ennemy's ships layout
-chnage start event and boss event
-rename the "Rebel Strongold" sector
-change the flagship layout
-change humans ennemys color "blue"
-change the credits
+change ennemy's ships layout.
+chnage start event and boss event.
+rename the "Rebel Strongold" sector.
+change the flagship layout.
+change humans ennemys color "blue".
+change the credits.
