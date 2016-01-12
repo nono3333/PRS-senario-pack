@@ -2,6 +2,7 @@
 
 Finished :
 change the color of the humans to orange.
+finish metadata file.
 
 WIP :
 switch words "federations" and "rebels" in events.
@@ -13,4 +14,4 @@ rename the "Rebel Strongold" sector.
 change the flagship layout.
 change humans ennemys color "blue".
 change the credits.
-finish metadata file.
+
