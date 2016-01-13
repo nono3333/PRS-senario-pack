@@ -62,20 +62,20 @@ Items:
 
 
 <event name="rebel_BASE">
-	<text>You arrive near the rebel Base to find the bulk of their fleet skirmishing with federation forces. You hang back near the far side of the moon to avoid the conflict. There's not much you can do to help in that battle, and your mission holds the key to turn the tide of the war. You prepare to face the Flagship.</text>
+	<text>You arrive near the rebel Base to find the bulk of their fleet skirmishing with federation forces. You hang back near the far side of the moon to avoid the conflict. There's not much you can do to help in that battle. You concentrate on chasing down the flagship.</text>
 </event>
 
 <!-- the first time you arrive at the base, before the federation fleet arrives -->
 <event name="LAST_STAND_START">
-	<text>You arrived to the rebel fleet who pursuiving the federation flagship, the commandant of the fleet, the admiral Achélèm contact you "Ah you are finally here ! We expect you !"</text>
+	<text>You arrive to the rebel fleet that's pursuing the Federation flagship, the commandant of the fleet, admiral Achélèm contacts you "Ah, you're here! We were expecting you."</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>"We have located the flagship, we can't..." suddenly the first lieutenant interrupt him and whispers him something.</text>
+			<text>"We have located the flagship, we can't..." suddenly the first lieutenant interrupts him and whispers him something.</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>The admiral responds, "They flagship is going to attack our medical fregate ! Go imtercept him before he can destroy the fregate, take this you will need this to intercept him."</text>
+					<text>The admiral responds, "The flagship is trying to take down our medical fregate! Go help them and intercept it before it can destroy the fregate. Also, here's some fuel, incase you should run out."</text>
 					<item_modify>
 						<item type="fuel" min="10" max="10"/>
 					</item_modify>
@@ -84,7 +84,7 @@ Items:
 			</choice>
 		</event>
 	</choice>
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 </event>
 
 <event name="BOSS_AUTOMATED">
@@ -92,7 +92,7 @@ Items:
 </event>
 
 <event name="BOSS_DESTROYED">
-	<text>Its explosion rocks your ship and you shudder with relief. You did it. The rebel is saved....</text>
+	<text>Its explosion rocks your ship and you shudder with relief. Another victory for the Rebellion...</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
@@ -110,7 +110,7 @@ Items:
 
 
 <event name="BOSS_TEXT_1">
-	<text>This is it... The federation flagship. If you are able to destroy this monstrosity, the rebel fleet will have a chance of surviving. There's no turning back!</text>
+	<text>This is it... The federation flagship. If you are able to destroy this monstrosity, the rebel fleet will gain an upper hand in the war. Let's do it.</text>
 </event>
 
 <event name="BOSS_TEXT_2">
@@ -157,8 +157,8 @@ Neutral
 <textList name="BOSS_SCOUT">
 	<text>Although this sector is still under rebel control, a small scout has slipped by the fleet. You move in to engage.</text>  <!--image- Fleet background-->
 	<text>Long range scanners show this system is empty of any capital ships. Clearly it is not of strategic value. Wait... FTL signatures show a federation scout just jumped nearby!</text> <!--image-no fleets-->
-	<text>Sensors indicate that the federations are setting up a forward Jump Beacon behind the nearby planet's moon. More importantly, a number of ships are passing by; prepare for a fight!</text> <!-- image- no fleet, empty planet-->
-	<text>rebel ships are scarce in this region of space despite a number of civilian space stations. You see a small bomber squadron engaged with some rebel scouts and quickly move in to assist.</text>
+	<text>Sensors indicate that the federation scums are setting up a forward Jump Beacon behind the nearby planet's moon. More importantly, a number of ships are passing by; prepare for a fight!</text> <!-- image- no fleet, empty planet-->
+	<text>Rebel ships are scarce in this region of space despite a number of civilian space stations. You see a small bomber squadron engaged with some rebel scouts and quickly move in to assist.</text>
 	<text>As soon as you arrive at the beacon, a federation scout turns to engage. Power up the weapons!</text>
 	<text>You scan the area, finding signatures for only a small trade vessel. However, as it approaches you see the silhouette of a federation scout! You run the scanners again and discover their registration is fake. You move in to attack.</text>
 </textList>
@@ -183,22 +183,20 @@ Neutral
 	<text>Shots fly by your port windows followed by a federation scout in pursuit of a damaged cruiser. Should we move in to engage?</text>
 	<text>There seems to be a small rebel colony under attack by a federation forward scout. Will you protect them?</text>
 	<text>A number of large transports are being pursued by a federation bombing squadron. One bomber has managed to slip through the defensive fire, and is poised to wreak havoc among the enormous yet vulnerable transports. There's time for you to advance and take it out!</text>
-	<text>A battle rages nearby between small fighters; apparently fighting over a space station. The rebel appears to be losing ships fast. Shall we assist them?</text>
-	<text>A civilian ship is broadcasting a request for assistance on a secure rebel channel. They are being harassed by federation scouts. Will you respond?</text>
+	<text>A battle rages nearby between small fighters; apparently fighting over a space station. The rebels appear to be losing ships fast. Shall we assist them?</text>
 	<text>A number of large transports are being pursued by a federation bombing squadron. One bomber has managed to slip through the defensive fire, and is poised to wreak havoc among the enormous yet vulnerable transports. There's time for you to advance and take it out!</text>
-	<text>A battle rages nearby between small fighters; apparently fighting over a space station. The rebel appears to be losing ships fast. Shall we assist them?</text>
-	<text>A civilian ship is broadcasting a request for assistance on a secure rebel channel. They are being harassed by federation scouts. Will you respond?</text>
+	<text>A battle rages nearby between small fighters; apparently fighting over a space station. The rebels appear to be losing ships fast. Shall we assist them?</text>
 </textList>
 <eventList name="BOSS_SCOUT_RESCUE_LIST">  <!-- what the player gets for rescuing the ship-->
 	<event>
-		<text>The people you rescued were primarily refugees fleeing the conflict. They offer you their sincere gratitude.</text>
+		<text>One federation ship less. You must move on now.</text>
 	</event>
 	<event>
 		<text>You are hailed, "Thank you! It's not much but we can repair a bit of damage before you jump off into the war. Good luck!"</text>
 		<damage amount="-8"/>
 	</event>
 	<event>
-		<text>The survivors send a message, "Thanks for the support, I don't know how much longer we could have held on. Take some supplies, we probably won't need them at this point."</text>
+		<text>The survivors send a message, "Thanks for the support, Captain, I don't know how much longer we could have held on. Take some supplies, we probably won't need them at this point."</text>
 		<autoReward level="MED">stuff</autoReward>
 	</event>
 	<event>  <!-- Gives new repair station-->
@@ -209,7 +207,7 @@ Neutral
 <ship name="BOSS_SCOUT_RESCUE" auto_blueprint="SHIPS_federation">
 	<escape  chance="0.5" min="4" max="8" load="PIRATE_ESCAPE"/>
 	<destroyed>
-		<text>With the federation ship destroyed you are free to contact their would-be victim.</text>
+		<text>With the federation ship destroyed you are free to contact the Rebel ship.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Contact the survivors.</text>
@@ -217,7 +215,7 @@ Neutral
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>With the federation ship defeated you quickly salvage what you can and move to contact their prey.</text>
+		<text>With the federation ship defeated you quickly salvage what you can and move to contact your comrades.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<choice hidden="true">
 			<text>Contact the survivors.</text>
@@ -309,26 +307,26 @@ Fleets - some with minor fights
  
 
 <event name="BOSS_FLEETS_federation"> <!-- areas that the fleet took over (or will take over soon) have the /!\ symbol on the map-->
-	<fleet>federation</fleet>
+	<fleet>fed</fleet>
 	<text load="BOSS_FLEETS_federation"/>
 	<ship load="BOSS_FLEETS_federation" hostile="true"/>
 </event>
 <textList name="BOSS_FLEETS_federation">
-	<text>Although you were expecting the federations, you never imagined their fleet could have grown so fast. You scanners can hardly register them all before a fighter stationed nearby moves in to attack.</text>
+	<text>Although you were expecting the federation, you never imagined their fleet to be that big. You scanners can hardly register them all before a fighter stationed nearby moves in to attack.</text>
 	<text>This system is flooded with federation warships. Luckily your ship's signature is disguised as a civilian transport. Most heavy vessels ignore you but a small fighter is approaching with weapons hot!</text> <!-- no environment?--> 
 	<text planet="PLANET_POPULATED">You arrive to find a federation battalion encircling a nearby planet, launching landing parties. A small scout moves toward your position. Prepare for a fight!</text>
 	<text>As soon as you arrive you find yourself in the debris of a fierce battle. However, only federation warships remain and you find yourself immediately under attack.</text>
 	<text>Shots fly by and your computer registers multiple weapon locks as soon as you arrive. Evasive action!</text>
 	<text planet="PLANET_POPULATED">What was once a great series of space stations is now nothing but a small ring of debris around the nearby moon. There's no time to mourn the dead; an enemy approaches!</text>
-	<text>The rebel seems to have put up a good fight. A number of federation ships lie broken or wounded. However their overwhelming numbers force the remaining rebel forces to retreat. Hopefully you can get away in time as well.</text>
+	<text>The rebels seem to have put up a good fight. A number of federation ships lie broken or wounded. However their numbers force the remaining rebel forces to retreat. Hopefully you can get away in time as well.</text>
 	
-		<text>Although you were expecting the federations, you never imagined their fleet could have grown so fast. You scanners can hardly register them all before a fighter stationed nearby moves in to attack.</text>
+		<text>Although you were expecting the federation, you never imagined their fleet to be that big. You scanners can hardly register them all before a fighter stationed nearby moves in to attack.</text>
 	<text>This system is flooded with federation warships. Luckily your ship's signature is disguised as a civilian transport. Most heavy vessels ignore you but a small fighter is approaching with weapons hot!</text> <!-- no environment?--> 
 	<text planet="PLANET_POPULATED">You arrive to find a federation battalion encircling a nearby planet, launching landing parties. A small scout moves toward your position. Prepare for a fight!</text>
 	<text>As soon as you arrive you find yourself in the debris of a fierce battle. However, only federation warships remain and you find yourself immediately under attack.</text>
 	<text>Shots fly by and your computer registers multiple weapon locks as soon as you arrive. Evasive action!</text>
 	<text planet="PLANET_POPULATED">What was once a great series of space stations is now nothing but a small ring of debris around the nearby moon. There's no time to mourn the dead; an enemy approaches!</text>
-	<text>The rebel seems to have put up a good fight. A number of federation ships lie broken or wounded. However their overwhelming numbers force the remaining rebel forces to retreat. Hopefully you can get away in time as well.</text>
+	<text>The rebels seem to have put up a good fight. A number of federation ships lie broken or wounded. However their numbers force the remaining rebel forces to retreat. Hopefully you can get away in time as well.</text>
 </textList>
 <ship name="BOSS_FLEETS_federation" auto_blueprint="SHIPS_federation">
 	<destroyed>
