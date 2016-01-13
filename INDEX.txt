@@ -7,13 +7,13 @@ change the color of the humans to orange.
 finish metadata file.
 switch words "federations" and "rebels" in events.
 change the boss event.
+change start event.
 
 WIP :
 
 Not started :
 
 Codding :
-change start event.
 rename the "Rebel Strongold" sector.
 change humans ennemys color "blue".
 change the credits.
