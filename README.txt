@@ -7,8 +7,6 @@ updates :
 
 Do not copy the codes of the mod (all packs include)
 
-Website : http://www.ftlgame.com/forum/viewtopic.php?f=11&t=28768
-
 Contact methode :
 nono333 : nono333mapmod@gmail.com
 stargateprovider : *Please put or not an email adresse or a link to an account (twitter...)*
