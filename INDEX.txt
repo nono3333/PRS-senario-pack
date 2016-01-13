@@ -5,14 +5,15 @@ Finished :
 Codding :
 change the color of the humans to orange.
 finish metadata file.
+switch words "federations" and "rebels" in events.
+change the boss event.
 
 WIP :
-switch words "federations" and "rebels" in events.
 
 Not started :
 
 Codding :
-change start event and boss event.
+change start event.
 rename the "Rebel Strongold" sector.
 change humans ennemys color "blue".
 change the credits.
