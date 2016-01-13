@@ -67,15 +67,15 @@ Items:
 
 <!-- the first time you arrive at the base, before the federation fleet arrives -->
 <event name="LAST_STAND_START">
-	<text>You arrive at an outpost close to the rebel Base. Your access codes get you past initial security and an officer sets up a direct feed to the rebel Base's war room. Admiral Tully speaks first saying, "What is the meaning of this?! Who are you?"</text>
+	<text>You arrived to the rebel fleet who pursuiving the federation flagship, the commandant of the fleet, the admiral Achélèm contact you "Ah you are finally here ! We expect you !"</text>
 	<choice>
-		<text>Explain your mission.</text>
+		<text>Continue...</text>
 		<event>
-			<text>Your explanation is met with murmurs of cynicism and disbelief among the officers. General Turzil of the Engi Brigade speaks up, "Intel suggests potential counter to federation technology. Risk all or save none."</text>
+			<text>"We have located the flagship, we can't..." suddenly the first lieutenant interrupt him and whispers him something.</text>
 			<choice hidden="true">
-				<text>Explain the weakness of the enemy fleet, the federation flagship.</text>
+				<text>Continue...</text>
 				<event>
-					<text>Tully responds, "It's settled. The federations will be here in a matter of moments. We will do what we can to hold off their warships but you must succeed in destroying this flagship. Your current outpost can provide some repairs and fuel, and the other repair stations can provide aid as well. Good luck."</text>
+					<text>The admiral responds, "They flagship is going to attack our medical fregate ! Go imtercept him before he can destroy the fregate, take this you will need this to intercept him."</text>
 					<item_modify>
 						<item type="fuel" min="10" max="10"/>
 					</item_modify>
