@@ -187,7 +187,7 @@ item - scrap + that thing  -->
 </event>
 
 <event name="START_GAME">
-	<text>The data you carry is vital to the remaining rebel fleet. You'll need supplies for the journey, so make sure to explore each sector before moving on to the next. But get to the exit before the pursuing federation fleet can catch up!</text>
+	<text>You are a rebel of the galactic rebellion, the general staff have choose you to destroy the federation flagship, this ship can be dangerous for the rebellion, for that the general staff have give you the coords of the flagship and some informations about this massive ship they inform you that a part of the rebel fleet is on the spot to prevent him to run away, but becarful the federation fleet want to catch you !</text>
 </event>
 
 <!-- demo gameover text-->
