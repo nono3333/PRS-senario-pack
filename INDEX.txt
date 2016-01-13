@@ -1,6 +1,8 @@
 # PRS-senario-pack
 
 Finished :
+
+Codding :
 change the color of the humans to orange.
 finish metadata file.
 
@@ -8,10 +10,15 @@ WIP :
 switch words "federations" and "rebels" in events.
 
 Not started :
-change ennemy's ships layout.
-chnage start event and boss event.
+
+Codding :
+change start event and boss event.
 rename the "Rebel Strongold" sector.
-change the flagship layout.
 change humans ennemys color "blue".
 change the credits.
 
+GUI/.png files :
+change the flagship layout.
+change ennemy's ships layout.
+change the player's ship image "kestrel" when openning the sector's map, to the "rebel bomber" or "rebel elite" ship image. 
+(File directory : img/map/map_icon_ship and img/map/map_icon_ship_fuel)
