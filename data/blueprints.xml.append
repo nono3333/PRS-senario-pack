@@ -18,7 +18,7 @@
 	<colorList>
 		<layer>
 			<!-- Layer 1 - Shirt -->
-			<color r="248" g="229" b="203" a="0.7" />
+			<color r="230" g="128" b="8" a="0.7" />
 			<!--
 			<color r="255" g="200" b="130" a="0.7"/>-->
 		</layer>
