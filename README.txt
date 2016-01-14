@@ -9,4 +9,4 @@ Do not copy the codes of the mod (all packs include)
 
 Contact methode :
 nono333 : nono333mapmod@gmail.com
-stargateprovider : *Please put or not an email adresse or a link to an account (twitter...)*
+stargateprovider : FTL forum
