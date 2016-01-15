@@ -75,7 +75,7 @@ Items:
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>The admiral responds, "The flagship is trying to take down our medical fregate! Go help them and intercept it before it can destroy the fregate. Also, here's some fuel, incase you should run out."</text>
+					<text>The admiral responds, "The flagship is trying to take down our medical frigate! Go and help to intercept it before it can destroy the frigate. Also, here's some fuel, incase you should run out."</text>
 					<item_modify>
 						<item type="fuel" min="10" max="10"/>
 					</item_modify>
