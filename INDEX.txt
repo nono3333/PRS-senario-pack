@@ -9,7 +9,7 @@ switch words "federations" and "rebels" in events.
 change the boss event.
 change start event.
 change the credits.
-rename the "Rebel Strongold" sector.
+
 
 GUI/.png files :
 change the player's ship image "kestrel" when openning the sector's map, to a "rebel bomber" or a "rebel elite" ship image. 
