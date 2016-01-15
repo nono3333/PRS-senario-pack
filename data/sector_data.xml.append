@@ -1,0 +1,194 @@
+<sectorType name="CIVILIAN">
+	<sector>CIVILIAN_SECTOR</sector>
+	<sector>ENGI_SECTOR</sector>
+	<sector>ENGI_HOME</sector>
+	<sector>ZOLTAN_SECTOR</sector>
+	<sector>ZOLTAN_HOME</sector>
+</sectorType>
+
+<sectorType name="HOSTILE">
+	<sector>REBEL_SECTOR</sector>
+	<sector>REBEL_SECTOR_MINIBOSS</sector>
+	<sector>PIRATE_SECTOR</sector>
+	<sector>MANTIS_SECTOR</sector>
+	<sector>MANTIS_HOME</sector>
+	<sector>ROCK_SECTOR</sector>
+	<sector>ROCK_HOME</sector>
+	
+</sectorType>
+
+<!--- USE ME FOR EXPANDED CONTENT -->
+<sectorType name="OVERRIDE_HOSTILE">
+	<sector>REBEL_SECTOR</sector>
+	<sector>REBEL_SECTOR_MINIBOSS</sector>
+	<sector>PIRATE_SECTOR</sector>
+	<sector>MANTIS_SECTOR</sector>
+	<sector>MANTIS_HOME</sector>
+	<sector>ROCK_SECTOR</sector>
+	<sector>ROCK_HOME</sector>
+	<sector>LANIUS_SECTOR</sector>
+</sectorType>
+<!----------------------------------->
+
+
+
+<!--default to prevent crashes if bad sector names are loaded-->
+<sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
+	<nameList>
+		<name>Federation Space</name>
+	</nameList>
+	<trackList>
+		<track>civilian</track>
+		<track>cosmos</track>
+		<track>milkyway</track>
+		<track>lostship</track>
+	</trackList>
+	<startEvent>START_BEACON</startEvent>
+	<event name="STORE" min="1" max="2"/>
+	<event name="ITEMS" min="1" max="1"/> <!--DLC - CHanged from 1/2-->
+	<event name="NEUTRAL_CIVILIAN" min="2" max="4"/>
+	<event name="NOTHING" min="1" max="2"/>
+	<event name="DISTRESS_BEACON" min="1" max="2"/>
+	<event name="HOSTILE_CIVILIAN" min="4" max="6"/>
+	<event name="NEBULA" min="0" max="4"/>
+	<event name="QUESTS" min="1" max="1"/>
+	<event name="HOSTILE1" min="2" max="2"/>
+	<event name="HOSTILE_BOARDING" min="0" max="0"/>
+</sectorDescription>
+
+<!--FINAL -- The sector with the boss -->
+<sectorDescription name="FINAL" minSector="7" unique="true">
+	<nameList>
+		<name>The Rebel Fleet</name>
+	</nameList>
+	<trackList>
+		<track>laststand</track>
+	</trackList>
+	<startEvent>BOSS_NEUTRAL</startEvent><!-- STUPID, since it's starting you at the "exit" -->
+	<event name="STORE" min="1" max="1"/>
+	<event name="BOSS_REPAIR_STATION" min="3" max="3"/>
+	<event name="BOSS_HOSTILE" min="6" max="6"/>
+	<event name="BOSS_NEUTRAL" min="7" max="10"/>
+</sectorDescription>
+
+<sectorDescription name="CIVILIAN_SECTOR" minSector="0" unique="false"> 
+	<nameList>
+		<name>Civilian Sector</name>
+	</nameList>
+	<trackList>
+		<track>civilian</track> 
+		<track>cosmos</track>
+		<track>milkyway</track>
+		<track>lostship</track>
+	</trackList>
+<!--	<startEvent>START_BEACON_CIVILIAN</startEvent>   JUSTIN TO DO-->
+	<event name="STORE" min="2" max="3"/>
+	<event name="ITEMS" min="2" max="3"/>
+	<event name="NEUTRAL_CIVILIAN" min="2" max="4"/>
+	<event name="NOTHING" min="1" max="2"/>
+	<event name="DISTRESS_BEACON" min="1" max="2"/>
+	<event name="HOSTILE_CIVILIAN" min="4" max="6"/>
+	<event name="NEBULA" min="0" max="8"/>
+<!--	<event name="HOSTILE_BOARDING" min="0" max="1"/>-->
+	<event name="QUESTS" min="0" max="2"/>
+	<event name="HOSTILE1" min="2" max="2"/>
+</sectorDescrption>
+
+
+<sectorDescription name="REBEL_SECTOR_MINIBOSS" minSector="4" unique="true">   <!-- This is the unique sector that has the mini-boss fight-->
+	<nameList>
+		<name>Rebel Stronghold</name>
+	</nameList>
+	<trackList>
+		<track>colonial</track>
+		<track>wasteland</track>
+		<track>hacking</track>
+		<track>lostship</track>
+	</trackList>
+	<startEvent>START_BEACON_REBEL</startEvent>
+	<event name="FLAGSHIP_CONSTRUCTION" min="1" max="1"/>
+	<event name="STORE_REBEL" min="1" max="2"/>
+	<event name="ITEMS" min="1" max="2"/>
+	<event name="HOSTILE_REBEL" min="6" max="8"/>
+	<event name="BOARDERS_REBEL" min="1" max="1"/>
+	<event name="DISTRESS_BEACON_REBEL" min="1" max="2"/>
+	<event name="NEBULA_REBEL" min="0" max="5"/>
+	<event name="NOTHING_REBEL" min="1" max="2"/>
+	<event name="QUESTS_REBEL" min="0" max="2"/>
+	<event name="NEUTRAL_REBEL" min="5" max="6"/>
+</sectorDescrption>
+
+<sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
+	<nameList>
+		<name>Rebel Controlled Sector</name>
+	</nameList>
+	<trackList>
+		<track>colonial</track>
+		<track>wasteland</track>
+		<track>lostship</track>
+		<track>hacking</track>
+	</trackList>
+	<startEvent>START_BEACON_REBEL</startEvent>
+	<event name="STORE_REBEL" min="1" max="2"/>
+	<event name="ITEMS" min="1" max="2"/>
+	<event name="HOSTILE_REBEL" min="6" max="8"/>
+	<event name="BOARDERS_REBEL" min="1" max="1"/>
+	<event name="DISTRESS_BEACON_REBEL" min="1" max="2"/>
+	<event name="NEBULA_REBEL" min="0" max="5"/>
+	<event name="NOTHING_REBEL" min="1" max="2"/>
+	<event name="QUESTS_REBEL" min="0" max="2"/>
+	<event name="NEUTRAL_REBEL" min="5" max="6"/>
+</sectorDescrption>
+
+
+<!-- Old name lists
+
+		<name>Federation Sector B53</name>
+		<name>Federation Sector C21</name>
+		<name>Former Republic of Gilead</name>
+		
+		<name>New Colonies of Qarth</name>
+		<name>Varlian DMZ</name>
+		<name>The United Talrasi Planets</name>
+		<name>Planets of Lodor</name>
+		<name>Colonies of Marlith</name>
+		<name>The Remskar Colonies</name>
+		<name>Tasador 8</name>
+		<name>Local Trade Sector 51-A2</name>
+		<name>Local Trade Sector 21-F3</name>
+		<name>Local Trade Sector 125-S1</name>
+		<name>Local Trade Sector 42-MX</name>
+
+		<name>Quarantine Zone 13C</name>
+		<name>Quarantine Zone 45A</name>
+		<name>Hergarth Protectorate - Pirate Warning!</name>
+		<name>The Lawless Zone - Pirate Warning!</name>
+		<name>Freedom's End - Pirate Warning!</name>
+		<name>Parth Mining Colonies - Pirate Warning!</name>
+		
+		<name>Rebel Forward Base Omega</name>
+		<name>Rebel Forward Base Sigma</name>
+		<name>The Liberated Front - Rebel Controlled!</name>
+		<name>Or'Arst Protectorate - Rebel Controlled!</name>
+		<name>Yarin IV - Rebel Controlled!</name>
+		
+		<name>Kirrakthas - Mantis Prime</name>
+		
+		<name>Perasian Nebula</name>
+		<name>Erkarth Nebula</name>
+		<name>Nebula of Teras</name>
+		<name>Yis'ver Nebula</name>
+		<name>Ceris Nebula</name>
+		<name>Persey Nebula</name>	
+		<name>Uncharted Nebula 3.45</name>
+		<name>Uncharted Nebula 6.567</name>
+		<name>Uncharted Nebula 52.4.2</name>
+
+		<name>Uncharted Sector 42.53</name>
+		<name>Uncharted Sector 12.425.2</name>
+		<name>Uncharted Sector 51.26</name>
+		<name>Uncharted Sector 2.XM.42</name>
+		<name>Uncharted Sector Omega 42</name>
+		<name>Uncharted Sector 21.56</name>
+
+		<name>Vector 253.1 - Engi Home Sector</name>-->
