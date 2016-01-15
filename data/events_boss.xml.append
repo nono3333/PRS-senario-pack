@@ -84,7 +84,7 @@ Items:
 			</choice>
 		</event>
 	</choice>
-	<fleet>rebel</fleet>
+	<fleet>fed</fleet>
 </event>
 
 <event name="BOSS_AUTOMATED">
@@ -236,7 +236,7 @@ Fleets - some with minor fights
 
 
 <event name="BOSS_FLEETS_FED">  <!-- empty nodes that the federations have not reached yet.-->
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text load="BOSS_FLEETS_FED"/>
 </event>
 <textList name="BOSS_FLEETS_FED">
@@ -307,7 +307,7 @@ Fleets - some with minor fights
  
 
 <event name="BOSS_FLEETS_federation"> <!-- areas that the fleet took over (or will take over soon) have the /!\ symbol on the map-->
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text load="BOSS_FLEETS_federation"/>
 	<ship load="BOSS_FLEETS_federation" hostile="true"/>
 </event>
