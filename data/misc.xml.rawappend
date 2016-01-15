@@ -1,0 +1,16 @@
+<text name="gameover_win">Congratulations! You've defeated the Federation Flagship and ensured their downfall!</text>
+<text name="gameover_fedbase">The Federation Flagship has destroyed the Medical Frigate. All is lost, they've won.</text>
+<text name="credit_victory">The Federation's flagship was destroyed, throwing their fleet into chaos and ensuring a victory for the Rebellion.</text>
+
+<text name="ipad_boss">The Flagship will destroy the Medical Frigate if it spends three consecutive turns there. The red rotating Flagship icon indicates its position. When the jump line from the ship is solid, it will jump to the indicated beacon on that turn. Repair stations partially repair for free.</text>
+<text name="pc_boss">The Flagship will destroy the Medical Frigate if it spends three consecutive turns there. \n\nThe red rotating Flagship icon indicates its position. When the jump line from the ship is solid, it will jump to the indicated beacon on that turn. \n\nRepair stations partially repair for free.</text>
+
+<text name="civ_sector">Civilian Sector</text>
+<text name="map_boss_loc">Federation Flagship</text>
+
+<text name="map_base_loc">This is the Medical Frigate.</text>
+<text name="map_rebels_loc">The Federation is about to reach this beacon!</text>
+<text name="map_repair_loc">Rebel Repair Station. Repairs hull and provides supplies.</text>
+<text name="map_fleet_loc">Federation fleet detected on this location. Very dangerous.</text>
+
+<text name="map_nebula_fleet_loc">The Federation Fleet was prepared for the nebula in this sector, so it won't be as effective a hiding spot.</text>
