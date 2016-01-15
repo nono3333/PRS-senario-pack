@@ -1,31 +1,31 @@
 <sectorType name="CIVILIAN">
+        <sector>REBEL_SECTOR</sector>
+        <sector>MANTIS_SECTOR</sector>
+	<sector>MANTIS_HOME</sector>
 	<sector>CIVILIAN_SECTOR</sector>
+</sectorType>
+
+<sectorType name="HOSTILE">
+	<sector>REBEL_SECTOR_MINIBOSS</sector>
+	<sector>PIRATE_SECTOR</sector>
+	<sector>ROCK_SECTOR</sector>
+	<sector>ROCK_HOME</sector>
 	<sector>ENGI_SECTOR</sector>
 	<sector>ENGI_HOME</sector>
 	<sector>ZOLTAN_SECTOR</sector>
 	<sector>ZOLTAN_HOME</sector>
 </sectorType>
 
-<sectorType name="HOSTILE">
-	<sector>REBEL_SECTOR</sector>
-	<sector>REBEL_SECTOR_MINIBOSS</sector>
-	<sector>PIRATE_SECTOR</sector>
-	<sector>MANTIS_SECTOR</sector>
-	<sector>MANTIS_HOME</sector>
-	<sector>ROCK_SECTOR</sector>
-	<sector>ROCK_HOME</sector>
-	
-</sectorType>
-
 <!--- USE ME FOR EXPANDED CONTENT -->
 <sectorType name="OVERRIDE_HOSTILE">
-	<sector>REBEL_SECTOR</sector>
 	<sector>REBEL_SECTOR_MINIBOSS</sector>
 	<sector>PIRATE_SECTOR</sector>
-	<sector>MANTIS_SECTOR</sector>
-	<sector>MANTIS_HOME</sector>
 	<sector>ROCK_SECTOR</sector>
 	<sector>ROCK_HOME</sector>
+	<sector>ENGI_SECTOR</sector>
+	<sector>ENGI_HOME</sector>
+	<sector>ZOLTAN_SECTOR</sector>
+	<sector>ZOLTAN_HOME</sector>
 	<sector>LANIUS_SECTOR</sector>
 </sectorType>
 <!----------------------------------->
@@ -35,7 +35,7 @@
 <!--default to prevent crashes if bad sector names are loaded-->
 <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
 	<nameList>
-		<name>Federation Space</name>
+		<name>Rebel Space</name>
 	</nameList>
 	<trackList>
 		<track>civilian</track>
@@ -73,7 +73,8 @@
 
 <sectorDescription name="CIVILIAN_SECTOR" minSector="0" unique="false"> 
 	<nameList>
-		<name>Civilian Sector</name>
+		<name>Civilian Sector Earth</name>
+		<name>Civilian Sector Eltheria</name>
 	</nameList>
 	<trackList>
 		<track>civilian</track> 
@@ -97,7 +98,10 @@
 
 <sectorDescription name="REBEL_SECTOR_MINIBOSS" minSector="4" unique="true">   <!-- This is the unique sector that has the mini-boss fight-->
 	<nameList>
-		<name>Rebel Stronghold</name>
+		<name>Federation Stronghold B12</name>
+		<name>Federation Stronghold N333</name>
+		<name>Federation Stronghold Alpha 15</name>
+		<name>Federation Stronghold Beta 045</name>
 	</nameList>
 	<trackList>
 		<track>colonial</track>
@@ -120,7 +124,12 @@
 
 <sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
 	<nameList>
-		<name>Rebel Controlled Sector</name>
+		<name>Federation Controlled Sector SGP</name>
+		<name>Federation Controlled Sector AHSA</name>
+		<name>Federation Controlled Sector Alpha V2K3</name>
+		<name>Federation Controlled Sector Beta MF</name>
+		<name>Federation Controlled Sector R12 FTL 86</name>
+		<name>Federation Controlled Sector T-34 85 C</name>
 	</nameList>
 	<trackList>
 		<track>colonial</track>
