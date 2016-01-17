@@ -61,21 +61,21 @@ Items:
 </eventList>
 
 
-<event name="rebel_BASE">
+<event name="FEDERATION_BASE">
 	<text>You arrive near the rebel Base to find the bulk of their fleet skirmishing with federation forces. You hang back near the far side of the moon to avoid the conflict. There's not much you can do to help in that battle. You concentrate on chasing down the flagship.</text>
 </event>
 
 <!-- the first time you arrive at the base, before the federation fleet arrives -->
 <event name="LAST_STAND_START">
-	<text>You arrive to the rebel fleet that's pursuing the Federation flagship, the commandant of the fleet, admiral Achélèm contacts you "Ah, you're here! We were expecting you."</text>
+	<text>You arrive back to the rebel fleet that's invading the Federation sector, the commandant of the fleet, admiral Achélèm contacts you "Ah, you're here! We're expecting you."</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>"We have located the flagship, we can't..." suddenly the first lieutenant interrupts him and whispers him something.</text>
+			<text>"A Flagship? I see." suddenly the first lieutenant interrupts him and whispers him something.</text>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>The admiral responds, "The flagship is trying to take down our medical frigate! Go and help to intercept it before it can destroy the frigate. Also, here's some fuel, incase you should run out."</text>
+					<text>The admiral responds, "It seems the Flagship you found out about is trying to take down our medical frigate. Go and help to intercept it before it can destroy the frigate. Also, here's some fuel, incase you should run out."</text>
 					<item_modify>
 						<item type="fuel" min="10" max="10"/>
 					</item_modify>
@@ -84,7 +84,7 @@ Items:
 			</choice>
 		</event>
 	</choice>
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 </event>
 
 <event name="BOSS_AUTOMATED">
@@ -110,21 +110,16 @@ Items:
 
 
 <event name="BOSS_TEXT_1">
-	<text>This is it... The federation flagship. If you are able to destroy this monstrosity, the rebel fleet will gain an upper hand in the war. Let's do it.</text>
+	<text>This is it... The Federation flagship. If you are able to destroy this monstrosity, the Rebel fleet will gain an upper hand in the war. Let's do it.</text>
 </event>
-
 <event name="BOSS_TEXT_2">
 	<text>You chase down the flagship and discover it is heavily damaged from the previous fight. Scans indicate that it has redirected considerable power to its drones. Get ready for a fight.</text>
 </event>
-
 <event name="BOSS_TEXT_3">
 	<text>You're not certain how it's able to keep fighting with the amount of damage it has sustained. It looks like it's transferred power to the teleporter as well as... some kind of super weapon. Be prepared... this is it!</text>
 </event>
 
-	
-	
-	
-	
+
 <event name="BOSS_REPAIR_STATION">  <!-- the various stations that heal you around the map-->
 	<text load="BOSS_REPAIR_STATION"/>
 	<damage amount="-15"/>
