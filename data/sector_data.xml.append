@@ -35,7 +35,10 @@
 <!--default to prevent crashes if bad sector names are loaded-->
 <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
 	<nameList>
-		<name>Civilian Sector</name>
+		<name>Civilian Sector Earth</name>
+		<name>Civilian Sector Eltheria</name>
+		<name>Civilian Sector TX-1</name>
+		<name>Civilian Sector B39</name>
 	</nameList>
 	<trackList>
 		<track>civilian</track>
@@ -75,6 +78,8 @@
 	<nameList>
 		<name>Civilian Sector Earth</name>
 		<name>Civilian Sector Eltheria</name>
+		<name>Civilian Sector TX-1</name>
+		<name>Civilian Sector B39</name>
 	</nameList>
 	<trackList>
 		<track>civilian</track> 
@@ -124,12 +129,12 @@
 
 <sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
 	<nameList>
-		<name>Federation Controlled Sector SGP</name>
-		<name>Federation Controlled Sector AHSA</name>
-		<name>Federation Controlled Sector Alpha V2K3</name>
-		<name>Federation Controlled Sector Beta MF</name>
-		<name>Federation Controlled Sector R12 FTL 86</name>
-		<name>Federation Controlled Sector T-34 85 C</name>
+		<name>Rebel Controlled Sector SGP</name>
+		<name>Rebel Controlled Sector AHSA</name>
+		<name>Rebel Controlled Sector V2K3</name>
+		<name>Rebel Controlled Sector MF</name>
+		<name>Rebel Controlled Sector FTL 86</name>
+		<name>Rebel Controlled Sector T-34 C</name>
 	</nameList>
 	<trackList>
 		<track>colonial</track>
