@@ -1705,5 +1705,28 @@ Special:
 </ship>
 
 
+<!--------------------------------
 
+	NEW PRS SHIPS
+	
+---------------------------------->
 
+<ship name="CIVILIAN_ESCORT_SHIP" auto_blueprint="SHIPS_CIVILIAN">
+	<surrender  chance="0.5" min="2" max="4">
+		<text>"Alright, we surrender! You can have our supplies."</text>
+		<choice>
+			<text>Accept their offer.</text>
+			<event>
+				<autoReward level="LOW">standard</autoReward>
+				<ship hostile="false"/>
+			</event>
+		</choice>
+		<choice>
+			<text>Surrender is not an option.</text>
+			<event/>
+		</choice>
+	</surrender>
+	<escape  chance="0.5" min="4" max="6"/>
+	<destroyed load="DESTROYED_DEFAULT"
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
