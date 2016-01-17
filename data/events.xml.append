@@ -1,86 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	GAMEOVER
-	TUTORIAL_START
-	TUTORIAL_ENEMY
-	TOO_MANY_CREW
-	
-	
-Fleet Progression:
-	START_BEACON
-	FINISH_BEACON
-	FINISH_BEACON_NEBULA
-	FLEET_EASY_BEACON
-	FLEET_HARD
-
-
-Hostile:
-
-Neutral:
-	ASTEROID_EXPLORE
-	MERCENARY
-
-
-Nothing:	
-	NOTHING
-	
-Distress Signals:
-	FRIENDLY_BEACON
-	PIRATE_CIVILIAN_BEACON
-	STRANDED_BEACON
-	TRAP_BEACON
-	CIVILIAN_ASTEROIDS_BEACON
-	ESCORT_BEACON
-	federation_VS_rebel   (also quest)
-
-	
-Boarders:
-	BOARDERS
-	BOARDERS_HACKING
-	STATION_SICK
-	BOARDERS_ASTEROID_GHOST
-	
-	
-
-	
-Items:
-	STORE
-	FIND_DRONE
-	FIND_WEAPON
-	FREE_ITEMS
-	FUEL_FOR_DRONE
-	REFUEL_STATION
-	REPAIR_STATION
-	SELL_DRONES_STATION
-	SELL_MISSILES_STATION
-	TRADER_CIV
-	
-
-
-	
-Special:
-	GHOST_SHIP
-	rebel_PLANET_SIGNAL    (contains other quest events)
-			rebel_PLANET_SIGNAL_LIST
-			HIDDEN_rebel_BASE_LIST
-			rebel_BASE_ASSIST
-	QUEST_ESCORT
-	STORE_RESCUE   (contains other quest events)
-			QUEST_STORE
-			QUEST_STORE_RESCUE
-	MERCENARY_WORK_START
-
---->
-
-
-
 <!--	
 		New Ideas:
 		
@@ -104,14 +21,8 @@ missiles_only
 droneparts_only - self explanatory
 weapon 
 augment 
-drone 
+drone
 item - scrap + that thing  -->
-
-<event name="BOARDER_TEST">
-	<text>Oh no enemies!</text>
-	<boarders min="3" max="5" class="human"/>
-	<ship load="PIRATE"/>
-</event>
 
 <event name="TEST_EVENT">
 	<text>This looks good...</text>
@@ -134,82 +45,29 @@ item - scrap + that thing  -->
 	<status type="limit" target="player" system="weapons" amount="1"/>
 </event>
 
-<event name="FREE_NANO">
-	<text>FREE NANO!</text>
-	<augment name="NANO_MEDBAY"/>
-</event>
-
 <event name="FREE_AUG">
 	<text>FREE AUG!</text>
 	<augment name="RANDOM"/>
 </event>
 
-<event name="CRYSTAL_TEST">
-	<text>Testing Crystal Teleport</text>
-	<choice>
-		<text>Travel to the Crystal Sector</text>
-		<event>
-			<secretSector/>
-		</event>
-	</choice>
-</event>
-
-<event name="STALEMATE_SURRENDER">
-	<text>The ship suddenly disables their weapons. There's no explanation and they don't respond to hails. It seems during the battle they lost some some fuel cells from their storage. You quickly collect it and leave.</text>
-	<item_modify>
-		<item type="fuel" min="2" max="2"/>
-	</item_modify>
-	<ship hostile="false"/>
-</event>
-
-<event name="BOSS_STALEMATE">
-	<text>The ship jumped away without warning, you prepare to pursue.</text>
-</event>
-
-<event name="CREW_STUCK">
-	<text>With your teleporter damaged and no way to fix it, you take one of the enemy ship's shuttles to return to your own ship.</text>
-</event>
-
-<event name="FUEL_ESCAPE_SUN">
-	<text>While waiting for help, you drained what little power you had left to pull away to a safe distance from the sun.</text>
-</event>
-
-<event name="FUEL_ESCAPE_STORM">
-	<text>The ion storm died down, leaving your ship in peace as you wait for help.</text>
-</event>
-
-<event name="FUEL_ESCAPE_ASTEROIDS">
-	<text>While waiting, you managed to navigate out of the asteroid field using only your impulse engines.</text>
-</event>
-
-<event name="AUGMENT_FULL">
-	<text>Your ship already has this augment and its effect cannot stack. You break it down into scrap.</text>
-</event>
-
 <event name="START_GAME">
-	<text>You are a rebel of the galactic rebellion, the general staff have choose you to destroy the federation flagship, this ship can be dangerous for the rebellion, for that the general staff have give you the coords of the flagship and some informations about this massive ship they inform you that a part of the rebel fleet is on the spot to prevent him to run away, but becarful the federation fleet want to catch you !</text>
+	<text>You are a proud rebel from the Galactic Rebellion, that is planing to take over a Federation sector in the other side of the galaxy. You were given a secret mission to gather data about their fleet which you managed to do successfully. Now you must escape from the Federation to return vital information about their flagship.</text>
 </event>
 
-<!-- demo gameover text-->
 <textList name="GAMEOVER">
-	<text>The last hope of the rebel dies as your ship breaks apart.</text>
+	<text>The information will never reach the Rebellion as your ship breaks apart.</text>
 </textList>
 
-<!-- Dummy event, please leave in-->
-<event name="DUMMY">
-	<text>Dummy</text>
-</event>
-
 <event name="TUTORIAL_START">
-	<text>Welcome to FTL! You are the captain of a rebel starship on a very important mission.</text>
+	<text>Welcome to FTL! You are the captain of a Rebel starship on a very important mission.</text>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>The rebel is currently being torn apart by vicious federations. Your ship is carrying data vital to the defense of the rebel.</text>
+			<text>The Rebellion is currently being torn apart by the vicious Federation. Your ship is carrying data that could turn the tide of the war.</text>
 			<choice>
 				<text>Continue...</text>
 				<event>
-					<text>You will be traveling through dangerous sectors of the galaxy with the federation fleet in hot pursuit. Make it to the exit beacon of each sector before the federations can catch you.</text>
+					<text>You will be traveling through dangerous sectors of the galaxy with the Federation fleet in hot pursuit. Make it to the exit beacon of each sector before the Federation can catch you.</text>
 				</event>
 				<choice>
 					<text>Start Tutorial.</text>
@@ -220,56 +78,6 @@ item - scrap + that thing  -->
 	</choice>
 </event>
 
-<event name = "TUTORIAL_MISSILE">
-	<text>Looks like you need some more help to get through his shields! Some events can provide items. This one is providing you with an Artemis Missile Launcher.</text>
-	<weapon name="MISSILES_2_PLAYER"/>
-</event>
-
-
-<event name = "TUTORIAL_ENEMY">
-	<text>Every new location will have an event like this. You might have multiple choices available to you at an event. In this example, a weak pirate ship is trying to destroy you.</text>
-	<choice>
-		<text>Continue...</text>
-		<event/>
-	</choice>
-	<choice req="sensors" lvl="1" hidden="true">
-		<text>Special BLUE choices like these are unlocked by having certain upgrades or equipment. They are nearly always a good choice.</text>
-		<event/>
-	</choice>
-	<ship load = "TUTORIAL_PIRATE" hostile="true"/>
-</event>
-
-<ship name="TUTORIAL_PIRATE" blueprint="TUTORIAL_PIRATE">
-	<destroyed>
-		<text>You destroyed the pirate ship. As salvage, you gain (from left to right) some Fuel, Missiles, Scrap and another weapon! Note the reward resource icons correspond to your reserves along the top of the screen.</text>
-		<item_modify>
-			<item type="fuel" min="1" max="1"/>
-			<item type="missiles" min="3" max="3"/>
-			<item type="scrap" min="100" max="100"/>
-		</item_modify>
-		<weapon name="BEAM_2"/>
-	</destroyed>
-	<deadCrew>
-		<text>You killed all of the pirates! As salvage, you gain (from left to right) some Fuel, Missiles, Scrap and another weapon! Note the reward resource icons correspond to your reserves along the top of the screen.</text>
-		<item_modify>
-			<item type="fuel" min="1" max="1"/>
-			<item type="missiles" min="3" max="3"/>
-			<item type="scrap" min="100" max="100"/>
-		</item_modify>
-		<weapon name="BEAM_2"/>
-	</deadCrew>
-</ship>
-
-
-<event name="TOO_MANY_CREW">
-	<text>Your ship cannot support any more active crew-members. You apologize and leave the extra crew at the nearest friendly outpost. They pay you for your troubles.</text>
-	<choice>
-		<text>Continue...</text>
-		<event/>
-	</choice>
-</event>
-
-
 
 
 <!--   		***************************************  
@@ -277,64 +85,41 @@ item - scrap + that thing  -->
 			********************************************   
 -->		
 <event name="START_BEACON">
-	<text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing federations catch you!</text>
-</event>
-
-<event name="FINISH_BEACON">
-	<text>You've arrived at the Long-Range Beacon. When the FTL Drive is charged you can jump to the next Sector.</text>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event load="EXIT_LIST"/>
-	</choice>
-</event>
-
-<event name="FINISH_BEACON_NEBULA">
-	<text>This Long-Range Beacon is almost hidden within a nebula. When the FTL Drive is charged you can jump to the next Sector.</text>
-<!--	<choice hidden="true">
-		<text>Continue...</text>   There has been two sightings of odd events at the end of the nebula sectors. Simplifying just as a random precaution.
-		<event load="NEBULA"/>
-	</choice>-->
+	<text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing federation ships catch you!</text>
 </event>
 
 
 <event name = "FLEET_EASY">
-	<fleet>federation</fleet>
-	<text>The federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+	<fleet>fed</fleet>
+	<text>The Federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
 
 
 <event name = "FLEET_EASY_DLC">
-	<fleet>federation</fleet>
-	<text>The federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+	<fleet>fed</fleet>
+	<text>The Federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
 
-<!--
-<event name = "FLEET_EASY_AGAIN">
-	<fleet>federation</fleet>
-	<text>Another ship approaches, the reinforcements seem endless! You must jump away!</text>
-	<ship load = "LONG_FLEET" hostile ="true"/>
-</event>  -->
-
 <event name = "FLEET_EASY_BEACON">
-	<fleet>federation</fleet>
-	<text>You've found the exit beacon but the federations got here first! You must survive long enough to be able to jump to the next sector.</text>
+	<fleet>fed</fleet>
+	<text>You've found the exit beacon but the Federation got here first! You must survive long enough to be able to jump to the next sector.</text>
 	<ship load="LONG_FLEET" hostile ="true"/>
 </event>
 
 <event name = "FLEET_EASY_BEACON_DLC">
-	<fleet>federation</fleet>
-	<text>You've found the exit beacon but the federations got here first! You must survive long enough to be able to jump to the next sector.</text>
+	<fleet>fed</fleet>
+	<text>You've found the exit beacon but the federation got here first! You must survive long enough to be able to jump to the next sector.</text>
 	<ship load="LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
 
 <event name = "FLEET_HARD">
-	<fleet>federation</fleet>
-	<text>The federation fleet has found you, and a nearby scout turns to engage. You must flee before their cruisers open fire!</text>
+	<fleet>fed</fleet>
+	<text>The Federation fleet has found you, and a nearby scout turns to engage. You must flee before their cruisers open fire!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 </event>
 
@@ -356,78 +141,20 @@ item - scrap + that thing  -->
 
 
 
-<!-- 	*********************************************
-					HOSTILE EVENTS
-		*********************************************
--->
-
-
-
-
-
-
-
 <!--      **********************************************
 						NEUTRAL EVENTS
 		  **********************************************
 	Not guaranteed fights or getting stuff
 -->
 
-<event name="ASTEROID_EXPLORE" unique="true">
-	<text>Scans reveal a large asteroid field nearby. Short-range scanners may discover useful materials while we wait for the FTL to recharge.</text>
-	<choice hidden="true">
-		<text>Explore the asteroid field.</text>
-		<event load="ASTEROID_EXPLORE_RESULTS"/>
-	</choice>
-	<choice>	
-		<text>Too dangerous. We'll just wait for the FTL to charge.</text>
-		<event/>
-	</choice>
-	<choice req="SCRAP_COLLECTOR" hidden="true">
-		<text>(Scrap Recovery Arm) Attempt to mine the asteroids.</text> 
-		<event>
-			<text>You carefully extract as much usable material as possible from the nearest asteroids while waiting for the FTL to charge.</text>
-			<autoReward level="HIGH">scrap_only</autoReward>
-		</event>
-	</choice>
-</event>
-<eventList name="ASTEROID_EXPLORE_RESULTS">
-	<event>
-		<text>A brief exploration yields nothing of interest.</text>
-	</event>
-	<event>
-		<text>Scans reveal a number of asteroids with useful compositions. You extract some fuel.</text>
-		<autoReward level="HIGH">fuel_only</autoReward>
-	</event>
-	<event>
-		<text>You discover the remains of ship embedded into an asteroid. It still has some functional missiles.</text>
-		<autoReward level="MED">missiles</autoReward>
-	</event>
-	<event>
-		<text>You happen upon an abandoned mining site. A few mining drones were left behind and could be repurposed.</text>
-		<autoReward level="MED">droneparts</autoReward>
-	</event>
-	<event>
-		<text>The asteroid field proved more dangerous than expected. Some asteroids managed to get through your ship's defenses.</text>
-		<damage amount="3"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-		<damage amount="1" system="room" effect="fire"/>
-	</event>
-	<event>
-		<text>A pirate ship hiding behind one of the larger asteroids attacks you!</text>
-		<ship load="PIRATE" hostile="true"/>
-		<environment type="asteroid"/>
-	</event>
-</eventList>
-
 		
 <event name="MERCENARY">
 	<text load="MERCENARY"/>
 	<ship load="PIRATE" hostile="false"/>
 	<choice>
-		<text>Hire the mercenary to delay the federations.</text>
+		<text>Hire the mercenary to delay the Federation.</text>
 		<event>
-			<text>The mercenary ship masks its jump signature to mimic your own and then jumps off in the opposite direction. This should keep the federations guessing.</text>
+			<text>The mercenary ship masks its jump signature to mimic your own and then jumps off in the opposite direction. This should keep the Federation guessing.</text>
 			<item_modify>
 				<item type="scrap" min="-25" max="-10"/>
 			</item_modify>
@@ -447,7 +174,7 @@ item - scrap + that thing  -->
 	<choice>
 		<text>Fight the ship.</text>
 		<event>
-			<text>Mercenaries are worse than federations. The only honorable course is to engage the mercenary in battle.</text>
+			<text>Mercenaries are worse than the Federation. The only honorable course is to engage the mercenary in battle.</text>
 			<ship hostile="true"/>
 		</event>
 	</choice>
@@ -462,13 +189,13 @@ item - scrap + that thing  -->
 	<text planet="PLANET_POPULATED">There's a ship with pirate markings orbiting the nearby planet. You receive his hail: "Anything is possible, for the right price."</text>
 	<text>The captain of this ship claims he can provide "services" as long as you've got the scrap.</text>
 	<text>Mercenaries are swarming the galaxy now, knowing that their less-than-legal services are in demand during this period of unrest. One is waiting at this beacon and hails you.</text>
-	<text>A ship hails you: "Good sir! It seems you're having some troubles with the federations. I'd like to help you, but I can't afford the upkeep required on this hunk of junk I'm flying... maybe we can come to an arrangement?"</text>
+	<text>A ship hails you: "Good sir! It seems you're having some troubles with the Federation. I'd like to help you, but I can't afford the upkeep required on this hunk of junk I'm flying... maybe we can come to an arrangement?"</text>
 </textList>
 
 
 
 <event name="PIRATE_STATION_CROPS" unique="true">
-	<text>Scans show a remote settlement being blockaded by a pirate ship. The ship hastily messages you, "Stay out of this, or you'll be next!...Concentrate fire on..."</text>
+	<text>Scans show a remote settlement being blockaded by a pirate ship. The ship hastily messages you, "Stay out of this rebel, or you'll be next!...Concentrate fire on..."</text>
 	<ship load="PIRATE_STATION_CROPS" hostile="false"/>
 	<choice hidden="true">
 		<text>Attack the pirate.</text>
@@ -479,9 +206,7 @@ item - scrap + that thing  -->
 	</choice>
 	<choice hidden="true">
 		<text>Ignore them.</text>
-		<event>
-			<text>It's just not possible to save every civilian affected by this war. You prepare to jump.</text>
-		</event>
+		<event/>
 	</choice>
 	<choice hidden="true" req="BEAM_FIRE">
 		<text>(Fire Beam) Show the pirate how to intimidate settlers: burn their crops!</text>
@@ -501,51 +226,6 @@ item - scrap + that thing  -->
 		</event>
 	</choice>
 </event>
-<event name="PIRATE_STATION_CROPS_RESULT">
-	<text>With the pirates gone you signal the station. "We appreciate what you've done, but there'll just be another ship looking to profit from our isolation soon enough. Sorry we can't give you more."</text>
-	<autoReward level="LOW">stuff</autoReward>
-</event>
-<ship name="PIRATE_STATION_CROPS" auto_blueprint="SHIPS_PIRATE"> 
-	<surrender  chance="0.5" min="2" max="4" >
-		<text>"Alright! We give up! We're terrible at this pirating thing anyway..."</text>
-		<choice>
-			<text>Let them go.</text>
-			<event>
-				<ship hostile="false"/>
-				<autoReward level="MED">stuff</autoReward>
-			</event>
-		</choice>
-		<choice>
-			<text>Piracy cannot be forgiven. Attack!</text>
-			<event/>
-		</choice>
-	</surrender>
-	<escape chance="0.5" min="3" max="4" >
-		<text>They look like they don't want to fight. They are trying to escape.</text>
-		<ship hostile="true"/>
-	</escape>
-	<gotaway load="PIRATE_STATION_CROPS_RESULT"/>
-	<destroyed>
-		<text>You pick through the remains and contact the settlement.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="PIRATE_STATION_CROPS_RESULT"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>You pick through the remains and contact the settlement.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="PIRATE_STATION_CROPS_RESULT"/>
-		</choice>
-	</deadCrew>
-</ship>
-
-
-
-
 
 
 
@@ -573,274 +253,33 @@ item - scrap + that thing  -->
 		</event>
 	</choice>
 	<choice>
-		<text>Apologize, wish them luck, and continue on.</text>
+		<text>They can't escape. Attack them!</text>
 		<event>
-			<text>"We understand... Please send help our way if you meet anyone trustworthy."</text>
+			<ship load="CIVILIAN_SHIP" hostile="true"/>
+		</event>
+	</choice>
+	<choice>
+		<text>Leave them there.</text>
+		<event>
+			<text>"Wait, please..." You ignore their plea and prepare to leave.</text>
 		</event>
 	</choice>
 </event>
-<eventList name="RANDOM_GIFT">  <!-- JUSTIN - ADD STUFF-->
-	<event>	
-		<text>"Thank you so much! We don't have much to offer, but have a look at the sector scans we took." Your map is updated.</text>
-		<reveal_map/>
-	</event>
-	<event>
-		<text>"Thank you. Here, have this extra scrap as payment."</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>"Thank you. Here, have this extra scrap as payment."</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>"Thank the Gods. We can finally get out of here! We're jumping straight home so take this extra weapon. We won't need it, hopefully."</text>
-		<weapon name="RANDOM"/>
-	</event>
-	<event> <!--DLC!-->
-		<text>"Thank you. Perhaps as payment our engineer can try to optimize your ship's reactor output?"</text>
-		<upgrade amount="1" system="reactor"/>
-	</event>
-</eventList>
 <textList name="FRIENDLY_BEACON">
-	<text>"Greetings! It is so good to see you! We've been out of fuel and floating out here for weeks. We were terrified a pirate or those damn federations would find us first. Could you spare some fuel?"</text>
-	<text>You arrive to find a ship floating among some debris. "Hello. Our impulse drives are shot and we can't jump. Could you give us some fuel?"</text>
+	<text>"Greetings! Oh, rebe...! We've been out of fuel and floating out here for weeks. Could you please spare some fuel?"</text>
+	<text>You arrive to find a ship floating among some debris. They look a little worried. "Hello, sir. Our impulse drives are shot and we can't jump. Maybe you have some fuel to spare?"</text>
 	<text>A small civilian ship flies over as soon as you arrive. You're prepared to fight but they just inform you that they're out of FTL fuel and can't jump.</text>
 	<text>"Hello. We used our last FTL fuel to jump to this station." They indicate a burnt out husk of debris and warped metal. "As you can see the war must have spread to this sector. We've been stranded ever since."</text>
-	<text>The ship emitting the distress beacon messages you, "Sorry to bother you, but we're out of fuel and can't get out of this barren sector. Could you help us out?</text>
+	<text>The ship emitting the distress beacon haltingly messages you, "Sorry to bother you, but we're out of fuel and can't get out of this barren sector. Could you help us out?</text>
 </textList>
-	
-	
-	
-<event name="PIRATE_CIVILIAN_BEACON">
-	<text>The distress beacon is coming from a civilian ship. It appears it is being chased by a pirate.</text>
-	<choice>
-		<text>Aid the civilian ship.</text>
-		<event>
-			<text>You power up your weapons and engage the pirate ship.</text>
-			<ship load="PIRATE_CIVILIAN" hostile="true"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Stay out of it.</text>
-		<event>
-			<text>The fight brings them out of your immediate scanning range; however, after a time the distress calls stop.</text>
-		</event>
-	</choice>
-	<choice req="weapons" lvl="6" hidden="true" hidden="true">
-		<text>(Improved Weapons) Fire a warning shot from your strongest weapon.</text>
-		<event load="PIRATE_CIVILIAN_BEACON_BEAM"/>
-	</choice>
-</event>
-<eventList name="PIRATE_CIVILIAN_BEACON_BEAM">
-	<event>
-		<text>Detecting the greater threat (and potential reward), they turn and engage your ship.</text>
-		<ship load="PIRATE_CIVILIAN" hostile="true"/>
-	</event>
-	<event>
-		<text>It seems the pirate wasn't looking for a fight with someone who could fight back. They leave and you move to contact the civilian ship.</text>
-		<choice hiiden="true">
-			<text>Continue...</text>
-			<event load="SAVE_CIVILIAN_LIST"/>
-		</choice>
-	</event>
-</eventList>
 
-
-<event name="STRANDED_BEACON" unique="true">
-	<text>It appears the distress beacon is coming from the surface of a nearby moon. Your sensors are picking up a single life form.</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Go down to the surface to investigate.</text>
-		<event load="STRANDED"/>
-	</choice>
-	<choice>
-		<text>Ignore the signal.</text>
-		<event/>
-	</choice>
-</event>
-<eventList name="STRANDED">
-	<event>
-		<text>You find a colony that seems to have been recently attacked. Exploring the devastation, you find a lone survivor.</text>
-		<choice hidden="true">
-			<text>Invite him to join your crew.</text>
-			<event load="STRANDED_CHARLIES"/> <!--DLC!-->
-		</choice>
-		<choice hidden="true">
-			<text>Take him home to his family on a nearby planet in this system.</text>
-			<event load="FAMILY_RETURN"/>
-		</choice>
-	</event>
-	<event>
-		<text>You find a man living alone in a cave. From the appearance of his wrecked ship, it seems he's been here for many years. He looks healthy, but his mental state is questionable.</text>
-		<choice hidden="true">
-			<text>Bring him back to your ship in hopes of finding some help for him.</text>
-			<event load="MADMAN"/>
-		</choice>
-		<choice>
-			<text>Leave the madman to his ravings, he's not worth the risk.</text>
-			<event/>
-		</choice>
-		<choice req="medbay" lvl="2" hidden="true" max_group="0"> 
-			<text>(Improved Medbay) Bring him to your medbay.</text>
-			<event>
-				<text>Once inside your medbay, the system is able to restore his body and undo some of the damage to his brain. Once awake he states, "I feel almost like my old self again... Thank you. Please let me serve on your ship."</text>
-				<crewMember amount="1">Charlie</crewMember>
-			</event>
-		</choice>
-		<choice req="medbay" lvl="2" hidden="true" max_group="0"> <!--DLC!-->
-			<text>(Advanced Medbay) Bring him to your medbay.</text>
-			<event>
-				<text>Once inside your advanced medbay, the system is able to identify and minimize the trauma associated with being alone for so long. Once awake he states, "I don't know how to repay you, I feel 10 years younger... Let me serve on your ship."</text>
-				<crewMember amount="1" all_skills="1">Charlie</crewMember>
-			</event>
-		</choice>
-		<choice req="slug" hidden="true">
-			<text>(Slug Crew) "Sir, allow me to assess his mental state."</text>
-			<event load="MADMAN_SLUG"/>
-		</choice>
-	</event>
-</eventList>
-<eventList name="FAMILY_RETURN">
-	<event>
-		<text>The family apparently owns one of the most valuable mining enterprises in the sector. For the safe return of his son, the patron of the family offers you a substantial reward.</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>The survivor's family is of modest means, yet they manage to offer you a reward for your virtuous deed.</text>
-		<autoReward level="MED">scrap_only</autoReward>
-	</event>	
-	<event>
-		<text>Overjoyed with the return of their son, the family of the survivor arranges to repair your ship's hull as compensation.</text>
-		<damage amount="-10"/>
-	</event>
-</eventList>
-<eventList name="MADMAN">
-	<event>
-		<text>Once back in orbit, the man turns increasingly violent. Eventually he turns on your crew and manages to kill one before you can subdue him.</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>Luckily, your clone bay is able to revive your crewmember.</text>
-		</removeCrew>
-	</event>
-	<event>
-		<text>He seems to improve immensely upon getting back to the ship. It might take a while for him to truly be well again, but until then he seems happy to serve as a member of your crew.</text>
-		<crewMember amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>Being back in space terrifies him. He goes mad and nearly blows a hole in the side of your ship with a makeshift explosive in an attempt to "escape this metal prison." He dies in the explosion.</text>
-		<damage amount="4"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-	</event>
-	<event>
-		<text>It seems he was in worse health than we first thought. He collapses on the trip up to the ship. It doesn't look like he's going to make it...</text>
-		<choice>
-			<text>Continue...</text>
-			<event/>
-		</choice>
-		<choice req="medbay" lvl="2" hidden="true"> 
-			<text>(Improved Medbay) Quickly bring him to the medbay.</text>
-			<event>
-				<text>Your improved medbay was able to resuscitate him. After a short time he recovers greatly saying, "I really thought I was a goner... I haven't eaten for days. Would you mind if I stayed on your ship?"</text>
-				<crewMember amount="1">Charlie</crewMember>
-			</event>
-		</choice>
-		<choice req="clonebay" lvl="2" hidden="true"> <!--DLC!-->
-			<text>(Improved Clonebay) Quickly register him into the clonebay.</text>
-			<event>
-				<text>Your quick reaction allowed your Clonebay to revive him after he passes. After he steps out of the machine he states, "How am I alive? Wasn't I just dying on some shuttle? Technology sure has changed."</text>
-				<crewMember amount="1">Charlie</crewMember>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<eventList name="MADMAN_SLUG">
-	<event>
-		<text>You bring the ship closer. The Slug enters a trance-like state for 1 to 2 seconds, then quickly snaps out of it. He states, "This person is clearly unstable. It is best we leave them alone."</text>
-	</event>
-	<event>
-		<text>You bring the ship closer and the Slug, after a pause, says that the person is stable and with good intentions. You offer a position in your crew and it is graciously accepted.</text>
-		<crewMember amount="1" class="human"/>	
-	</event>
-</eventList>
-<eventList name="STRANDED_CHARLIES"> <!--DLC!-->
-	<event>
-		<text>He states that he was a weapons operator before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember weapons="1" amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>He states that he was a shield operator before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember shields="1" amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>He states that he was a pilot before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember pilot="1" amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>He states that he was an engineer before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember engines="1" amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>He states that he was an infantryman before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember combat="1" amount="1">Charlie</crewMember>
-	</event>
-	<event>
-		<text>He states that he was a shipwright before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
-		<crewMember repair="1" amount="1">Charlie</crewMember>
-	</event>
-</eventList>
-
-
-
-
-<event name="TRAP_BEACON" unique="true">
-	<text load="TRAP_BEACON_TEXT"/>
-	<distressBeacon/>
-	<ship load="PIRATE" hostile="true"/>
-</event>
-<textList name="TRAP_BEACON_TEXT">  <!-- JUSTIN - ADDED -->
-	<text>You arrive at the beacon and immediately detect a pirate ship. It seems this distress beacon was a trap!</text>
-	<text>"Haha! I knew someone would fall into our dastardly trap!" It appears this distress beacon was nothing but a decoy for a pirate ambush.</text>
-	<text>Your cockpit lights up with warning signals. You are being targeted by a nearby ship. The distress call was a lure to attract unwitting ships into weapons range. You prepare for a fight.</text>
-	<text>As soon as you arrive at the distress signal, shots are fired toward your ship. A trap!</text>
-</textList>
 
 <event name="CIVILIAN_ASTEROIDS_BEACON" unique="true">
 	<text>You follow the distress beacon to a tiny asteroid belt. You find a small ship struggling to maneuver through the field.</text>
 	<distressBeacon/>
 	<choice>
-		<text>Hail them to offer assistance.</text>
+		<text>Hail them.</text>
 		<event load="CIVILIAN_ASTEROIDS_BEACON_2"/>
-	</choice>
-</event>
-
-<event name="CIVILIAN_ASTEROIDS_BEACON_2">
-	<text>They respond: "Help! Our shields are down and we won't last long!"</text>
-	<choice hidden="true">
-		<text>Try to shield their ship with yours.</text>
-		<event load="CIVILIAN_ASTEROIDS_BEACON_LIST1"/>
-	</choice>
-	<choice>
-		<text>Don't risk our ship. Leave them to their fate.</text>
-		<event load="CIVILIAN_ASTEROIDS_BEACON_LIST4"/>
-	</choice>
-	<choice req="DRONES_DEFENSE" hidden="true">
-		<text>(Defense Drone) Use a Defense Drone to protect their ship.</text>
-		<event load="CIVILIAN_ASTEROIDS_BEACON_LIST2"/>
-	</choice>
-	<choice req="REPAIR" hidden="true">
-		<text>(Repair Drone) Send a Repair Drone to fix their Shields.</text>
-		<event load="CIVILIAN_ASTEROIDS_BEACON_LIST2"/>
-	</choice>
-	<choice req="teleporter" hidden="true">
-		<text>(Teleporter) Offer to beam them aboard your ship.</text>
-		<event load="CIVILIAN_ASTEROIDS_BEACON_LIST3"/>
-	</choice>
-	<choice req="ROCK_ARMOR" hidden="true"> 
-		<text>(Rock Armor) Shield their ship with yours and escort them out.</text>
-		<event>	
-			<text>You succeed in preventing them from being entirely destroyed, your improved hull taking the brunt of the asteroids that make it past your defenses. They offer you some of the scrap and fuel they were mining out of the asteroid as thanks.</text>
-			<autoReward level="MED">fuel</autoReward>
-		</event>
 	</choice>
 </event>
 
@@ -872,7 +311,11 @@ item - scrap + that thing  -->
 		<damage amount="1" system="room" effect="fire"/>
 	</event>
 	<event>
-		<text>The drone keeps the ship stable enough to allow them to escape the asteroid field. They message you with map coordinates, "You're that rebel ship the federations are after, aren't you? I can't offer much but I heard there was a rebel loyalist base nearby. Maybe they can help you?"</text>
+		<text>Your drone succeeds in keeping their ship from breaking apart while they fix it. They offer you some droneparts as thanks for saving them.</text>
+		<autoReward level="MED">droneparts</autoReward>
+	</event>
+	<event>
+		<text>The drone keeps the ship stable enough to allow them to escape the asteroid field. They message you with map coordinates, "You're that rebel ship the Federation is after, aren't you? I can't offer much but I heard there was a rebel loyalist base nearby. Maybe they can help you?"</text>
 		<quest event="HIDDEN_rebel_BASE_LIST"/>
 		<item_modify>
 			<item type="drones" min="-1" max="-1"/>
@@ -881,7 +324,7 @@ item - scrap + that thing  -->
 </eventList>
 <eventList name="CIVILIAN_ASTEROIDS_BEACON_LIST3">
 	<event>
-		<text>They reluctantly agree. Once aboard, you watch as their ship crashes against a massive rock. They thank you, but say "I don't know what we'll do without our ship. As the Captain, I feel obligated to help you with your mission."</text>
+		<text>They reluctantly agree. Once aboard, you watch as their ship crashes against a massive rock. They thank you, but say "I don't know what we'll do without our ship. I thought the Rebels were only spreading chaos around the galaxy, but now I feel obligated to help you with your mission."</text>
 		<crewMember amount="1"/>
 	</event>
 	<event>
@@ -894,7 +337,11 @@ item - scrap + that thing  -->
 </eventList>
 <eventList name="CIVILIAN_ASTEROIDS_BEACON_LIST4">
 	<event>
-		<text>You regretfully leave the area, not able to watch them get destroyed. A short while later you get a second message, "We survived, no thanks to you! Don't think I don't know that the federations are hunting for you. I'll be sure to tell them where you are the next time I see them!"</text>
+		<text>You regretfully leave the area, not able to watch them get destroyed. A short while later you get a second message, "We survived, no thanks to you! Don't think I don't know that the federation is hunting for you. I'll be sure to tell them where you are the next time I see them!"</text>
+		<modifyPursuit amount="1"/>
+	</event>
+	<event>
+		<text>You regretfully leave the area, not able to watch them get destroyed. A short while later you get a second message, "We survived, no thanks to you! Don't think I don't know that the federation is hunting for you. I'll be sure to tell them where you are the next time I see them!"</text>
 		<modifyPursuit amount="1"/>
 	</event>
 	<event>
@@ -906,7 +353,7 @@ item - scrap + that thing  -->
 <event name="ESCORT_BEACON" unique="true">
 	<text>Once you arrive at the location of the distress call a civilian ship hails you, "Thanks for responding to our beacon. Our FTL navigation has gone haywire and we can't plot a course to the nearest depot to get it fixed. Could you lead us there?"</text>
 	<distressBeacon/>
-	<ship load="CIVILIAN_SHIP" hostile="false"/>
+	<ship load="CIVILIAN_ESCORT_SHIP" hostile="false"/>
 	<choice hidden="true">
 		<text>Lead them to their destination.</text>
 		<event>
@@ -914,6 +361,10 @@ item - scrap + that thing  -->
 			<quest event="QUEST_ESCORT_ARRIVE"/>
 			<autoReward level="LOW">scrap_only</autoReward>
 		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Demand that they surrender you their supplies.</text>
+		<event load="ESCORT_SURRENDER"/>
 	</choice>
 	<choice>
 		<text>Decline.</text>
@@ -930,33 +381,44 @@ item - scrap + that thing  -->
 	</choice>
 </event>
 
+<eventList name="ESCORT_SURRENDER">
+	<event>
+		<text>The ship doesn't hesitate for long and surrenders its supplies.</text>
+		<autoReward level="LOW">standard</autoReward>
+	</event>
+	<event>
+		<text>The ship pulls out its weapons. It seems they won't surrender that easily.</text>
+		<ship hostile="true"/>
+	</event>
+</eventList>
 
-<event name="federation_VS_rebel" unique="true">  <!-- Fight a federation ship who's attacking a rebel ship. -->
-	<text load="federation_VS_rebel"/>
+
+<event name="REBEL_VS_FEDERATION" unique="true">  <!-- Fight a federation ship who's attacking a rebel ship. -->
+	<text load="REBEL_VS_FEDERATION"/>
 	<img back="BACKGROUND" planet="PLANET_POPULATED"/>
 	<choice>
-		<text>Aid the rebel ship.</text>
+		<text>Aid the Rebel ship.</text>
 		<event>
-			<text>You power up your weapons and engage the federation ship.</text>
-			<ship load="federation_VS_rebel" hostile="true"/>
+			<text>You power up your weapons and engage the Federation ship.</text>
+			<ship load="REBEL_VS_FEDERATION" hostile="true"/>
 		</event>
 	</choice>
 	<choice>
 		<text>Use this chance to escape.</text>
 		<event>
-			<text>The federation's preoccupation with the rebel ship allows you to slip away undetected. However you can't help but feel you should have helped them.</text>
+			<text>The Federation ship's preoccupation with the Rebel ship allows you to slip away undetected. However you can't help but feel you should have helped them.</text>
 		</event>
 	</choice>
 </event>
-<textList name="federation_VS_rebel">
-	<text>Upon arriving at this beacon, you detect a distress call. Local scans reveal that a rebel transport is under attack from a federation scout!</text>
-	<text>You immediately notice a federation ship chasing what appears to be a civilian transport. However you are detecting chatter on an encrypted rebel channel... That transport is carrying rebel loyalists!</text>
-	<text>Your sensors are picking up a distress call on an encrypted rebel channel. You eventually find a rebel scout being chased by a federation fighter!</text>
+<textList name="REBEL_VS_FEDERATION">
+	<text>Upon arriving at this beacon, you detect a distress call. Local scans reveal that a Rebel transport is under attack from a Federation scout!</text>
+	<text>You immediately notice a Federation ship chasing what appears to be a civilian transport. However you are detecting chatter on an encrypted rebel channel... That transport is carrying Rebel loyalists!</text>
+	<text>Your sensors are picking up a distress call on an encrypted Rebel channel. You eventually find a Rebel scout being chased by a Federation fighter!</text>
 </textList>
-<eventList name="federation_VS_rebel_SAVED_LIST">  <!-- What happens once you save the rebel ship from the federation -->
+<eventList name="REBEL_VS_FEDERATION_SAVED_LIST">
 	<event>
-		<text>"Thank you for saving us. This ship is transporting rebel civilians on the run from the federationlion and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden rebel base nearby. Perhaps they can assist you more."</text>
-		<quest event="HIDDEN_rebel_BASE_LIST"/>
+		<text>"Thank you for saving us. This ship is transporting rebels on the run from the federation and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden rebel base nearby. Perhaps they can assist you more."</text>
+		<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 	</event>
 	<event>
 		<text>Their ship looks to be on the verge of destruction and life signs are fading quickly.</text>
@@ -981,7 +443,7 @@ item - scrap + that thing  -->
 			<event>
 				<text>Your quick reactions allow you to stabilize a few of the seriously wounded crewmembers. An infantryman offers to join your crew and the rest tell you of a hidden rebel base a few jumps from here.</text>
 				<crewMember combat="1" amount="1"/> <!--DLC!-->
-				<quest event="HIDDEN_rebel_BASE_LIST"/>
+				<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 				<autoReward level="MED">scrap_only</autoReward>
 			</event>
 		</choice>
@@ -997,7 +459,7 @@ item - scrap + that thing  -->
 						<event>
 							<text>Now that they're safe an engineer offers to join your crew and the rest tell you of a hidden rebel base a few jumps from here.</text>
 							<crewMember engines="1" amount="1"/> <!--DLC!-->
-							<quest event="HIDDEN_rebel_BASE_LIST"/>
+							<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 							<autoReward level="MED">scrap_only</autoReward>
 						</event>
 				</choice>
@@ -1005,7 +467,7 @@ item - scrap + that thing  -->
 		</choice>
 	</event>
 	<event>
-		<text>"Thanks, we didn't think there would be federation ships all the way out here. They seem to be searching for something. Take some extra supplies as thanks for your aid."</text>
+		<text>"Thanks, we didn't think there would be Federation ships all the way out here. They seem to be searching for something. Take some extra supplies as thanks for your aid."</text>
 		<autoReward level="MED">standard</autoReward>
 	</event>
 </eventList>
