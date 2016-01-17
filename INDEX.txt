@@ -15,16 +15,15 @@ GUI/.png files :
 change the player's ship image "kestrel" when openning the sector's map, to a "rebel bomber" or a "rebel elite" ship image. 
 (File directory : img/map/map_icon_ship and img/map/map_icon_ship_fuel)
 change "base" to "medical fregate" in the images : directory (img/map/boss_jumps_box.png and map_box_base.png)
-
-WIP :
 change the flagship layout.
 change ennemy's ships layout.
+rename the "Rebel Strongold" sector.
+
+WIP :
 
 Not started :
 
 Codding :
-rename the "Rebel Strongold" sector.
-change humans ennemys color "blue".
 
 GUI/.png files :
-
+change humans ennemys color "blue".
