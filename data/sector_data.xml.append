@@ -35,7 +35,7 @@
 <!--default to prevent crashes if bad sector names are loaded-->
 <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
 	<nameList>
-		<name>Rebel Space</name>
+		<name>Civilian Sector</name>
 	</nameList>
 	<trackList>
 		<track>civilian</track>
