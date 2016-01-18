@@ -150,7 +150,7 @@
 		<autoReward level="MED">standard</autoReward>
 		<status type="clear" target="player" system="shields" amount="100"/>
 		<status type="clear" target="player" system="hacking" amount="100"/>
-	</destroyed>
+	</deadCrew>
 </ship>
 
 <ship name="REBEL_AND_AUTO" auto_blueprint="SHPS_REBEL_AND_AUTO">
@@ -763,6 +763,6 @@
 		</choice>
 	</surrender>
 	<escape  chance="0.5" min="4" max="6"/>
-	<destroyed load="DESTROYED_DEFAULT"
+	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
