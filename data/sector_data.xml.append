@@ -98,7 +98,7 @@
 <!--	<event name="HOSTILE_BOARDING" min="0" max="1"/>-->
 	<event name="QUESTS" min="0" max="2"/>
 	<event name="HOSTILE1" min="2" max="2"/>
-</sectorDescrption>
+</sectorDescription>
 
 
 <sectorDescription name="REBEL_SECTOR_MINIBOSS" minSector="4" unique="true">   <!-- This is the unique sector that has the mini-boss fight-->
@@ -125,7 +125,7 @@
 	<event name="NOTHING_REBEL" min="1" max="2"/>
 	<event name="QUESTS_REBEL" min="0" max="2"/>
 	<event name="NEUTRAL_REBEL" min="5" max="6"/>
-</sectorDescrption>
+</sectorDescription>
 
 <sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
 	<nameList>
@@ -152,7 +152,7 @@
 	<event name="NOTHING_REBEL" min="1" max="2"/>
 	<event name="QUESTS_REBEL" min="0" max="2"/>
 	<event name="NEUTRAL_REBEL" min="5" max="6"/>
-</sectorDescrption>
+</sectorDescription>
 
 
 <!-- Old name lists
