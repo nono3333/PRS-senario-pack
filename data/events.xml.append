@@ -602,7 +602,7 @@ item - scrap + that thing  -->
 	</event>
 	<event>
 		<text>As you approach the signal you receive a message on a federation channel, "I knew we'd catch some rebel fish with this signal. Prepare to be boarded, scum!"</text>
-		<ship load="federation" hostile="true"/>
+		<ship load="FED_SHIP" hostile="true"/>
 		<boarders min="2" max="3" class="human"/>
 	</event>
 </eventList>
@@ -719,7 +719,7 @@ item - scrap + that thing  -->
 	<text>Once you arrive at this populated region, you immediately pick up a distress signal. A small shuttle is asking anyone who'll listen for help protecting their family from a rebel ship. Unsurprisingly, no one has yet responded to their request. Once they notice you the signal stops.</text>
 	<choice>
 		<text>Ask them for the coordinates.</text>
-		<event load="STORE_RESCUE_LIST"/>
+		<event load="STORE_RESCUE_REBEL_LIST"/>
 	</choice>
 	<choice>
 		<text>Ignore their pleas.</text>
