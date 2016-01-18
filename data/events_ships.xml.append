@@ -270,13 +270,53 @@
 
 <!--------------------------------
 
-	federation SHIPS
+	FEDERATION SHIPS
 	
 ---------------------------------->
 
+<ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
+	<destroyed load="DESTROYED_DEFAULT"/>
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
 
+<ship name="FED_AUTO" auto_blueprint="SHIPS_AUTO">
+	<destroyed load="DESTROYED_DEFAULT"/>
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
 
-<ship name="REBEL" auto_blueprint="SHIPS_FED">
+<ship name="FED_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
+	<escape timer="80" min="30" max="30"/>
+	<gotaway>
+		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
+	</gotaway>
+	<destroyed>
+		<text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+		<autoReward level="MED">fuel</autoReward>
+	</destroyed>
+</ship>
+
+<ship name="FED_FUEL" auto_blueprint="SHIPS_FED"> 
+	<escape timer="80" min="30" max="30"/>
+	<gotaway>
+		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
+	</gotaway>
+	<destroyed>
+		<text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+		<autoReward level="MED">fuel</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>With the crew dead you are free to scrap the ship.</text>
+		<autoReward level="HIGH">fuel</autoReward>
+	</deadCrew>
+</ship>
+
+<!--------------------------------
+
+	REBEL SHIPS
+	
+---------------------------------->
+
+<ship name="REBEL" auto_blueprint="SHIPS_REBEL">
 	<surrender  chance="0.5" min="2" max="3" load="PIRATE_SURRENDER"/>
 	<escape  chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
 	<destroyed load="DESTROYED_DEFAULT"/>
@@ -838,18 +878,6 @@
 	</escape>
 </ship>
 
-
-
-<!--------------------------------
-
-	REBEL SHIPS???
-	
----------------------------------->
-
-<ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
 
 
 
