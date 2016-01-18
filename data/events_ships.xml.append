@@ -4,127 +4,8 @@
 	
 ---------------------------------->
 
-<ship name="PIRATE" auto_blueprint="SHIPS_PIRATE">
-	<surrender  chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
-	<escape  chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<gotaway>
-		<text>The pirate jumped away.</text>
-	</gotaway>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
 
-<ship name="PIRATE_FUEL" auto_blueprint="SHIPS_PIRATE">
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<surrender  chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-<ship name="PIRATE_CIVILIAN" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>The pirate ship breaks apart. You hasten to contact the civilian ship.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Contact the civilian ship.</text>
-			<event load="SAVE_CIVILIAN_LIST"/>    
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>No more life signs detected on the pirate ship. You hasten to contact the civilian ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Contact the civilian ship.</text>
-			<event load="SAVE_CIVILIAN_LIST"/>    
-		</choice>
-	</deadCrew>
-</ship>
-
-<ship name="PIRATE_SLAVER" auto_blueprint="SHIPS_PIRATE">  <!-- NEEDS ELITE TAG -->
-	<surrender  chance="0.2" min="2" max="4">
-		<text>We surrender! Take one of our slaves as tribute; if you destroy us they'll all die anyway!</text>
-		<choice>
-			<text>Accept their offer.</text>
-			<event>
-				<crewMember amount="1"/>
-				<ship hostile="false"/>
-			</event>
-		</choice>
-		<choice>
-			<text>Surrender is not an option.</text>
-			<event/>
-		</choice>
-	</surrender>
-	<escape  chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed>
-		<text>The slave ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</destroyed>
-	<deadCrew load="DEAD_CREW_SLAVER"/>
-</ship>
-
-<ship name="PIRATE_BRIBER" auto_blueprint="SHIPS_PIRATE"> <!-- NEEDS ELITE TAG -->
-	<surrender  chance="0.3" min="3" max="4">
-		<text>"Fine! Our previous offer was not generous enough, let's improve it."</text>
-		<choice>
-			<text>Accept the more generous bribe and leave.</text>
-			<event>
-				<ship hostile="false"/>
-				<autoReward level="HIGH">stuff</autoReward>
-			</event>
-		</choice>
-		<choice>
-			<text>Reject the offer and continue your assault.</text>
-			<event/>
-		</choice>
-	</surrender>
-	<escape  chance="0.4" min="3" max="4">
-		<text>You've proved a sufficient match for the pirates; they are powering up their FTL and trying to get away.</text>
-	</escape>
-	<gotaway>
-		<text>The pirate has abandoned pursuit of both you and its former prey. You attempt to hail the damaged ship.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="PIRATE_BRIBER_WIN"/>
-		</choice>
-	</gotaway>
-	<destroyed>
-		<text>The pirate explodes, leaving behind a substantial collection of useful scrap material. You go to examine the ship you just saved.</text>
-		<autoReward level="RANDOM">scrap_only</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="PIRATE_BRIBER_WIN"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>The pirates are all dead, leaving the ship dead in space. You scrounge what you can from their ship before contacting its former prey.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="PIRATE_BRIBER_WIN"/>
-		</choice>
-	</deadCrew>
-</ship>
-
-<ship name="PIRATE_NO_ESCAPE" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>With the pirate ship destroyed, your ship's system is restored to full functionality. You salvage what you can from the debris.</text>
-		<autoReward level="RANDOM">fuel</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With the pirate ship disabled, your engines come online again. You salvage what you can from their ship.</text>
-		<autoReward level="MED">fuel</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-	</deadCrew>
-</ship>
-
-<ship name="PIRATE_SMUGGLE" auto_blueprint="SHIPS_PIRATE"> <!-- NEEDS ELITE TAG -->
+<ship name="PIRATE_SMUGGLE" auto_blueprint="SHIPS_PIRATE">
 	<surrender  chance="0.5" min="2" max="4" >
 		<text>They hail you, "We realize our ship is no match for yours. If you let us go we can make it worth your while."</text>
 		<choice>
@@ -145,125 +26,6 @@
 	</escape>
 	<destroyed load="federation_TRANSPORT_DESTROYED"/>
 	<deadCrew load="federation_TRANSPORT_CAPTURED"/>
-</ship>
-
-<ship name="SQUAT_PIRATE_MERCENARY" auto_blueprint="SHIPS_PIRATE">
-	<surrender min="3" max="4">
-		<text>They hail your ship saying, "You win! We're not cut out for this!"</text>
-		<choice hidden="true">
-			<text>Let them live and then return to the settlement.</text>
-			<event>
-				<ship hostile="false"/>
-				<text>With the pirates dissuaded from their career path, you return to the settlement. "Thank you, they returned to us before you did. I don't think we'll need this anymore."</text>
-				<autoReward level="MED">weapon</autoReward>
-			</event>
-		</choice>
-		<choice>
-			<text>Forget your promise, they die!</text>
-			<event/>
-		</choice>
-	</surrender>
-	<destroyed>
-		<text>With all of the would-be pirates dead, you think it best not to return to the settlement... You prepare to jump.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With all of the would-be pirates dead, you think it best not to return to the settlement... You prepare to jump.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</deadCrew>
-</ship>
-
-<ship name="JELLY_PIRATE_WITHBOARDERS" auto_blueprint="SHIPS_PIRATE">
-	<surrender min="0" max="5" load="PIRATE_SURRENDER"/>
-	<escape chance="0.3" min="2" max="4" timer="15" load="PIRATE_ESCAPE"/>
-	<gotaway>
-		<text>The pirate jumped away in search of weaker targets.</text>
-	</gotaway>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-<ship name="JELLY_PIRATE_MERCHANT" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>You contact the delivery ship, who are grateful for your assistance. They offer you a reward for saving them.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>You contact the delivery ship, who are grateful for your assistance. They offer you a reward for saving them.</text>
-		<autoReward level="MED">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="STORM_PIRATE_SUPPLY_FUEL" auto_blueprint="SHIPS_PIRATE">
-	<escape  chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed>
-		<text>The ship obliterated, only scant fuel canisters can be scavenged from the wreckage before the ion storm clears and you have to jump away.</text>
-		<autoReward level="LOW">fuel</autoReward>
-	</destroyed>
-	<gotaway>
-		<text>The pirate jumped away.</text>
-	</gotaway>
-	<deadCrew>
-		<text>With the ship in one piece, you are able to salvage most of the fuel supplies before the ion storm clears and you have to jump away.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</deadCrew>
-</ship>
-<ship name="STORM_PIRATE_SUPPLY_AMMO" auto_blueprint="SHIPS_PIRATE">
-	<escape  chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed>
-		<text>The ship obliterated, only scant ammunition crates can be scavenged from the wreckage before the ion storm clears and you have to jump away.</text>
-		<autoReward level="LOW">missiles</autoReward>
-	</destroyed>
-	<gotaway>
-		<text>The pirate jumped away.</text>
-	</gotaway>
-	<deadCrew>
-		<text>With the ship in one piece, you are able to salvage most of the ammunition before the ion storm clears and you have to jump away.</text>
-		<autoReward level="HIGH">missiles</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-
-<ship name="QUEST_SLUG_PIRATE_TRAP1" auto_blueprint="SHIPS_PIRATE">
-	<surrender  chance="0" min="3" max="4">
-		<text>When the pirate ship looks ready to break apart you notice the Slug ship has secured the loot and is preparing to jump away!</text>
-		<choice hidden="true">
-			<text>Continue fighting the pirate.</text>
-			<event>
-				<text>It's best you finish this - but you wonder whether what the pirate is carrying will be as valuable as what the Slugs snuck off with.</text>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Let the pirate escape and go after the Slugman ship.</text>
-			<event>
-				<text>The pirate's too badly damaged to pursue you, and you catch up to the Slugs before they jump. "Ah, of courssse, we would never leave without providing the agreed upon ssspoils." They transfer over a decent chunk of the profits and set off.</text>
-				<autoReward level="HIGH">scrap_only</autoReward>
-				<ship hostile="false"/>
-			</event>
-		</choice>
-	</surrender>
-	<destroyed>
-		<text>With the pirate defeated you scan the debris for anything useful. The Slug ship is long gone, spoils from the cache in hand.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the pirate defeated you scan the debris for anything useful. The Slug ship is long gone, spoils from the cache in hand.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
-<ship name="QUEST_SLUG_PIRATE_TRAP2" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>With the pirate taken care of, you search again for the cache he was protecting, but it's lost in the clouds. You console yourself with the salvage from the well-armed pirate ship.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the pirate defeated, you search again for the cache he was protecting, but it's lost in the clouds. You console yourself with the salvage from the well-armed pirate ship.</text>
-		<autoReward level="MED">standard</autoReward>
-	</deadCrew>
 </ship>
 
 
@@ -556,13 +318,13 @@
 
 <ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_FED">
 	<destroyed>
-		<text>The outpost hails you, "Thank you! I don't know what we did to anger the federations, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
+		<text>The outpost hails you, "Thank you! I don't know what we did to anger the Federation, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
 		<autoReward level="MED">scrap_only</autoReward>
 		<damage amount="-5"/>
 		<store/>
 	</destroyed>
 	<deadCrew>
-		<text>The outpost hails you, "Thank you! I don't know what we did to anger the federations, but they were ready to kill us. I'll show you our goods and patch up your hull.</text>
+		<text>The outpost hails you, "Thank you! I don't know what we did to anger the Federation, but they were ready to kill us. I'll show you our goods and patch up your hull.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 		<damage amount="-5"/>
 		<store/>
