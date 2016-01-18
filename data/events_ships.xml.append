@@ -1,64 +1,3 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Pirates
-	PIRATE
-		PIRATE_CIVILIAN
-		PIRATE_SLAVER
-		PIRATE_BRIBER
-		PIRATE_NO_ESCAPE
-		PIRATE_SMUGGLE
-		SQUAT_PIRATE_MERCENARY
-		JELLY_PIRATE_WITHBOARDERS
-		JELLY_PIRATE_MERCHANT
-
-federations:
-	federation
-		federation_AUTO
-		federation_AUTO_CIVILIAN
-		federation_AUTO_REFUEL
-		federation_AUTO_MAP
-		federation_AUTO_ITEM
-		federation_AUTO_RADAR
-		federation_AUTO_WARNING
-		federation_AUTO_BAIT
-		SQUAT_REFUEL_STATION
-		SQUAT_WARNING
-		SQUAT_TRANSPORT
-		SQUAT_STORE_RESCUE
-		AUTO_rebel_BASE
-		AUTO_rebel_BASE2
-		federation_VS_rebel
-		LONG_ELITE
-		LONG_FLEET
-		federation_FLEET_FUEL
-
-Engi:
-	ENGI_SHIP
-		ENGI_MANTIS_CONTROLLED
-		MANTIS_ENGI_STATION
-
-Mantis:
-	MANTIS_FIGHT
-		MANTIS_CIVILIAN
-		MANTIS_NAMED_THIEF
-
-Civilian:
-	JELLY
-		CIVILIAN_SHIP
-		AUTO_FUEL_SELLER
-
-Special:
-	GHOST_SHIP
---->
-
-
-
-
 <!--------------------------------
 
 	PIRATE SHIPS
@@ -75,8 +14,6 @@ Special:
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
-
-
 <ship name="PIRATE_FUEL" auto_blueprint="SHIPS_PIRATE">
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
@@ -86,8 +23,6 @@ Special:
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
-
-
 
 <ship name="PIRATE_CIVILIAN" auto_blueprint="SHIPS_PIRATE">
 	<destroyed>
@@ -339,20 +274,22 @@ Special:
 	
 ---------------------------------->
 
-<ship name="federation" auto_blueprint="SHIPS_federation">
+
+
+<ship name="REBEL" auto_blueprint="SHIPS_FED">
 	<surrender  chance="0.5" min="2" max="3" load="PIRATE_SURRENDER"/>
 	<escape  chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
-<ship name="federation_AUTO" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO" auto_blueprint="SHIPS_AUTO">
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
 
-<ship name="federation_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
+<ship name="REBEL_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
 		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
@@ -363,7 +300,7 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_FUEL" auto_blueprint="SHIPS_federation"> 
+<ship name="REBEL_FUEL" auto_blueprint="SHIPS_REBEL"> 
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
 		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
@@ -394,7 +331,7 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="federation_AUTO_HACKSHIELDS" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_HACKSHIELDS" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>The ship explodes, leaving behind a collection of useful scrap material.</text>
 		<autoReward level="MED">standard</autoReward>
@@ -409,13 +346,13 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AND_AUTO" auto_blueprint="SHPS_federation_AND_AUTO">
+<ship name="REBEL_AND_AUTO" auto_blueprint="SHPS_REBEL_AND_AUTO">
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
 
-<ship name="federation_AUTO_CIVILIAN" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_CIVILIAN" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>The ship breaks apart. You hasten to contact the civilian ship.</text>
 		<autoReward level="LOW">standard</autoReward>
@@ -434,7 +371,7 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="federation_AUTO_REFUEL" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_REFUEL" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>The ship breaks apart and you quickly salvage what you can.</text>
 		<autoReward level="LOW">standard</autoReward>
@@ -448,7 +385,7 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AUTO_MAP" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_MAP" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>You access the recent scans from the unguarded station. Your map has been updated with details of the surrounding area.</text>
 		<reveal_map/>
@@ -456,7 +393,7 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AUTO_ITEM" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_ITEM" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>You salvage what you can from the broken ship.</text>
 		<autoReward level="MED">scrap_only</autoReward>
@@ -467,9 +404,9 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AUTO_RADAR" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_RADAR" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
-		<text>You salvage what you can and approach the station. It is used to relay information to the federation Fleet. You could attempt to hack it to give the federations false information.</text>
+		<text>You salvage what you can and approach the station. It is used to relay information to the Federation Fleet. You could attempt to hack it to give the Federation false information.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 		<choice>
 			<text>Attempt to manually hack into the station.</text>
@@ -493,7 +430,7 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AUTO_WARNING" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_WARNING" auto_blueprint="SHIPS_AUTO">
 	<escape timer="40" min="22" max="22" >
 		<text>The ship starts to power up its FTL Drive. If it gets away, it will no doubt warn the fleet of your position!</text>
 		<ship hostile="true"/>
@@ -508,7 +445,7 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_AUTO_BAIT" auto_blueprint="SHIPS_AUTO">
+<ship name="REBEL_AUTO_BAIT" auto_blueprint="SHIPS_AUTO">
 	<escape timer="2000" min="3" max="4" >
 		<text>Careful! Sensors indicate that this automated ship is rigged to inform the fleet of your location if destroyed! It is better to avoid risk and leave it alone, otherwise the fleet will find you faster within this Sector.</text>
 		<ship hostile="true"/>
@@ -524,14 +461,14 @@ Special:
 	</destroyed>
 </ship>
 		
-<ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_federation">
+<ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_FED">
 	<destroyed>
 		<text>The ship breaks apart and you quickly salvage what you can.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
 			<event>
-				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebel. Take this for the help."</text>
+				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebels. Take this for the help."</text>
 				<autoReward level="MED">fuel</autoReward>
 			</event>
 		</choice>
@@ -542,14 +479,14 @@ Special:
 		<choice hidden="true">
 			<text>Continue...</text>
 			<event>
-				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebel. Take this for the help."</text>
+				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebels. Take this for the help."</text>
 				<autoReward level="MED">fuel</autoReward>
 			</event>
 		</choice>
 	</deadCrew>
 </ship>
 
-<ship name="SQUAT_WARNING" auto_blueprint="SHIPS_federation">
+<ship name="SQUAT_WARNING" auto_blueprint="SHIPS_FED">
 	<escape timer="40" min="22" max="22" >
 		<text>They are powering up their FTL! If they get away, they will no doubt warn the fleet of your position!</text>
 		<ship hostile="true"/>
@@ -568,7 +505,7 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="SQUAT_TRANSPORT" auto_blueprint="SHIPS_federation">
+<ship name="SQUAT_TRANSPORT" auto_blueprint="SHIPS_FED">
 	<escape timer="40" min="14" max="14" >
 		<text>They look like they don't want to fight. They are trying to escape.</text>
 		<ship hostile="true"/>
@@ -577,7 +514,7 @@ Special:
 	<deadCrew load="federation_TRANSPORT_CAPTURED"/>
 </ship>
 
-<ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_federation">
+<ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_FED">
 	<destroyed>
 		<text>The outpost hails you, "Thank you! I don't know what we did to anger the federations, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
 		<autoReward level="MED">scrap_only</autoReward>
@@ -592,7 +529,7 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="AUTO_rebel_BASE" auto_blueprint="SHIPS_AUTO">
+<ship name="AUTO_REBEL_BASE" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>You scrap the wreckage.</text>
 		<autoReward level="LOW">standard</autoReward>
@@ -606,7 +543,7 @@ Special:
 		</choice>
 	</destroyed>
 </ship>
-<ship name="AUTO_rebel_BASE2" auto_blueprint="SHIPS_AUTO">
+<ship name="AUTO_REBEL_BASE2" auto_blueprint="SHIPS_AUTO">
 	<destroyed>
 		<text>You scrap the wreckage.</text>
 		<autoReward level="LOW">standard</autoReward>
@@ -622,27 +559,27 @@ Special:
 	</destroyed>
 </ship>
 
-<ship name="federation_VS_rebel" auto_blueprint="SHIPS_federation">  <!-- fed base? -->
+<ship name="REBEL_VS_FEDERATION" auto_blueprint="SHIPS_FED">
 	<destroyed>
 		<text>With the ship destroyed, you quickly collect useful resources.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
-			<text>Contact the rebel ship.</text>
-			<event load="federation_VS_rebel_SAVED_LIST"/>
+			<text>Contact the Rebel ship.</text>
+			<event load="REBEL_VS_FEDERATION_SAVED_LIST"/>
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>With the crew of the federation ship dead, you salvage what you can.</text>
+		<text>With the crew of the Federation ship dead, you salvage what you can.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
-			<text>Contact the rebel ship.</text>
-			<event load="federation_VS_rebel_SAVED_LIST"/>
+			<text>Contact the Rebel ship.</text>
+			<event load="REBEL_VS_FEDERATION_SAVED_LIST"/>
 		</choice>
 	</deadCrew>
 </ship>
 
 
-<ship name="LONG_ELITE" auto_blueprint="SHIPS_federation_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="LONG_ELITE" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<destroyed>
 		<text>You are able to salvage scrap from the ship's debris.</text>
 		<autoReward level="HIGH">standard</autoReward>
@@ -650,7 +587,7 @@ Special:
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
-<ship name="LONG_FLEET" auto_blueprint="SHIPS_federation_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="LONG_FLEET" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<destroyed>
 		<text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
 		<item_modify>
@@ -666,7 +603,7 @@ Special:
 </ship>
 
 
-<ship name="federation_FLEET_FUEL" auto_blueprint="SHIPS_federation_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="REBEL_FLEET_FUEL" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
 		<text>The ship jumps away without a word. You assume they just went to get reinforcements...</text>
@@ -686,7 +623,7 @@ Special:
 </ship>
 
 
-<ship name="federation_ENGI_UNLOCK_2FAKE" auto_blueprint="SHIPS_federation">
+<ship name="REBEL_ENGI_UNLOCK_2FAKE" auto_blueprint="SHIPS_FED">
 	<escape timer="40" min="18" max="18" >
 		<text>As soon as they see you, they power up their engines to jump away. Stop them!</text>
 		<ship hostile="true"/>
@@ -704,7 +641,7 @@ Special:
 		<autoReward level="MED">standard</autoReward>
 	</deadCrew>
 </ship>
-<ship name="federation_ENGI_UNLOCK_2REAL" auto_blueprint="SHIPS_federation">
+<ship name="REBEL_ENGI_UNLOCK_2REAL" auto_blueprint="SHIPS_FED">
 	<escape timer="40" min="18" max="18" >
 		<text>As soon as they see you they power up their engines to jump away. Stop them!</text>
 		<ship hostile="true"/>
@@ -726,81 +663,24 @@ Special:
 
 
 
-<ship name="DISTRESS_ENGI_federation" auto_blueprint="SHIPS_federation">
+<ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_FED">
 	<destroyed>
-		<text>The federations destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+		<text>The federation ship destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
 		<autoReward level="LOW">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
-			<event load="DISTRESS_ENGI_federation_RESULT"/>
+			<event load="DISTRESS_ENGI_REBEL_RESULT"/>
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>The federations destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+		<text>The federation ship destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
-			<event load="DISTRESS_ENGI_federation_RESULT"/>
+			<event load="DISTRESS_ENGI_REBEL_RESULT"/>
 		</choice>
 	</deadCrew>
 </ship>
-
-
-<!--------------------------------
-
-	ENGI SHIPS
-	
----------------------------------->
-
-<ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-
-
-<ship name="ENGI_MANTIS_CONTROLLED" auto_blueprint="SHIPS_CIRCLE">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-	<crew>
-		   <crewMember type="mantis" prop="1"/>
-	</crew>
-</ship>
-
-<ship name="MANTIS_ENGI_STATION" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>The Mantis ship breaks apart.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Attempt to contact the Engi.</text>
-			<event load="SAVE_ENGI_STATION"/>    
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>No more life signs detected on the Mantis ship. You hasten to contact the Engi.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Attempt to contact the Engi.</text>
-			<event load="SAVE_ENGI_STATION"/>    
-		</choice>
-	</deadCrew>
-</ship>
-
-<ship name="FUEL_OFF_ENGI_DUBIOUS" auto_blueprint="SHIPS_CIRCLE">
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<destroyed>
-		<text>With the hostile Engi ship destroyed you carefully extract as much fuel as possible from the wreckage.</text>
-		<autoReward level="MED">fuel</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the hostile Engies subdued you carefully extract as much fuel as possible from the ship.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</deadCrew>
-</ship>
-
 
 
 <!--------------------------------
@@ -809,25 +689,6 @@ Special:
 	
 ---------------------------------->
 
-<ship name="ROCK_SHIP" auto_blueprint="SHIPS_ROCK">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<surrender  chance="0.7" min="3" max="4" load="ROCK_SHIP_SURRENDER"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship> 
-
-<ship name="ROCK_PIRATE" auto_blueprint="SHIPS_ROCK_PIRATE">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-	<crew>
-		   <crewMember type="rock" prop="1"/>
-	</crew>
-</ship>
-
-
-<ship name="ROCK_UNLOCK1" auto_blueprint="ROCK_ASSAULT_ELITE">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
 <ship name="ROCK_UNLOCK2" auto_blueprint="ROCK_ASSAULT_ELITE">
 	<escape timer="32" min="28" max="28" > <!-- was 24-->
 		<text>The Rock ship starts to power up their FTL drive. If we're going to earn their trust we must endure the heat for as long as they can!</text>
@@ -838,118 +699,15 @@ Special:
 		<quest event="ROCK_UNLOCK3"/>
 	</gotaway>
 	<destroyed>
-		<text>Their ship breaks apart and you feel a twinge of guilt. Perhaps they could have helped the rebel if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
+		<text>Their ship breaks apart and you feel a twinge of guilt. Perhaps they could have helped the rebellion if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
 		<autoReward level="MED">standard</autoReward>
 	</destroyed>
 	<deadCrew>
-		<text>Their ship goes quiet and you feel a twinge of guilt. Perhaps they could have helped the rebel if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
+		<text>Their ship goes quiet and you feel a twinge of guilt. Perhaps they could have helped the rebellion if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
 		<autoReward level="HIGH">standard</autoReward>
 	</deadCrew>
 </ship>
 
-
-
-<!--------------------------------
-
-	MANTIS SHIPS
-	
----------------------------------->
-
-
-<ship name="MANTIS_FIGHT" auto_blueprint="SHIPS_MANTIS">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-	<crew>
-		   <crewMember type="mantis" prop="0.80"/>
-		   <crewMember type="engi" prop="0.20"/>
-	</crew>
-</ship>
-
-
-
-<ship name="MANTIS_CIVILIAN" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>The Mantis ship breaks apart.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Attempt to contact the civilian ship.</text>
-			<event load="SAVE_CIVILIAN_LIST"/>    
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>No more life signs detected on the pirate ship. You hasten to contact the civilian ship.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Attempt to contact the civilian ship.</text>
-			<event load="SAVE_CIVILIAN_LIST"/>    
-		</choice>
-	</deadCrew>
-	<crew>
-		   <crewMember type="mantis" prop="0.75"/>
-		   <crewMember type="engi" prop="0.25"/>
-	</crew>
-</ship>
-
-<ship name="MANTIS_NAMED_THIEF" auto_blueprint="SHIPS_MANTIS">  <!--NEEDS ELITE TAG  - need an escape/surrender -->
-	<destroyed>
-		<text>KazaaakplethKilik fights to the last, and you pick the scraps from the corpse of his ship. You sense, though, that his death has left a great mystery unresolved.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew load="MANTIS_NAMED_THIEF_DEFEAT"/>
-</ship>
-
-
-
-<ship name="MANTIS_ENGI_UNLOCK_3" auto_blueprint="SHIPS_MANTIS">
-	<destroyed load="ENGI_UNLOCK_4"/>
-	<deadCrew>
-		<text>You strip what you can and contact the Engi ships.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice>
-			<text>Continue...</text>
-			<event load="ENGI_UNLOCK_4"/>
-		</choice>
-	</deadCrew>
-	<crew>
-		   <crewMember type="human" prop="1"/>
-	</crew>
-</ship>
-
-
-<ship name="SLUG_DISTRESS_MANTIS" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>The Mantis defeated, you contact the weakened Slug vessel. "You ssseee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at this time."</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Leave them be.</text>
-			<event>
-				<text>These wretches aren't worth fighting. Time to spin up and jump off.</text>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Finish them off.</text>
-			<event load="SLUG_DISTRESS_MANTIS_SURRENDER"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>The Mantis defeated, you contact the weakened Slug vessel. "You sssee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at thiss time."</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Leave them be.</text>
-			<event>
-				<text>These wretches aren't worth fighting. Time to spin up and jump off.</text>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Finish them off.</text>
-			<event load="SLUG_DISTRESS_MANTIS_SURRENDER"/>
-		</choice>
-	</deadCrew>
-	<crew>
-		   <crewMember type="mantis" prop="0.75"/>
-		   <crewMember type="engi" prop="0.25"/>
-	</crew>
-</ship>
 
 
 
@@ -971,29 +729,7 @@ Special:
 	
 ---------------------------------->
 
-<ship name="JELLY" auto_blueprint="SHIPS_JELLY">
-	<surrender  chance="0.5" min="3" max="4" load="SLUG_SURRENDER"/>
-	<escape  chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
 
-<ship name="JELLY_UNLOCK1" auto_blueprint="SHIPS_JELLY">
-	<surrender  chance="0" min="3" max="4" load="SLUG_UNLOCK_SURRENDER"/>
-	<escape  chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-<ship name="JELLY_UNLOCK2" auto_blueprint="JELLY_TRUFFLE">  <!-- this is the hard ship defending the platform-->
-	<destroyed>
-		<text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
 <ship name="JELLY_UNLOCK3" auto_blueprint="JELLY_BUTTON">  <!-- this is the weak ship that gives you the unlock -->
 	<escape timer="35" min="22" max="22" >
 		<text>The interceptor powers up its FTL drive in preparation to escape. At the same time, the cruiser's FTL drive does the same. They must be linked! Don't let them get away!</text>
@@ -1003,13 +739,13 @@ Special:
 		<text>The interceptor jumps away with the cruiser linked to its FTL signatures. You were so close...</text>
 	</gotaway>
 	<destroyed>
-		<text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the main rebel hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
+		<text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the rebel hangar. You discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
 		<unlockShip id="5">The Slug cruiser has been unlocked and added to the hangar!</unlockShip>
 		<autoReward level="HIGH">standard</autoReward>
 		<augment name="SLUG_GEL"/>
 	</destroyed>
 	<deadCrew>
-		<text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the main rebel hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
+		<text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the rebel hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
 		<unlockShip id="5">The Slug cruiser has been unlocked and added to the hangar!</unlockShip>
 		<autoReward level="HIGH">standard</autoReward>
 		<augment name="SLUG_GEL"/>
@@ -1017,68 +753,6 @@ Special:
 </ship>
 
 
-<ship name="JELLY_DISTRESS_ROCK" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>With the Slug ship destroyed, you retrieve some scrap and return to the Rock ship.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="SLUG_DISTRESS_ROCK_RESULT"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>With the Slugs no longer a threat, you strip the ship and return to the Rockmen.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="SLUG_DISTRESS_ROCK_RESULT"/>
-		</choice>
-	</deadCrew>
-</ship>
-
-
-<ship name="SLUG_DISTRESS_MANTIS_SLUG" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>At last the Slugs' prized possessions are yours for the taking. After, that is, you split your takings with the Mantis.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>At last the Slugs' prized possessions are yours for the taking. After, that is, you split your takings with the Mantis.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="JELLY_OVERPRICED" auto_blueprint="SHIPS_JELLY">
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<destroyed>
-		<text>You try and collect as much fuel from the wreckage as possible.</text>
-		<autoReward level="MED">fuel</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the Slug ship subdued you are free to collect as much fuel as possible.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="JELLY_STATUS_OXYGEN" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="oxygen" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your systems return to normal. You strip the ship.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="oxygen" amount="100"/>
-	</deadCrew>
-</ship>
 <ship name="JELLY_STATUS_OXYGEN_FIRE" auto_blueprint="SHIPS_JELLY">
 	<destroyed>
 		<text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
@@ -1098,108 +772,6 @@ Special:
 	</weaponOverride>
 </ship>
 
-<ship name="JELLY_STATUS_DOORS" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="doors" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your systems return to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="doors" amount="100"/>
-	</deadCrew>
-	<weaponOverride count="1">
-		<name>BEAM_FIRE</name>
-		<name>BOMB_FIRE</name>
-	</weaponOverride>
-</ship>
-<ship name="JELLY_STATUS_ENGINES" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your engines return to normal. You collect what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your engines return to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-	</deadCrew>
-</ship>
-<ship name="JELLY_STATUS_SHIELDS" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your shields return to normal. You collect what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="shields" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your shields return to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="shields" amount="100"/>
-	</deadCrew>
-</ship>
-
-<ship name="JELLY_STATUS_PILOT" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your piloting returns to normal. You collect what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="pilot" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your piloting returns to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="pilot" amount="100"/>
-	</deadCrew>
-</ship>
-
-<ship name="JELLY_STATUS_WEAPONS" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your weapon system returns to normal. You collect what you can.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="weapons"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your weapon system returns to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="weapons"/>
-	</deadCrew>
-</ship>
-
-<ship name="JELLY_STATUS_HACKING" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and their hacking module is destroyed. You collect what you can.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="hacking"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your weapon system returns to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="hacking"/>
-	</deadCrew>
-</ship>
-
-<ship name="JELLY_STATUS_MEDBAY" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="medbay" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-		<status type="clear" target="player" system="clonebay" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With their crew dead, you quickly shut off their hacking module and your systems return to normal. You strip the ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<status type="clear" target="player" system="medbay" amount="100"/>
-		<status type="clear" target="player" system="clonebay" amount="100"/>
-		<status type="clear" target="player" system="hacking" amount="100"/>
-	</deadCrew>
-</ship>
-
-
-
-
 
 
 <!--------------------------------
@@ -1207,92 +779,6 @@ Special:
 	ZOLTAN SHIPS
 	
 ---------------------------------->
-
-<ship name="ZOLTAN_SHIP" auto_blueprint="SHIPS_ZOLTAN">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-
-<ship name="ZOLTAN_PIRATE" auto_blueprint="SHIPS_ZOLTAN_PIRATE">
-	<surrender  chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
-	<escape  chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<gotaway>
-		<text>The pirate jumped away.</text>
-	</gotaway>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-
-<ship name="ZOLTAN_SCIENCE_DOCK" auto_blueprint="SHIPS_ZOLTAN">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<surrender  chance="0.5" min="3" max="4">
-		<text>The Zoltan captain sends an urgent hail: "Wait, this was all a test! A test that you passed! A diverse crew, working together, surely a sight to warm the heart of any dispassionate observer. Come, I shall join your crew!"</text>
-		<ship hostile="false"/>
-		<crewMember amount="1" class="energy"/>  
-		<autoReward level="LOW">standard</autoReward>
-	</surrender>
-	<destroyed>
-		<text>While you search the debris, you wonder what it was that could have provoked them to act so irrationally.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>While you scrap their ship, you wonder what it was that could have provoked them to act so irrationally.</text>
-		<autoReward level="MED">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="ZOLTAN_PEACE_QUEST_ATTACK1" auto_blueprint="ZOLTAN_PEACE">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<surrender  chance="0.2" min="3" max="4">
-		<text>They are clearly not putting up a fight. Are you sure you want to destroy them?</text>
-		<choice hidden="true">
-			<text>Finish them off.</text>
-			<event>
-				<text>You continue the assault.</text>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Let them go.</text>
-			<event>
-				<text>You power down your weapons and after a time the ship slowly limps away. They refuse all communications. You can't help but feel somewhat guilty.</text>
-				<ship hostile="false"/>
-			</event>
-		</choice>
-	</surrender>
-	<destroyed>
-		<text>You can't help but feel somewhat guilty as you search through the debris. It was probably a trap... right?</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>You begin to strip their ship and don't find anything that would indicate they were on anything other than a peaceful mission. Perhaps you were too hasty.</text>
-		<autoReward level="RANDOM">standard</autoReward>
-	</deadCrew>
-</ship>
-<ship name="ZOLTAN_PEACE_QUEST_ATTACK2" auto_blueprint="SHIPS_ZOLTAN">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<destroyed>
-		<text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
-		<autoReward level="RANDOM">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="ZOLTAN_SHIP_SAVE_MANTIS1" auto_blueprint="SHIPS_ZOLTAN">
-	<destroyed>
-		<text>The Mantis are so grateful that they only take three quarters of the loot, leaving the rest for you. How civilized.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>The Mantis are so grateful that they only take three quarters of the loot, leaving the rest for you. How civilized.</text>
-		<autoReward level="MED">standard</autoReward>
-	</deadCrew>
-</ship>
 
 
 <ship name="ZOLTAN_PRIMITIVES_ZOLTAN" auto_blueprint="SHIPS_ZOLTAN">   
@@ -1308,7 +794,7 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="ZOLTAN_PRIMITIVES_federation" auto_blueprint="SHIPS_federation">
+<ship name="ZOLTAN_PRIMITIVES_REBEL" auto_blueprint="SHIPS_FED">
 	<destroyed>
 		<text>The Zoltan hail once the smoke disperses. "Thank you. We were led to believe rebel ideals died along with the rebel itself. Let us aid you a little, for old times' sake." You accept their reward and scrap, then collect some remains from the federation ship.</text>
 		<autoReward level="LOW">weapon</autoReward>
@@ -1321,157 +807,7 @@ Special:
 
 
 
-<ship name="ZOLTAN_LIFERAFT" auto_blueprint="SHIPS_ZOLTAN_PIRATE">
-	<destroyed>
-		<text>You salvage what you can from the ship.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>The Zoltan looks deeply dissatisfied with your aiming and demands to be dropped off at your earliest convenience.</text>
-				<choice>
-					<text>Let him go.</text>
-					<event/>
-				</choice>
-				<choice hidden="true">
-					<text>Offer to hire him for 40 scrap.</text>
-					<event load="ZOLTAN_LIFERAFT_HIRE"/>
-				</choice>
-			</event>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>The last pirate life-signs blink out and the Zoltan returns to his bridge. "Egalitarianism is a cornerstone of successful cohabitation. Please, enjoy the fruits of your labor."</text>
-		<autoReward level="HIGH">augment</autoReward>
-	</deadCrew>
-	<crew>
-	   <crewMember type="random" prop="1"/>
-	</crew>
-</ship>
 
-
-<ship name="ZOLTAN_RIFT_MANTIS" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>You salvage the remains and contact the wise man.</text>
-		<autoReward level="LOW">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>You salvage the ship and contact the wise man.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</deadCrew>
-</ship>
-<ship name="ZOLTAN_RIFT_SLUG" auto_blueprint="SHIPS_JELLY">
-	<destroyed>
-		<text>You salvage the remains and contact the wise man.</text>
-		<autoReward level="LOW">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>You salvage the ship and contact the wise man.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</deadCrew>
-</ship>
-<ship name="ZOLTAN_RIFT_ROCK" auto_blueprint="SHIPS_ROCK">
-	<destroyed>
-		<text>You salvage the remains and contact the wise man.</text>
-		<autoReward level="LOW">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>You salvage the ship and contact the wise man.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ZOLTAN_RIFT_SUCCESS"/>
-		</choice>
-	</deadCrew>
-</ship>
-<!-- JUSTIN - to do - Crystal -->
-
-
-
-
-<ship name="ZOLTAN_CREW_SCAN" auto_blueprint="SHIPS_ZOLTAN">   <!-- JUSTIN - MAKE A SURRENDER!!-->
-	<destroyed>
-		<text>You scrap what you can and prepare to jump before the other guards arrive.</text>
-		<autoReward level="LOW">standard</autoReward>
-		<status type="clear" target="player" system="weapons" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>You scrap what you can and prepare to jump before the other guards arrive.</text>
-		<autoReward level="MED">standard</autoReward>
-		<status type="clear" target="player" system="weapons" amount="100"/>
-	</deadCrew>
-</ship>
-
-
-
-
-<!--------------------------------
-
-	ZOLTAN SECTOR SHIPS SHIPS
-	
----------------------------------->
-
-
-
-<ship name="PIRATE_ZOLTAN_CREW_STUDY" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>You take out the ship and contact the research station.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>"Thank you for rescuing us! They held us hostage to ambush unsuspecting passersby. Please, take this."</text>
-				<autoReward level="LOW">stuff</autoReward>
-				<drone name="RANDOM"/>
-			</event>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>You disable the ship and contact the research station.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>"Thank you for rescuing us! They held us hostage to ambush unsuspecting passersby. Please, take this."</text>
-				<autoReward level="LOW">stuff</autoReward>
-				<drone name="RANDOM"/>
-			</event>
-		</choice>
-	</deadCrew>
-</ship>
-
-
-
-<!--------------------------------
-
-	rebel SHIPS SHIPS
-	
----------------------------------->
-
-<ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
 
 
 <!--------------------------------
@@ -1504,7 +840,16 @@ Special:
 
 
 
+<!--------------------------------
 
+	REBEL SHIPS???
+	
+---------------------------------->
+
+<ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
+	<destroyed load="DESTROYED_DEFAULT"/>
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
 
 
 
@@ -1516,47 +861,6 @@ Special:
 	
 ---------------------------------->
 
-<ship name="CRYSTAL_SHIP" auto_blueprint="SHIPS_CRYSTAL">   
-	<surrender  chance="0.6" min="3" max="4">
-		<text load="CRYSTAL_SHIP_SURRENDER"/>
-		<choice hidden="true">
-			<text>Accept their surrender.</text>
-			<event load="CRYSTAL_SHIP_SURRENDER"/>
-		</choice>
-		<choice hidden="true">
-			<text>Ignore them.</text>
-			<event>
-				<text>You cut off communications and prepare to finish them off.</text>
-			</event>
-		</choice>
-	</surrender>
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship> 
-
-<ship name="CRYSTAL_SHIP_NO_SURRENDER" auto_blueprint="SHIPS_CRYSTAL">   
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship> 
-
-<ship name="CRYSTAL_FED" auto_blueprint="SHIPS_CRYSTAL">
-	<destroyed>
-		<text>The Crystalline ship shatters and you pick what you can from the debris.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_FED_LIST"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>The crew of the enemy ship has been eliminated. You scrap what you can.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_FED_LIST"/>
-		</choice>
-	</deadCrew>
-</ship>
 
 <ship name="CRYSTAL_CONVOY" auto_blueprint="SHIPS_CRYSTAL">
 	<surrender  chance="0" min="3" max="4">
@@ -1564,7 +868,7 @@ Special:
 		<choice hidden="true">
 			<text>Stop the fight.</text>
 			<event>
-				<text>They accept your explanation and allow you to approach the fleet. It appears they are miners and colonists from a fringe settlement who are fleeing to more protected space after hearing reports of pirate and federation attacks.</text>
+				<text>They accept your explanation and allow you to approach the fleet. It appears they are miners and colonists from a fringe settlement who are fleeing to more protected space after hearing reports of pirate and rebel attacks.</text>
 				<ship hostile="false"/>
 				<choice hidden="true">
 					<text>Continue...</text>
@@ -1601,7 +905,7 @@ Special:
 		<choice hidden="true">
 			<text>Accept their surrender.</text>
 			<event>
-				<text>They send one of their prisoners over to your ship. They're a bit shaken up and you suspect that they were once a federation, but they seem very glad to be free.</text>
+				<text>They send one of their prisoners over to your ship. They're a bit shaken up and you suspect that they were once from the federation, but they seem very glad to be free.</text>
 				<crewMember amount="1" class="human"/>
 			</event>
 		</choice>
@@ -1622,9 +926,9 @@ Special:
 	</deadCrew>
 </ship>
 
-<ship name="federation_CRYSTAL_federation_CRYSTAL" auto_blueprint="SHIPS_federation">
+<ship name="REBEL_CRYSTAL_REBEL_CRYSTAL" auto_blueprint="SHIPS_FED">
 	<destroyed>
-		<text>The federations destroyed, you pick the bones of their ship.</text>
+		<text>The federation ship destroyed, you pick the bones of their ship.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1632,75 +936,12 @@ Special:
 		</choice>
 	</destroyed>
 	<deadCrew>
-		<text>The federations destroyed, you pick the bones of their ship.</text>
+		<text>The federation ship destroyed, you pick the bones of their ship.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
 			<event load="CRYSTAL_SAVED"/>
 		</choice>
-	</deadCrew>
-</ship>
-
-
-
-<ship name="MANTIS_CRYSTAL" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>The ship explodes and you scrap what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_SAVED"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>With the crew dead you take as much salvage from the ship as possible.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_SAVED"/>
-		</choice>
-	</deadCrew>
-</ship>
-
-<ship name="PIRATE_CRYSTAL" auto_blueprint="SHIPS_PIRATE">
-	<destroyed>
-		<text>The ship explodes and you scrap what you can.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_SAVED"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>With the crew dead you take as much salvage from the ship as possible.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="CRYSTAL_SAVED"/>
-		</choice>
-	</deadCrew>
-</ship>
-
-
-
-<!--------------------------------
-
-	SPECIAL SHIPS
-	
----------------------------------->
-
-
-
-<ship name="GHOST_SHIP" auto_blueprint="JELLY_TRUFFLE">
-	<destroyed>
-		<text>The haunted ship is destroyed. It won't be able to trouble future travelers.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</destroyed>
-	<crew>
-		   <crewMember class="ghost" prop="2"/>
-	</crew>
-	<deadCrew>
-		<text>Should not be seen</text>
 	</deadCrew>
 </ship>
 
