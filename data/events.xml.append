@@ -316,7 +316,7 @@ item - scrap + that thing  -->
 	</event>
 	<event>
 		<text>The drone keeps the ship stable enough to allow them to escape the asteroid field. They message you with map coordinates, "You're that rebel ship the Federation is after, aren't you? I can't offer much but I heard there was a rebel loyalist base nearby. Maybe they can help you?"</text>
-		<quest event="HIDDEN_rebel_BASE_LIST"/>
+		<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 		<item_modify>
 			<item type="drones" min="-1" max="-1"/>
 		</item_modify>
@@ -417,7 +417,7 @@ item - scrap + that thing  -->
 </textList>
 <eventList name="REBEL_VS_FEDERATION_SAVED_LIST">
 	<event>
-		<text>"Thank you for saving us. This ship is transporting rebels on the run from the federation and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden rebel base nearby. Perhaps they can assist you more."</text>
+		<text>"Thank you for saving us. This ship is transporting rebels on the run from the Federation and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden rebel base nearby. Perhaps they can assist you more."</text>
 		<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 	</event>
 	<event>
@@ -441,9 +441,8 @@ item - scrap + that thing  -->
 		<choice req="teleporter" hidden="true"> 
 			<text>(Teleporter) Lock on to all remaining life signatures and beam them onto your ship.</text>
 			<event>
-				<text>Your quick reactions allow you to stabilize a few of the seriously wounded crewmembers. An infantryman offers to join your crew and the rest tell you of a hidden rebel base a few jumps from here.</text>
+				<text>Your quick reactions allow you to stabilize a few of the seriously wounded crewmembers. An infantryman offers to join your crew.</text>
 				<crewMember combat="1" amount="1"/> <!--DLC!-->
-				<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 				<autoReward level="MED">scrap_only</autoReward>
 			</event>
 		</choice>
@@ -473,313 +472,6 @@ item - scrap + that thing  -->
 </eventList>
 
 
-<event name="DISTRESS_TRAPPED_MINER" unique="true">
-	<text>You arrive at the distress beacon near a small asteroid belt and find a ship with pirate markings partially crushed between two large rocks. It must have been illegally mining the belt without proper equipment.</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Try to dislodge the ship by shooting at the rocks.</text>
-		<event load="DISTRESS_TRAPPED_MINER_SHOOT"/>
-	</choice>
-	<choice hidden="true">
-		<text>Destroy and loot the ship. They're just pirates.</text>
-		<event load="DISTRESS_TRAPPED_MINER_LOOT"/>		
-	</choice>
-	<choice hidden="true" req="WEAPONS_BEAM_DAMAGE"> <!-- JUSTIN - TO DO - List of beam weapons-->
-		<text>(Beam Weapon) Carefully cut the ship out.</text>
-		<event>
-			<text>You use your beam to make a few precision cuts in the asteroid. The ship gives a quick burst of thrust and the rock crumbles away. They thank you and offer some of the resources they have collected.</text> 
-			<autoReward level="MED">standard</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true" req="COMBAT_BEAM">
-		<text>(Beam Drone) Have your drone cut the ship out.</text>
-		<event>
-			<text>You program the drone to work carefully around the trapped ship. In a short time it allows the ship to easily slip out of its cage. They thank you and offer some of the resources they have collected.</text>
-			<autoReward level="MED">standard</autoReward>
-			<item_modify>
-				<item type="drones" min="-1" max="-1"/>
-			</item_modify>
-		</event>
-	</choice>
-</event>
-<eventList name="DISTRESS_TRAPPED_MINER_SHOOT">
-	<event>
-		<text>You take a few careful shots but you expose a mineral patch in the rock that reacts violently with your weapon. A shockwave forces you back as debris pelts against your hull. When you regain control you find there is not much left of the ship.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-		<damage amount="2" system="random"/> <!--DLC-->
-	</event>
-	<event>
-		<text>You fire a few volleys into the rock and it starts to shudder and break apart. Without shields the pirate ship takes a beating but eventually pulls free. They thank you for your assistance.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-</eventList>	
-<eventList name="DISTRESS_TRAPPED_MINER_LOOT">
-	<event>
-		<text>You decide the pirate is not worth saving and fire a few volleys into their hull causing the ship to depressurize and break apart. You move in to loot the remains.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-	<event>
-		<text>You decide the pirate is not worth saving and fire a few volleys into their hull. Before you can scrap the remains another pirate ship flashes on your radar. Perhaps they saw your deed, or perhaps they want to claim the spoils for themselves, but for whatever reason, they're charging weapons!</text>
-		<ship load="PIRATE" hostile="true"/>
-	</event>
-</eventList>	
-	
-<event name="DISTRESS_INFESTATION" unique="true">
-	<text>You find a number of ships fleeing from a small space station. You hail them, asking what's wrong: "Help! We're being overrun by some sort of giant alien spiders!"</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Send the crew to help! Giant alien spiders are no joke.</text>
-		<event load="DISTRESS_INFESTATION_LIST"/>
-	</choice>
-	<choice hidden="true">
-		<text>Leave them alone.</text>
-		<event>
-			<text>You can't risk fighting some unknown alien on every backwater station you come across. You prepare to jump.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="BATTLE">
-		<text>(Anti-Personnel Drone) Send your battle drone in to help.</text>
-		<event>
-			<text>You pull up alongside the station and release the drone through the airlock. Within a short time the majority of the creatures are dead, with only a little collateral damage. They express their most sincere gratitude.</text>
-			<autoReward level="MED">stuff</autoReward>			
-			<item_modify>
-				<item type="drones" min="-1" max="-1"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="true" req="BOARDER">
-		<text>(Boarding Drone) Launch a Boarding drone into the station.</text>
-		<event>
-			<text>You launch the drone and it crashes through their hull, leaving a huge breach. You watch as the drone tears through the creatures while debris and dead bodies fly out of the breach. The owners of the station are less than effusive when they thank you, and offer only a meager payment. Maybe it's a good time to leave...</text>
-			<autoReward level="LOW">standard</autoReward>			
-			<item_modify>
-				<item type="drones" min="-1" max="-1"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="true" req="BEAM_BIO">
-		<text>(Bio Beam) Use the beam to pick off the spiders.</text>
-		<event>
-			<text>You instruct them to drop their shields and you are able to kill the creatures without damaging the station. "The monsters just started bursting into flame as we watched. What a terrifying weapon... Here, take this for your help, friend."</text>
-			<autoReward level="HIGH">stuff</autoReward>
-		</event>	
-	</choice>
-</event>
-<eventList name="DISTRESS_INFESTATION_LIST">
-	<event>
-		<text>Your crew boards the station, cautiously moving between corridors. Suddenly a man-sized arachnid bursts from a vent in the ceiling, followed by countless more. You fight your way back to the airlock and are forced to leave before accounting for all crewmembers. Not everybody made it back.</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>You take a hopeful trip to the Clone Bay, and to your relief a clone is already prepared for the lost crewmember.</text>
-		</removeCrew>
-	</event>
-	<event>
-		<text>Your crew slowly creeps up on a cluster of the creatures from behind. Without warning, the giant arachnids turn and charge. However, your team stays in control and before long you've beaten them back.</text>
-		<choice hidden="true">	
-			<text>Contact the station owners.</text>
-			<event>
-				<text>They are thrilled with your success and offer you a reward.</text>
-				<autoReward level="HIGH">stuff</autoReward>		
-			</event>
-		</choice>	
-	</event>
-</eventList>
-
-<event name="DISTRESS_SATELLITE_DEFENSE" unique="true">
-	<text>The distress signal is coming from a small space station orbiting an uninhabited planet. Their satellite defense system has gone haywire and their repair crew can't approach without being fired on. They're looking for help to fix or disable it.</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Promise to help.</text>
-		<event>
-			<text>You consider your options.</text>
-			<choice hidden="true">
-				<text>Simply fire on the defense system from a distance.</text>
-				<event load="SATELLITE_DEFENSE_BORING"/>
-			</choice>
-			<choice hidden="true" req="WEAPONS_ION"> 
-				<text>(Ion Weapon) Disable the defense system.</text>
-				<event>
-					<text>You use your ion weaponry to disable the gun long enough for their repair crews to fix it. They message you, "I've never seen a weapon like that before! Thanks for your help. Please accept this reward."</text>
-					<autoReward level="HIGH">standard</autoReward>
-				</event>
-			</choice>
-			<choice hidden="true" req="cloaking" lvl="1" max_group="0">
-				<text>(Cloaking) Use your Cloaking to disable the system.</text>
-				<event>
-					<text>You use your ship's Cloaking to try to prevent the defense system from getting a lock. However before you are able to safely disable the system your cloaking gives out and you are forced to destroy the satellite. No one was harmed but they don't seem happy with your solution.</text>
-					<autoReward level="LOW">standard</autoReward>
-				</event>
-			</choice>
-			<choice hidden="true" req="cloaking" lvl="2" max_group="0"> <!--DLC!-->
-				<text>(Improved Cloaking) Use your Cloaking to disable the system.</text>
-				<event>
-					<text>You use your ships Cloaking to prevent the defense system from getting a lock. Once closer, you hasten to disable the system without damaging it. It was a sloppy job but they appreciate it and offer a reward.</text>
-					<autoReward level="MED">standard</autoReward>
-				</event>
-			</choice>
-			<choice hidden="true" req="cloaking" lvl="3" max_group="0">  <!--DLC!-->
-				<text>(Advanced Cloaking) Use your Cloaking to disable the system.</text>
-				<event>
-					<text>Your ship's Advanced Cloaking allows you to approach the defense system without an issue. Once closer, you are able to safely disable the system. They thank you for your help and offer a reward.</text>
-					<autoReward level="HIGH">standard</autoReward>
-				</event>
-			</choice>
-			<choice hidden="true" req="engi">
-				<text>(Engi Crew) Remotely repair its targeting system.</text>
-				<event>
-					<text>Your crew-member is able to remotely fix the glitch in the defense AI, allowing the repair crew to close in and finish the job. The station gives you its thanks along with a reward.</text>	
-					<autoReward level="HIGH">standard</autoReward>
-				</event>
-			</choice><!--
-			<choice hidden="true" req="anaerobic"> <!--DLC!-
-				<text>(Lanius Crew) Your crew offers to help.</text>
-				<event>
-					<text>Your Lanius crewman appears to have a solution. The Lanius simply jumps out of the airlock towards the satellite. Apparently its lack of heat signatures renders it hidden from the satellite's targeting sensors. Once there he simply melts it down into scrap. You quickly pick him up and prepare to jump before the station can question your methods.</text>
-					<autoReward level="HIGH">scrap_only</autoReward>
-				</event>
-			</choice> -->
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Leave them alone.</text>
-		<event>
-			<text>You can't help them so you prepare to move on.</text>
-		</event>
-	</choice>
-</event>
-<eventList name="SATELLITE_DEFENSE_BORING">
-	<event>
-		<text>You fire a few volleys from a distance and it is clear the defense system is no match for your weapons. However, the station does not seem happy with your 'solution'. You salvage what you can and jump before there is trouble.</text>
-		<autoReward level="LOW">standard</autoReward>
-	</event>
-	<event>
-		<text>You fire a few volleys but aren't able to penetrate the defense system's shields. Its weapons have no trouble piercing yours though, and you take minor damage before escaping. The station will need to find help elsewhere.</text>
-		<damage amount="3"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-		<damage amount="1" system="room" effect="breach"/>
-	</event>	
-</eventList>
-
-<event name="DISTRESS_STATION_FIRE" unique="true">
-	<text>You find the source of the distress call, a small research station. It appears a small laboratory fire got out of control and is threatening to destroy the station. Their fire suppression system is not responding.</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Send your crew in a shuttle to help put out the fire.</text>
-		<event load="DISTRESS_STATION_FIRE_CREW"/>
-	</choice>
-	<choice hidden="true">
-		<text>Dock and try to rescue the survivors.</text>
-		<event load="DISTRESS_STATION_FIRE_RESCUE"/>
-	</choice>
-	<choice hidden="true">
-		<text>Leave.</text>
-		<event>
-			<text>You coldly shut off communications and prepare to leave. Your crew seems upset but you assure them that nothing could have been done.</text>
-		</event>		
-	</choice>
-	<choice hidden="true" req="rock">
-		<text>(Rock Crew) Send your Rock crew-member in.</text>
-		<event>
-			<text>Your Rock soldier tears through the airlock directly into the fire. You've never seen someone that large move that fast. It disperses as much fire suppressant as possible into the heart of the blaze and eventually the fires start to die down.</text>
-			<choice hidden="true">
-				<text>Contact the survivors.</text>
-				<event>
-					<text>With most of the fire under control, the scientists are able to help secure the station. They offer you their sincere gratitude and a generous reward.</text>
-					<autoReward level="HIGH">augment</autoReward>
-				</event>
-			</choice>
-		</event>					
-	</choice>
-	<choice hidden="true" req="REPAIR">
-		<text>(Repair Drone) Send your Repair drone into the fire.</text>
-		<event>
-			<text>You send the Repair drone in and it methodically puts out the fires. Once it has made some progress, the rest of your crew helps to secure the station.</text>
-			<choice hidden="true">
-				<text>Contact the survivors.</text>
-				<event>
-					<text>They offer you their sincere gratitude; the station would have surely been destroyed without your assistance. They transfer a small reward and an additional drone schematic.</text>
-					<autoReward level="HIGH">drone</autoReward>
-				</event>
-			</choice>
-		</event>			
-	</choice>
-</event>
-<eventList name="DISTRESS_STATION_FIRE_CREW">
-	<event>
-		<text>You send your crew into the station. Unfortunately as soon as they enter the fire breaches the station's fuel cell containment. You quickly try to dock and retrieve your crew but not before an unfortunate soul is lost in the inferno.</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>With a new-found respect for flames, your crewmember's clone stumbles out of the Clone Bay.</text>
-		</removeCrew>
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>Your crew valiantly keeps the fire at bay long enough to allow some of the scientists to escape, but it appears to be a losing battle. Before long you order the retreat. The few scientists they were able to save are distraught but grateful. You'll drop them off at the next station.</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-</eventList>
-<eventList name="DISTRESS_STATION_FIRE_RESCUE">
-	<event>
-		<text>You locate the highest concentration of life forms and bring the ship alongside the station. Before you can begin to offload the survivors, a huge blast splits the station apart. Your ship is thrown away and some debris pierces your hull. You watch helplessly as the last of the survivors are consumed in the collapse of the station.</text>
-		<damage amount="3"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>You pull up alongside the station and cut through their hull. You are able to rescue a few survivors but many more are lost. One of the survivors offers to join your crew and you offload the rest on a nearby station.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-		<crewMember amount="1">Dr. Jones</crewMember> 
-	</event>
-</eventList>
-
-<event name="DISTRESS_STATION_DISEASE" unique="true">
-	<distressBeacon/>
-	<text>You locate a nearby human mining colony where an unknown disease has spread virulently. They are setting up a quarantine to contain it but a riot has broken out.</text>
-	<choice hidden="true">
-		<text>Send in your crew to help control the crowds.</text>
-		<event load="DISTRESS_STATION_DISEASE_LIST"/>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore their request and move on.</text>
-		<event>
-			<text>Unfortunately your mission is too important and you're not willing to risk your crew. You prepare to move on.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="rock">
-		<text>(Rock Crew) Send your Rock crew-member to prevent a riot.</text>
-		<event>
-			<text>It's unlikely the Rock's impressive immune system is susceptible to a human virus so you send it in. It is able to intimidate the workers long enough for the colony forces to set up a quarantine. Their leaders offer a reward and assure you they will try to find a cure as soon as possible.</text>
-			<autoReward level="MED">stuff</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true" req="engi">
-		<text>(Engi Crew) Send your Engi to calm down the infected.</text>
-		<event>
-			<text>With no fear of catching the disease, your Engi crewmember helps reassure and organize the infected humans. Calmed by its extensive knowledge of human physiology, the infected submit to the quarantine in the hopes that a cure can be found soon. The colony leaders offer a reward for helping to prevent an ugly incident.</text>
-			<autoReward level="MED">stuff</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true" req="medbay" lvl="2">
-		<text>(Adv. Medbay) Use your Medbay to help synthesize a cure.</text>
-		<event>
-			<text>Your military-grade medical computers are easily able to isolate the cause of the virus, a previously unknown spore that was unearthed during excavations. You are quickly able to inform the colony's leaders of your success in reverse engineering a cure.</text>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>"Thank you so much! We don't have the funds to hire outside help and it would have taken our staff weeks to figure that out. Here, take this as payment!"</text>
-					<autoReward level="MED">stuff</autoReward>
-				</event>
-			</choice>
-			<choice hidden="true" req="NANO_MEDBAY">
-				<text>(Engi Med-bot Dispersal) Use the Nano med-bots to accelerate the dispersal of the cure.</text>
-				<event>
-					<text>You reconfigure your ship's Nano dispersal system. In a matter of minutes all of the workers are cured. The leaders can hardly believe what you have achieved. They offer you what they can as payment.</text>
-					<autoReward level="HIGH">weapon</autoReward>
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
 <eventList name="DISTRESS_STATION_DISEASE_LIST">
 	<event>
 		<text>Your crew tries to keep the crowds in line but the scene quickly turns ugly. Half-crazed with fear, the infected grab mining tools and push back at your crew, forcing them to retreat hastily. They barely get away without injury but the same can't be said for the colony's leaders. You quickly leave.</text>
@@ -788,7 +480,7 @@ item - scrap + that thing  -->
 		<text>With the visible threat of your weapons, the infected become subdued enough for you to set up a rudimentary quarantine. However before you leave, one of your crew presents signs of infection. You have no choice but to leave them on the station in the hopes that they discover a cure quickly. You leave before more crew succumb.</text>
 		<removeCrew>
 			<clone>false</clone>
-			<text>As your crewman is still alive and working towards a cure, it would be against rebel regulation to create a clone to continue with you on your journey.</text>
+			<text>As your crewman is still alive and working towards a cure, it would be against regulations to create a clone to continue with you on your journey.</text>
 		</removeCrew>
 		<autoReward level="MED">stuff</autoReward>
 	</event>
@@ -813,185 +505,19 @@ item - scrap + that thing  -->
 	<text>As you arrive, you become aware of a small federation outpost near the beacon. You are hardly able to bark an order before a small team is beamed aboard your ship. They must have been expecting you...</text>
 </textList>
 
-<event name="BOARDERS_HACKING" unique="true">
-	<text>You catch a glimpse of a strange signal coming from a space station before your sensors shut off unexpectedly. As you discover that your sensors are being jammed, you hear hostiles beam onto your ship.</text>
-	<boarders min="3" max="5" class="human"/>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event>
-			<text>Until you are able to jump away from the hostile space station, your sensors will be disabled. You should deal with these boarders first though!</text>
-			<status type="limit" target="player" system="sensors" amount="0"/>
-		</event>
-	</choice>
-	<choice hidden="true" req="hacking"> <!--DLC - added -->
-		<text>(Hacking System) Counter the remote hacking.</text>
-		<event>
-			<text>Your hacking system automatically counters the digital assault. Your Sensors flicker back on and you prepare to fight the boarders.</text>
-		</event>
-	</choice>
-</event>
 
-<event name="BOARDERS_HACKING_2">
-	
-</event>
-
-
-<event name="STATION_SICK" unique="true">
-	<text>You arrive to find a small research station putting out a distress signal. There is no response to your hails.</text>
-	<choice hidden="true">
-		<text>Dock with the station and investigate.</text>
-		<event load="STATION_SICK_LIST"/>
-	</choice>
-	<choice>
-		<text>Leave it alone.</text>
-		<event/>
-	</choice>
-	<choice hidden="true" req="BATTLE">
-		<text>(Anti-Personnel Drone) Use an Anti-Personnel Drone to investigate.</text>
-		<event load="STATION_SICK_DRONE_LIST"/>
-	</choice>  
-	<choice hidden="true" req="LIFE_SCANNER"> <!--DLC-->
-		<text>(Life Scanner) Run advanced life scans.</text>
-		<event load="STATION_SICK_SCANNER"/>
-	</choice>			
-</event>	
-<eventList name="STATION_SICK_SCANNER"> <!--DLC-->
-	<event>
-		<text>Sensors show scattered signs of life although most of the crew are deceased. However the health signatures of the living indicate they are violent and unstable. You decide it's better to move on than risk engaging the remaining crew.</text>
-	</event>
-	<event>
-		<text>There are no life signs detected on the ship although there appears to be a number of deceased crew. There does not appear to be any airborn contagions so your crew quickly salvages what they can before moving on. You can only wonder what befell the station.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-</eventList>
-<eventList name="STATION_SICK_LIST">
-	<event>
-		<text>Inside there are signs of a great struggle; scientists lie dead where they fell, brutally dismembered. You grab a few research drone parts lying on a desk near the door and leave quickly.</text>
-		<autoReward level="MED">droneparts</autoReward>
-	</event>
-	<event>
-		<text>You dock with the station and see a frantic person banging on the airlock door. Once inside your ship, he drops to the floor saying, "My... friends... They've gone insane... They're coming!" You hand him a blaster and turn to see a number of people charging toward the ship.</text>
-		<crewMember amount="1"/>
-		<choice>
-			<text>Prepare for a fight!</text>
-			<event>
-				<boarders min="3" max="4" class="human"/>
-			</event>
-		</choice>
-		<choice hidden="true" req="medbay" lvl="3" max_group="0"> 
-			<text>(Medbay) Have the Advanced Medbay analyze their condition.</text>
-			<event>
-				<text>You hold them off while retreating into the Med-bay. Its advanced systems determine that an alien neurotoxin is the cause of their frenzy. It synthesizes an antidote and releases it into the room. After a time, the scientists recover. One offers their services as thanks for saving them.</text>
-				<crewMember repair="1" amount="1"/>
-				<autoReward level="MED">scrap_only</autoReward>
-			</event>
-		</choice>  
-	</event>
-	<event>
-		<text>As you explore the base, crazed screams are heard. Your team retreats back to your ship with a number of armed scientists in pursuit. One of your team starts to cough and falls in a spasm onto the floor.</text>
-		<choice>
-			<text>Drag him back to the ship and prepare for a fight.</text>
-			<event>
-				<text>As you get back on board, your injured friend rises up and starts to attack you, screaming. Caught off-guard, your remaining crew fall back as the other scientists fight their way onto the ship.</text>
-				<boarders min="3" max="4" class="human"/>
-				<crewMember amount="-1" class="traitor"/>
-			</event>
-		</choice>
-		<choice hidden="true" req="teleporter"> 
-			<text>(Teleporter) Use your Teleporter to retrieve your crew.</text>
-			<event>
-				<text>You beam your away team back to the ship and disengage from the station. Although the ship is safe, the infected crewmember quickly becomes frenzied and attacks.</text>
-				<crewMember amount="-1" class="traitor"/>
-			</event>
-		</choice>
-		<choice hidden="true" req="medbay" lvl="2" max_group="0"> 
-			<text>(Medbay) Drag him back to the Medbay.</text>
-			<event>
-				<text>You hold him down and the Medbay is able to stop whatever neurotoxin was on the ship from fully infecting your crew. Once he recovers, you prepare to fight off the scientists, who are beyond help.</text>
-				<boarders min="3" max="4" class="human"/>
-			</event>
-		</choice>
-		<choice hidden="true" req="medbay" lvl="3" max_group="0">  
-			<text>(Advanced Medbay) Have the Advanced Medbay analyze their condition.</text>
-			<event>
-				<text>You hold them off while retreating into the Med-bay. Its advanced systems determine that an alien neurotoxin is driving your crewmember insane. It synthesizes an antidote and releases it into the ship. After a time, the frenzied scientists recover and one offers to help out as thanks for saving them.</text>
-				<crewMember amount="1"/>
-			</event>
-		</choice> 
-	</event>
-</eventList>
-<eventList name="STATION_SICK_DRONE_LIST">
-	<event>
-		<text>You send your Anti-Personnel drone to explore the station. What you find is disconcerting... It appears that something has caused the scientists and guards to tear each other to pieces. You abandon the drone on the station for fear that it is contagious.</text>
-		<item_modify>
-			<item type="drones" min="-1" max="-1"/>
-		</item_modify>
-	</event>
-	<event>
-		<text>Once on board the station, your drone is immediately beset by frenzied scientists and guards. It eventually gets torn apart by the mob but it has bought you enough time to disengage from the station and escape into empty space.</text>
-		<item_modify>
-			<item type="drones" min="-1" max="-1"/>
-		</item_modify>
-	</event>
-	<event>
-		<text>The cameras mounted to your Anti-Personnel drone show a chaotic scene. No people are to be found but the remnants of a recent battle on-board the ship are obvious. You instruct the drone to retrieve some useful materials before leaving.</text>
-		<autoReward level="MED">standard</autoReward>
-		<item_modify>
-			<item type="drones" min="-1" max="-1"/>
-		</item_modify>
-	</event>
-</eventList>
-
-<event name="BOARDERS_ASTEROID_GHOST" unique="true">   <!-- JUSTIN - maybe add some sort of ship graveyard background? -->
-	<img back="BG_DARK" planet="NONE"/>
-	<text>You jump into the middle of an asteroid field. Looking around, you find you are surrounded by dozens of wrecks of other ships. Faint wisps of light can be seen moving between wrecks. As you watch, they seem to be changing path and floating toward your ship!</text>
-	<choice>
-		<text>Prepare for a fight!</text>
-			<event>
-			<boarders min="3" max="6" class="ghost"/>
-			<environment type="asteroid"/>
-		</event>
-	</choice>
-	<choice req="engines" lvl="5" hidden="true"> 
-		<text>(Engines) Activate full impulse drive to escape.</text>
-		<event>
-			<text>With your Advanced Engines you were able to quickly get out of the asteroid field, however your ship took a number of hits on the way out.</text>
-			<damage amount="3"/>
-			<damage amount="1" system="random"/>  <!--DLC-->
-		</event>
-	</choice>
-	<choice req="pilot" lvl="2" hidden="true"> 
-		<text>(Piloting) Have your pilot maneuver you out of the asteroid field.</text>
-		<event>
-			<text>Thanks to your pilot, you were able escape the worst of the asteroid field unscathed. However, the wisps of light stream out of the field following your ship!</text>
-			<boarders min="2" max="4" class="ghost"/>
-		</event>
-	</choice>  
-</event>
-
-
-
-
-
-<!-----------
-		ENVIRONMENT!!!
-	Events with unique environments
------------->
 
 <event name="AUTO_ASTEROID">
 	<img back="BG_DARK" planet="NONE"/>
-	<text>You arrive in an asteroid belt to discover that a federation automated-scout has been stationed here. Prepare for a fight!</text>
-	<ship load="federation_AUTO" hostile="true"/>
+	<text>You arrive in an asteroid belt to discover that a Federation automated-scout has been stationed here. Prepare for a fight!</text>
+	<ship load="FED_AUTO" hostile="true"/>
 	<environment type="asteroid"/>
 </event>
-
 <event name="AUTO_SUN" unique = "true">
 	<text>You arrive at the beacon to find yourself dangerously close to a star. An automated federation ship, impervious to the heat, moves in to engage.</text>
-	<ship load="federation_AUTO" hostile="true"/>
+	<ship load="FED_AUTO" hostile="true"/>
 	<environment type="sun"/>
 </event>
-
-
 
 
 <!-----------
@@ -999,26 +525,15 @@ item - scrap + that thing  -->
 	Events that give items
 ------------>
 
-<event name="STORE">
-	<text load="STORE_TEXT"/>
-	<store/>
-</event>
-<textList name="STORE_TEXT">
-	<text>A ship engineer has set up a small shop here.</text>
-	<text planet="NONE">You find yourself surrounded by a group of mysterious alien vessels. They hail you and apparently have some valuable technology for sale.</text>
-	<text planet="PLANET_POPULATED">A transmission from the nearby planet indicates an outpost below which offers supplies to travelers. You send down an away party to check it out.</text>
-	<text planet="PLANET_POPULATED">The space station here has a traveling merchant who shows you his wares.</text>
-	<text planet="NONE">There is only one other ship at this beacon, and it is showing heavy damage. You receive a message on your console: "Greetings traveler. We were crippled by a band of pirates and are now forced to sell our remaining valuable equipment to acquire the necessary supplies to get home."</text>
-</text>
 
 <event name="FIND_DRONE">
 	<text load="FIND_DRONE"/>
 	<autoReward level="LOW">drone</autoReward>
 </event>
 <textList name="FIND_DRONE">
-	<text>When you ask a nearby station for aid, a friendly programmer gives you the schematics for a drone!</text>
+	<text>When you ask a nearby station for aid, a programmer gives you the schematics for a drone!</text>
 	<text>An abandoned space station circles a lonely planet. A quick check yields schematics for a drone. You bring it aboard the ship.</text>
-	<text>rebel sympathizers contact you as you arrive. "We know your mission should be secret, so don't ask how we know about it. Take this schematic, it's all we can do to help."</text>
+	<text>Rebel sympathizers contact you as you arrive. "We know your mission should be secret, so don't ask how we know about it. Take this schematic, it's all we can do to help."</text>
 	<text>A small Engi research vessel is trying to fend off a Mantis ship. You move in to engage, but after a quick scan of your ship the Mantis ship retreats. The Engi offer you a drone schematic as thanks for your timely arrival.</text>
 	<text>You find an abandoned mining station on a nearby moon. A quick scan shows no life forms; however, you discover a usable drone schematic!</text>
 
@@ -1033,7 +548,7 @@ item - scrap + that thing  -->
 <textList name="FIND_WEAPON">
 	<text planet="NONE">Holy crap! A weapon is just floating in space!</text>
 	<text planet="PLANET_UNPOPULATED" back="BG_NEBULA">You inform a nearby station of your flight from the federations. They offer to outfit your ship with a weapon and wish you well.</text>
-	<text planet="PLANET_POPULATED" back="BG_NEBULA">A settlement still loyal to the rebel hails your ship. They have prepared a weapon to aid your escape from the federations.</text>
+	<text planet="PLANET_POPULATED" back="BG_NEBULA">A settlement under rebel control hails your ship. They have prepared a weapon to aid your escape from the Federation.</text>
 	<text>As soon as you arrive a small Mantis ship detaches from a wreck and jumps away. You must have interrupted their salvage operation because you find a weapon ready to be installed!</text>
 	<text>A small merchant ship messages you, "Underground rebel comm channels are all talking about your 'secret' mission. Let us install a weapon to help. Good luck!"</text>
 	<text>Debris from a battle is scattered around this system. A few pieces bounce against your ship. You passively scan them and discover there is a functioning weapon among them!</text> 
@@ -1046,614 +561,40 @@ item - scrap + that thing  -->
 <textList name="FREE_ITEMS">
 	<text>You arrive in a system and immediately discover a pirate ship nearby. Strangely, scans indicate there are no lifeforms aboard. You salvage anything useful, but find no clue as to the whereabouts of the former crew.</text>
 	<text>Not much remains in this abandoned system; however, scans reveal a nearby mining platform with some salvageable materials.</text>
-	<text planet="PLANET_POPULATED">As you arrive in the system you are hailed by a loyalist settlement. Upon learning of your quest, they offer you supplies.</text>
+	<text planet="PLANET_POPULATED">As you arrive in the system you are hailed by a rebel controlled settlement. Upon learning of your quest, they offer you supplies.</text>
 	<text planet="PLANET_GAS">Debris from a forgotten battle still orbits the gas giant in this system. Some of it still might be usable.</text>
 	
 	<!--DLC! added texts-->
-	<text>You receive a message from a nearby station, "A rebel cruiser jumping into federation territory? Quite the bold move." You quickly move to arm the weapons but he continues, "Lucky for you we're not all in support of the federationlion. Perhaps these supplies will help you get to friendlier space alive."</text>
 	<text>You happen upon the remains of a space station. It has been mostly picked clean but there appears to be a few materials that will aid you in your mission.</text>
 </textList>
 
-<event name ="FUEL_FOR_DRONE">
-	<text load="FUEL_FOR_DRONE"/>
-	<choice>
-		<text>Accept the offer.</text>
-		<event>
-			<item_modify>
-				<item type="fuel" min="-4" max="-2"/>
-				<item type="drones" min="1" max ="3"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice>
-		<text>Reject their offer.</text>
-		<event/>
-	</choice>
-</event>
-<textList name="FUEL_FOR_DRONE">
-	<text planet="PLANET_POPULATED">A nearby space station hails you. "Greetings! Your arrival is most fortuitous. We recently came across some extra drones. If you have some fuel, perhaps we can make a deal?"</text>
-	<text>A strange vessel approaches. A digital message appears on your view-screen: "This is an automated merchant. Refill this vessel with fuel and it will supply you with drones."</text>
-	<text>You arrive in the sector and are greeted by a science vessel waiting by the beacon. They hail you, "We find ourselves low on fuel and have a proposition."</text>
-</textList>
-
-<event name="REFUEL_STATION" unique="true">   <!-- NEED - checks to see if you have enough scrap!-->
-	<text>A ship refueling station is stationed at this beacon. We can purchase fuel here.</text>
-	<choice hidden="false">
-		<text>Buy 6 fuel for 12 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="fuel" min="6" max="6"/>
-				<item type="scrap" min="-12" max="-12"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="false">
-		<text>Buy 3 fuel for 6 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="fuel" min="3" max="3"/>
-				<item type="scrap" min="-6" max="-6"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="false">
-		<text>Buy 1 fuel for 2 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="fuel" min="1" max="1"/>
-				<item type="scrap" min="-2" max="-2"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice>
-		<text>Ignore the station.</text>
-		<event/>
-	</choice>
-</event>
-
-<event name="REPAIR_STATION" unique="true">   <!-- NEED - checks to see if you have enough scrap!-->
-	<text>You see a small station fitted with hundreds of Repair drones. You receive an automated message, "We don't know who you are and we don't care, but this is the right place for some ship repair!"</text>
-	<choice>
-		<text>Repair 20 damage.</text>
-		<event>
-			<text>"Thank you for your business, no refunds!"</text>
-			<item_modify>
-				<item type="scrap" min="-40" max="-40"/>
-			</item_modify>
-			<damage amount="-20"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Repair 10 damage.</text>
-		<event>
-			<text>"Thank you for your business, no refunds!"</text>
-			<item_modify>
-				<item type="scrap" min="-20" max="-20"/>
-			</item_modify>
-			<damage amount="-10"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Repair 5 damage.</text>
-		<event>
-			<text>"Thank you for your business, no refunds!"</text>
-			<item_modify>
-				<item type="scrap" min="-10" max="-10"/>
-			</item_modify>
-			<damage amount="-5"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Ignore the station.</text>
-		<event/>
-	</choice>
-</event>
-
-<event name="SELL_MISSILES_STATION" unique="true">  
-	<text>There is a black market hub here. You receive a message, "These are dangerous times. If you have extra military-grade explosives, we'll gladly pay you for them."</text>
-	<choice hidden="true">
-		<text>Sell 5 missiles for 15 scrap.</text>
-		<event>
-			<text>"Thank you, this will help greatly."</text>
-			<item_modify>
-				<item type="missiles" min="-5" max="-5"/>
-				<item type="scrap" min="15" max="15"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Sell 10 missiles for 30 scrap.</text>
-		<event>
-			<text>"Thank you, this will help greatly."</text>
-			<item_modify>
-				<item type="missiles" min="-10" max="-10"/>
-				<item type="scrap" min="30" max="30"/>
-			</item_modify>
-		</event>
-	</choice>
-		<choice hidden="true">
-		<text>Sell 15 missiles for 45 scrap.</text>
-		<event>
-			<text>"Thank you, this will help greatly."</text>
-			<item_modify>
-				<item type="missiles" min="-15" max="-15"/>
-				<item type="scrap" min="45" max="45"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice>
-		<text>Ignore the station.</text>
-		<event/>
-	</choice>
-</event>
-
-<event name="SELL_DRONES_STATION" unique="true"> 
-	<text>You see a civilian space station with heavy damage. You receive a message, "We've been hit hard by the war. We need more drone parts to speed up our repairs. We'll buy some from you if you have extra."</text>
-	<choice hidden="true">
-		<text>Sell 3 drone parts for 12 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="drones" min="-3" max="-3"/>
-				<item type="scrap" min="12" max="12"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Sell 6 drone parts for 24 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="drones" min="-6" max="-6"/>
-				<item type="scrap" min="24" max="24"/>
-			</item_modify>
-		</event>
-	</choice>
-		<choice hidden="true">
-		<text>Sell 12 drone parts for 48 scrap.</text>
-		<event>
-			<text>"Thank you for your business."</text>
-			<item_modify>
-				<item type="drones" min="-12" max="-12"/>
-				<item type="scrap" min="48" max="48"/>
-			</item_modify>
-		</event>
-	</choice>
-	<choice>
-		<text>Ignore the station.</text>
-		<event/>
-	</choice>
-</event>
-
-<!--needs civilized background-->
-<event name="TRADER_CIV">
-	<text load="TRADER_CIV"/>
-	<choice>
-		<text>Trade.</text>
-		<event load="TRADER_LIST"/>
-	</choice>
-	<choice>
-		<text>Ignore.</text>
-		<event/>
-	</choice>
-</event>
-<textList name="TRADER_CIV">
-	<text planet="PLANET_POPULATED">You arrive at a quiet spaceport and are immediately hailed by another ship at port with a "once in a lifetime deal!"</text>
-	<text planet="PLANET_POPULATED">You jump into a sector filled with civilian activity. Your scan the various advertisement channels while waiting for your FTL to charge, and are intrigued by a grey-market shipwright.</text>
-	<text planet="PLANET_POPULATED">Your ship is flooded with advertisement transmissions from nearby merchants as soon as you arrive at this beacon. You arbitrarily pick one to examine in detail.</text>
-	<text planet="NONE">Despite the barren area, a trader has set up shop at this beacon. He presents his offer.</text>
-	<text>The beacon at first glance seems home to a junk yard. Upon closer inspection, it reveals itself to be a ramshackle market. One trader has a deal that catches your eye.</text>
-	<text planet="NONE">A pawn broker has set up shop at this obscure beacon. He might be offering something worth looking at.</text>
-</textList>
-<eventList name="TRADER_LIST">
-	<event>
-		<item_modify>
-			<item type="fuel" min="5" max="10"/>
-			<item type="drones" min="-2" max="-1"/>
-		</item_modify>
-	</event>
-	<event>
-		<item_modify>
-			<item type="missiles" min="4" max="5"/>
-			<item type="fuel" min="-2" max="-1"/>
-		</item_modify>
-	</event>
-	<event>
-		<item_modify>
-			<item type="drones" min="2" max="3"/>
-			<item type="missiles" min="-3" max="-2"/>
-		</item_modify>
-	</event>
-	<event>
-		<item_modify>
-			<item type="fuel" min="4" max="10"/>
-			<item type="missiles" min="-4" max="-2"/>
-		</item_modify>
-	</event>
-</eventList>
-
-
-
-		
 
 
 
 
-
-<!-----------
-		SPECIAL!!!
-	Special Events
------------->
-
-
-<event name="GHOST_SHIP" unique="true">
-	<img planet="NONE"/>
-	<text load="GHOST_SHIP_TEXT"/>
-	<ship load="GHOST_SHIP" hostile="FALSE"/>
-	<choice hidden="true">
-		<text>This is a great opportunity. Let's dock and see if we can find valuable supplies.</text>
-		<event load="GHOST_DOCK"/>
-	</choice>
-	<choice hidden="true">
-		<text>We're in a hurry, let's just quickly pull some scrap off the ship.</text>
-		<event load="GHOST_SCRAP"/>
-	</choice>
-	<choice hidden="true">
-		<text>Something seems wrong here. Let's just leave.</text>
-		<event/>
-	</choice>
-</event>
-<textList name="GHOST_SHIP_TEXT">
-	<text>This beacon lies in an empty section of space. You almost move on before spotting a heavily damaged ship drifting nearby. The ship's markings are unfamiliar.</text>
-	<text>You share this beacon with just one other ship, but it appears ancient and long since abandoned.</text>
-	<text>Another ship is jumping away just as you arrive. They send out a quick communication before their jump completes: "That ruined bulk is more trouble than it's worth." You see a drifting, abandoned vessel nearby.</text>
-	<text>There's a heavily damaged ship at this beacon. You briefly pick up a very distorted communication from the ship but are unable to understand it. Your sensors detect no life-signs.</text>
-</textList>
-<eventList name="GHOST_DOCK">
-	<event>
-		<text>Your crew complains of hearing strange voices as they work. One requests that they end the salvage operation early.</text>
-		<choice hidden="true">
-			<text>They're being ridiculous. Finish the job.</text>
-			<event load="GHOST_BOARDING"/>
-		</choice>
-		<choice hidden="true">
-			<text>They've gathered enough supplies. Let's get going.</text>
-			<event load="GHOST_SCRAP"/>
-		</choice>
-		<choice req="sensors" lvl="3" hidden="true"> 
-			<text>(Sensors) Wait, sensors are picking up something strange...</text>
-			<event>
-				<text>Your sensors are picking up some subtle but anomalous activity, it's as if the ship is slowly activating. You pull everyone back to your ship with what they have gathered.</text>
-				<event load="GHOST_SPACE"/>
-				<autoReward level="MED">scrap_only</autoReward>
-			</event>
-		</choice>
-	</event>
-	<event load="GHOST_BOARDING"/>
-</eventList>
-<event name="GHOST_SCRAP">
-	<text>You recover what you can before making preparations to jump away.</text>
-	<autoReward level="LOW">scrap_only</autoReward>
-	<choice>
-		<text>Continue...</text>
-		<event load="GHOST_SPACE"/>
-	</choice>
-</event>
-<eventList name="GHOST_SPACE">
-	<event>
-		<text>Suddenly the wreckage powers up. Still no life-signs are detected. You have no idea who's piloting the ship, but it has clearly become hostile.</text>
-		<ship hostile="true"/>
-	</event>
-	<event>
-		<text>You receive a transmission from the ship: "You got what you came for. Now leave us!" No life-signs are detected still.</text>
-		<choice hidden="true">
-			<text>You take the empty ship's advice and leave.</text>
-			<event/>
-		</choice>
-		<choice hidden="true">
-			<text>This ship could be dangerous to future travelers. We should destroy it.</text>
-			<event>
-				<ship hostile="true"/>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<eventList name="GHOST_BOARDING">
-	<event>
-		<text>The salvage operation ends without a hitch. You get your crew-members back on board and prepare to jump away.</text>
-		<autoReward level="HIGH">weapon</autoReward>
-	</event>
-	<event>
-		<text>Just as they're finishing the salvage operation, your crew reports they're being attacked by what they claim to be the ghosts of the previous crew. They seem confident they can deal with them though.</text>
-		<choice hidden="true">
-			<text>Order your crew to retreat with what they can and get back to the ship.</text>
-			<autoReward level="MED">scrap_only</autoReward>
-			<event load="GHOST_SPACE"/>
-		</choice>
-		<choice hidden="true">
-			<text>Order them to stand their ground, they should be able to handle a few ghosts.</text>
-			<event load="GHOST_STAND"/>
-		</choice>
-	</event>
-</eventList>
-<eventList name="GHOST_STAND">
-	<event>
-		<text>The fight doesn't doesn't go well. Eventually your crew is forced to abandon the supplies and retreat of their own accord.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="GHOST_BOARDED"/>
-		</choice>
-	</event>
-	<event>
-		<text>The ghosts prove to be even weaker than you'd expected. Your crew quickly mops them up and brings back a large cache of supplies.</text>
-		<autoReward level="HIGH">standard</autoReward>
-		<choice>
-			<text>Continue...</text>
-			<event load="GHOST_SPACE"/>
-		</choice>
-	</event>
-	<event>
-		<text>Your crew is losing the fight against the ghosts. If this continues, you'll lose everyone.</text>
-		<choice>
-			<text>Everyone make a full retreat.</text>
-			<event load="GHOST_BOARDED"/>
-		</choice>
-		<choice>
-			<text>Retreat if possible, but protecting the ship is the primary goal.</text>
-			<event>
-				<text>You lose a crew-member to the fight but manage to escape the ghost ship and its inhabitants.</text>
-				<removeCrew>
-					<clone>true</clone>
-					<text>You get back to find your crew-member cloned, though annoyed with the command decisions that lead to his death.</text>
-				</removeCrew>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<event name="GHOST_BOARDED">
-	<text>The ghosts follow your crew-members back on board the ship!</text>
-	<boarders min="2" max="4" class="ghost"/>
-</event>
-
-
-
-<event name="MERCHANT_REQUEST" unique="true">
-	<img planet="PLANET_POPULATED_SMALL"/>
-	<text>You arrive at a populated sector. One merchant seems to be mass-broadcasting a request for a mercenary ship to aid him. Shall we respond?</text>
-	<choice hidden="true">
-		<text>Yes.</text>
-		<event load="MERCHANT_REQUEST_LIST"/>
-	</choice>
-	<choice>
-		<text>No.</text>
-		<event/>
-	</choice>
-</event>
-
-<eventList name="MERCHANT_REQUEST_LIST">
-	<event>
-		<text>"Great, I was worried no one would respond. My usual carrier is days late. I need you to deliver this cargo of drone parts to a small station a few jumps from here. We can't afford to pay another carrier, but they will surely tip you generously."</text>
-		<choice hidden="true">
-			<text>Accept.</text>
-			<event>
-				<text>"Great! I uploaded their location to your star map. I'm running out of options, so I have no choice but to trust you'll do what you have agreed to do."</text>
-				<item_modify>
-					<item type="drones" min="5" max="5"/>
-				</item_modify>
-				<quest event="MERCHANT_DELIVER"/>
-			</event>
-		</choice>
-		<choice>
-			<text>Decline.</text>
-			<event>
-				<text>"Fine, I'll keep looking for someone who wishes to make some easy money..."</text>
-			</event>
-		</choice>
-	</event> 
-	<event>
-		<text>"Your ship seems reasonably equipped... A freighter carrying a shipment of my goods is a week late. The fools flew through a pirate-filled sector in their haste and I fear for the cargo's safety. I'm looking for a less incompetent captain to investigate."</text>
-		<choice hidden="true">
-			<text>Accept.</text>
-			<event>
-				<text>"At least you're confident, for what little that's worth. Here is their last known location."</text>
-				<quest event="MERCHANT_INVESTIGATE"/>
-			</event>
-		</choice>
-		<choice>
-			<text>Decline.</text>
-			<event>
-				<text>"At least YOU are willing to admit your incompetence. Thank you for saving me the cost of paying more fools to go to their death."</text>
-			</event>
-		</choice>
-	</event>  
-</eventList>
-<event name="MERCHANT_DELIVER">
-	<text>You arrive at the location given to you by the merchant. You are supposed to deliver drone parts to a station here.</text>
-	<choice>
-		<text>Continue...</text>
-		<event load="MERCHANT_DELIVER_LIST"/>
-	</choice>
-</event>
-<eventList name="MERCHANT_DELIVER_LIST">
-	<event>
-		<text>You find the small research station and discover that it's putting out a distress signal. Strangely, there is no response to your hails.</text>
-		<choice hidden="true">
-			<text>Dock with the station and investigate.</text>
-			<event load="STATION_SICK_LIST"/>
-		</choice>
-		<choice>
-			<text>Leave it alone.</text>
-			<event/>
-		</choice>
-		<choice hidden="true" req="BATTLE"> 
-			<text>(Anti-Personnel Drone) Use an Anti-Personnel Drone to investigate.</text>
-			<event load="STATION_SICK_DRONE_LIST"/>
-		</choice>  
-	</event>
-	<event>
-		<text>You find the station and they respond to your hails immediately, saying, "It took you long enough! We have practically no use for these now... I refuse to pay full price, take this and leave the cargo in our holds."</text>
-		<choice>
-			<text>Accept the paltry payment.</text>
-			<event>
-				<text>You drop the parts off and take your pay.</text>
-				<item_modify>
-					<item type="scrap" min="20" max="30"/>
-					<item type="drones" min="-5" max="-5"/>
-				</item_modify>			
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Refuse and keep the drone parts.</text>
-			<event load="MERCHANT_DELIVER_BLUFF_LIST"/>
-		</choice>
-		<choice hidden="true" req="mind">
-			<text>(Mind Control) Convince him that he's being 'unfair'.</text>
-			<event>
-				<text>"I'm being unfair. You did the job and the parts are here safe and sound. Here is the agreed upon amount."</text>
-				<choice>
-					<text>Accept the new offer.</text>
-					<event>
-						<item_modify>
-							<item type="scrap" min="40" max="55"/>
-							<item type="drones" min="-5" max="-5"/>
-						</item_modify>			
-					</event>
-				</choice>
-				<choice>
-					<text>Leave.</text>
-					<event/>
-				</choice>
-			</event>
-		</choice>
-		<choice hidden="true" req="weapons" lvl="6"> 
-			<text>(Weapons) Remain silent but power up your weapons.</text>
-			<event>
-				<text>"You make a good point. You traveled all the way out here to fulfill our request, despite what must have been... a difficult scenario to cause such a delay. Here, we'll even tip you for the inconvenience you must have gone through..."</text>
-				<item_modify>
-					<item type="scrap" min="55" max="70"/>
-					<item type="drones" min="-5" max="-5"/>
-					<item type="fuel" min="2" max="5"/>
-				</item_modify>			
-			</event>
-		</choice>
-	</event>
-	<!--JUSTIN - TO DO    add another?  -->
-</eventList>
-<eventList name="MERCHANT_DELIVER_BLUFF_LIST"> <!--DLC!-->
-	<event>
-		<text>"Fine, I was bluffing. I'll pay the full price."</text>
-		<choice>
-			<text>Accept the new offer.</text>
-			<event>
-				<item_modify>
-					<item type="scrap" min="40" max="55"/>
-					<item type="drones" min="-5" max="-5"/>
-				</item_modify>			
-			</event>
-		</choice>
-		<choice>
-			<text>Leave.</text>
-			<event/>
-		</choice>
-	</event>
-	<event>
-		<text>The merchant disconnects in a huff.</text>
-	</event>
-</eventList>
-<event name="MERCHANT_INVESTIGATE">
-	<text>You arrive at the last known location of the merchant's delivery. You begin to scan for the lost ship.</text>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event load="MERCHANT_INVESTIGATE_LIST"/>
-	</choice>
-</event>
-<eventList name="MERCHANT_INVESTIGATE_LIST">
-	<event>
-		<text>You find the remains of the ship. It seems to have severe external damage, but you cannot pinpoint a cause. The majority of its cargo seems intact. You manage to discern the ship's intended destination.</text>
-		<autoReward level="MED">standard</autoReward>
-		<choice>
-			<text>Take the cargo and head to its original destination in search of a reward.</text>
-			<event>
-				<quest event="MERCHANT_INVESTIGATE_DELIVER"/>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Take the cargo for yourself.</text>
-			<event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
-		</choice>
-	</event>
-	<event>
-		<text>You find a severely damaged ship floating among some debris. The crew hails you, "I can't believe that cheap bastard sent someone after us! I thought we would freeze to death. If you help us complete the delivery, we'll share the reward and join your crew."</text>
-		<choice hidden="true">
-			<text>Promise to deliver the cargo and ask if any would be interested in joining your crew.</text>
-			<event>
-				<text>They upload the delivery destination once on board. One takes you up on your offer, the rest you drop off at a nearby station.</text>
-				<crewMember amount="1"/>
-				<quest event="MERCHANT_INVESTIGATE_DELIVER"/>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Take the cargo but drop them off at a nearby station.</text>
-			<event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
-		</choice>
-		<choice req="teleporter" hidden="true"> 
-			<text>(Teleporter) Beam the cargo aboard and leave them to their fate.</text>
-			<event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
-		</choice>
-	</event>
-	<event>
-		<text>After a quick scan, you find a ship being chased by a pirate. This must be the missing delivery ship! You move in to rescue them.</text>
-		<ship load="JELLY_PIRATE_MERCHANT" hostile="true"/>
-	</event>
-</eventList>
-<eventList name="MERCHANT_INVESTIGATE_CARGO_LIST">
-	<event>
-		<text>The cargo was some food and medical supplies, nothing that you need right now. You make a note of the delivery destination in case you want to drop off the cargo for the payment.</text>
-		<quest event="MERCHANT_INVESTIGATE_DELIVER"/>
-	</event>
-	<event>
-		<text>You find a prototype weapon inside. You quickly install it on the ship.</text>
-		<weapon name="RANDOM"/>
-	</event>
-	<event>
-		<text>There were general military supplies in the cargo crates. You take what you can use.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</event>
-</eventList>
-<event name="MERCHANT_INVESTIGATE_DELIVER">
-	<text>You find the station that had ordered your cargo. You drop it off and they respond, "Ignoring the fact that this is days late, we really appreciate that you delivered our materials. We realize how dangerous this sector is these days. Take this as payment."</text>
-		<autoReward level="MED">drone</autoReward>
-</event>
-
-
-
-
-<event name="rebel_PLANET_SIGNAL" unique ="true">    
+<event name="FEDERATION_PLANET_SIGNAL" unique="true">    
 	<text>A rebel encrypted signal is being broadcast from a nearby planet.</text>
 	<choice hidden="true">
 		<text>Send an away party to investigate.</text>
-		<event name="rebel_PLANET_SIGNAL_LIST"/>
+		<event name="FEDERATION_PLANET_SIGNAL_LIST"/>
 	</choice>
 	<choice>
 		<text>It could be a trap. Let's move on.</text>
 		<event/>
 	</choice>
 </event>
-<eventList name="rebel_PLANET_SIGNAL_LIST">
+<eventList name="FEDERATION_PLANET_SIGNAL_LIST">
 	<event>
 		<text>You find a secret rebel outpost. They are regrettably out of supplies but are eager to tell you of another secret base. They give you the coordinates.</text>
-		<quest event="HIDDEN_rebel_BASE_LIST"/>
+		<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 	</event>
 	<event>
-		<text>You find a hidden rebel outpost. They message you, "Quick, we just got word from a sister outpost that they've been discovered by the federations and are under attack! If you are still loyal to the rebel, go save them!"</text>
+		<text>You find a hidden rebel outpost. They message you, "Quick, we just got word from a sister outpost that they've been discovered by the federation and are under attack! If you are still loyal to the rebellion, go save them!"</text>
 		<autoReward level="MED">stuff</autoReward>
-		<quest event="rebel_BASE_ASSIST"/>
+		<quest event="FEDERATION_BASE_ASSIST"/>
 	</event>
 	<event>
-		<text>You find a secret rebel outpost... but it appears the federations have found it before you; the place is empty and faint bloodstains can be seen in the living quarters. You find the encrypted signal emitter and shut it off before leaving.</text>
+		<text>You find a secret rebel outpost... but it appears the federation has found it before you; the place is empty and faint bloodstains can be seen in the living quarters. You find the encrypted signal emitter and shut it off before leaving.</text>
 	</event>
 	<event>
 		<text>You find a small cache of supplies that were surely left for any loyal rebel ships in trouble. You take all that you need, leaving some for others to find.</text>
@@ -1665,7 +606,7 @@ item - scrap + that thing  -->
 		<boarders min="2" max="3" class="human"/>
 	</event>
 </eventList>
-<eventList name="HIDDEN_rebel_BASE_LIST">   <!-- JUSTIN - USE THIS ELSEWHERE -->
+<eventList name="HIDDEN_FEDERATION_BASE_LIST">   <!-- JUSTIN - USE THIS ELSEWHERE -->
 	<event>
 		<text>You find the planet at the indicated coordinates. Your initial scans show the planet to be barren and devoid of life, but you get a prompt reply when you broadcast on rebel frequencies. "Hello! So nice to see friends. We'll bring you up some supplies."</text>
 		<autoReward level="HIGH">drone</autoReward>
@@ -1673,7 +614,7 @@ item - scrap + that thing  -->
 	<event>
 		<text>By following the directions given to you, you find a well-disguised outpost. You are welcomed by a friendly face who offers to assist you in your quest by joining your crew.</text>
 		<autoReward level="LOW">standard</autoReward>	
-		<crewMember amount="1"/> <!---->
+		<crewMember amount="1"/>
 	</event>
 	<event>
 		<text>After a quick search you discover the hidden rebel space-dock. They offer you some supplies in addition to fully repairing your ship.</text>
@@ -1686,7 +627,7 @@ item - scrap + that thing  -->
 			<text>Leave.</text>
 			<event/>
 		</choice>
-		<choice req="sensors" lvl="2" hidden="true" max_group="0"> <!--DLC!-->
+		<choice req="sensors" lvl="2" hidden="true" max_group="0">
 			<text>(Improved Sensors) Run a second scan pass.</text>
 			<event>
 				<text>Your Advanced Sensors pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a supply cache whose rebel signal emitter has malfunctioned.</text>
@@ -1708,21 +649,20 @@ item - scrap + that thing  -->
 			</event>
 		</choice>  
 	</event>
-	<event load="rebel_BASE_ASSIST"/> 
+	<event load="FEDERATION_BASE_ASSIST"/> 
 </eventList>
-<eventList name="rebel_BASE_ASSIST">
+<eventList name="FEDERATION_BASE_ASSIST">
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_rebel_BASE" hostile="true"/>
+		<ship load="AUTO_FEDERATION_BASE" hostile="true"/>
 	</event>
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_rebel_BASE2" hostile="true"/>
+		<ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
 	</event>
 </eventList>
 
 
-	
 <event name="QUEST_ESCORT" unique="false">
 	<text load="QUEST_ESCORT_TEXT"/>
 	<ship load="CIVILIAN_SHIP" hostile="false"/>
@@ -1732,6 +672,13 @@ item - scrap + that thing  -->
 			<text>"Great. Take this bit of fuel as a down-payment. We'll be one step behind you, following your jump signatures. Don't want to take any risks now, do we?"</text>
 			<quest event="QUEST_ESCORT_ARRIVE"/>
 			<autoReward level="LOW">fuel_only</autoReward>
+		</event>
+	</choice>
+	<choice>
+		<text>Attack the ship.</text>
+		<event>
+			<text>"We should have known not to trust you, Rebel." You ignore them and prepare to engage.</text>
+			<ship hostile="true"/>
 		</event>
 	</choice>
 	<choice>
@@ -1749,7 +696,7 @@ item - scrap + that thing  -->
 <eventList name="QUEST_ESCORT_ARRIVE">
 	<event>
 		<text>You escort the ship to the requested beacon. Much to your dismay you are ambushed by a federation ship. You walked right into their trap!</text>
-		<ship load="federation" hostile="true"/>
+		<ship load="FED_SHIP" hostile="true"/>
 	</event>
 	<event>
 		<text>Shortly after you arrive, the ship you were escorting jumps nearby. They thank you for your help and offer you a reward.</text>
@@ -1769,13 +716,10 @@ item - scrap + that thing  -->
 
 <event name="STORE_RESCUE" unique="true">
 	<img planet="PLANET_POPULATED"/>
-	<text>Once you arrive at this populated region, you immediately pick up a distress signal. A small shuttle is asking anyone who'll listen for help protecting their family from a federation ship. Unsurprisingly, no one has yet responded to their request.</text>
+	<text>Once you arrive at this populated region, you immediately pick up a distress signal. A small shuttle is asking anyone who'll listen for help protecting their family from a rebel ship. Unsurprisingly, no one has yet responded to their request. Once they notice you the signal stops.</text>
 	<choice>
-		<text>See if you can assist them.</text>
-		<event>
-			<text>It seems that a small space dock has done something to anger the federations. The store there is run by his family and he pleads that you rescue them. He uploads the coordinates of the station to your navigation system.</text>
-			<quest event="QUEST_STORE_RESCUE"/>
-		</event>
+		<text>Ask them for the coordinates.</text>
+		<event load="STORE_RESCUE_LIST"/>
 	</choice>
 	<choice>
 		<text>Ignore their pleas.</text>
@@ -1784,14 +728,40 @@ item - scrap + that thing  -->
 		</event>
 	</choice>
 </event>
-<event name="QUEST_STORE">  <!-- JUSTIN - Can be used elsewhere-->
-	<text>You follow the directions given to you and find the hidden space dock. The owner hails you, "I got a message that you were coming. I don't normally offer goods to strangers, but I'll make an exception. Take a look."</text>
-	<store/>
-</event>
+
+<eventList name="STORE_RESCUE_REBEL_LIST">
+	<event>
+		<text>They are reluctant to give you the information, but you threathen them with weapons and he regretfully uploads the coordinates of the station to your navigation system.</text>
+		<quest event="QUEST_STORE_RESCUE"/>
+	</event>
+	<event>
+		<text>They are reluctant to give you the information, but you threathen them with weapons. Unfortunately they are stubborn enough to challenge you.</text>
+		<ship load="CIVILIAN_SHIP" hostile="true"/>
+	</event>
+	<event>
+		<text>They are reluctant to give you the information, but you threathen them with weapons. Unfortunately they are stubborn enough to challenge you.</text>
+		<ship load="CIVILIAN_SHIP" hostile="true"/>
+	</event>
+</eventList>
+
+
 <event name="QUEST_STORE_RESCUE">
-	<text>Once you arrive at the beacon you detect a federation scout assaulting a compound on a nearby desolate moon.</text>
+	<text>Once you arrive at the beacon you detect a rebel scout assaulting a compound on a nearby desolate moon.</text>
 	<choice>
-		<text>Engage the federation and rescue the space dock.</text>
+		<text>Help the Rebel ship.</text>
+		<event load="QUEST_STORE_HELP_LIST"/>
+	</choice>
+	<choice>
+		<text>Avoid a fight.</text>
+		<event>
+			<text>After a time the ship powers down its weapons and jumps away. No life-signs are detected on the moon.</text>
+		</event>
+	</choice>
+</event>
+<event name="QUEST_STORE_RESCUE_FED">
+	<text>Once you arrive at the beacon you detect a Federation scout assaulting a compound on a nearby desolate moon.</text>
+	<choice>
+		<text>Engage the Federative scum and rescue the space dock.</text>
 		<event>
 			<ship load="SQUAT_STORE_RESCUE" hostile="true"/>
 		</event>
@@ -1803,6 +773,22 @@ item - scrap + that thing  -->
 		</event>
 	</choice>
 </event>
+
+<eventList name="QUEST_STORE_HELP_LIST">
+	<event>
+		<text>You move in to assist your the Rebel ship. You take some damage from the fight with the moon base, but soon the moon stops registering life-signs. You share the collected resources.</text>
+		<damage amount="3"/>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+	<event>
+		<text>You move in to assist your the Rebel ship. Soon the moon stops registering life-signs. You share the collected resources.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+	<event>
+		<text>You move in to assist your the Rebel ship. Soon the moon stops registering life-signs. You manage to strip the base from resources.</text>
+		<autoReward level="MED">stuff</autoReward>
+	</event>
+</eventList>
 
 
 
@@ -1820,12 +806,12 @@ item - scrap + that thing  -->
 </event>
 <eventList name="MERCENARY_WORK_LIST">
 	<event>
-		<text>"A space dock is under assault from the federations. Although the dock is... technically... illegal within their laws, it's very important for our trade. We'll pay you in fuel and scrap if you promise to save them."</text>
+		<text>"A space dock is under assault from the federation. The dock is illegal within their laws, but... it's very important for our trade. We'll pay you in fuel and scrap if you promise to save them."</text>
 		<choice>
 			<text>Agree to rescue the store.</text>
 			<event>
 				<text>They transmit the space dock's coordinates.</text>
-				<quest event="QUEST_STORE_RESCUE"/>
+				<quest event="QUEST_STORE_RESCUE_FED"/>
 			</event>
 		</choice>
 		<choice>
@@ -1856,8 +842,6 @@ item - scrap + that thing  -->
 
 
 
-		
-
 <!-----------
 		QUEESTTTS!!!
 	Quest Events
@@ -1865,11 +849,11 @@ item - scrap + that thing  -->
 
 		
 <event name="QUEST_MANTIS_INVASION_START" unique="true">
-	<text>You receive a request, "All of our military ships have been destroyed or damaged during the federationlion. However, there have been reports of a Mantis war camp only a few jumps from us. Can you help?"</text>
+	<text>You receive a request from a rebel base, "Most of our military ships have been destroyed or damaged by the Mantis. We are excpeting another attack soon. However, there have been reports of their war camp only a few jumps from us. Could you help delay them so we could gather forces?"</text>
 	<choice hidden="true">
 		<text>Pledge to do what you can.</text>
 		<event>
-			<text>"Thank you! If you can just give us a count on their numbers perhaps we can get the federations to help."</text>
+			<text>"Thank you! If you can just give us a count on their numbers perhaps we can get the federation to help."</text>
 			<quest event="QUEST_MANTIS_INVASION"/>
 			<autoReward level="MED">scrap_only</autoReward>
 		</event>
@@ -1907,109 +891,14 @@ item - scrap + that thing  -->
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-					<text>With most of their ships and forces focused on the chaos, you slip undetected to a nearby depot. You find some useful resources and an Engi slave who gladly accepts your liberation.</text>
+					<text>With most of their ships and forces focused on the chaos, you slip undetected to a nearby depot. You find some useful resources and an Engi slave who accepts to stay with you rather than the Mantis.</text>
 					<autoReward level="HIGH">stuff</autoReward>
 					<crewMember amount="1" class="engi"/>
 				</event>
 			</choice>
 		</event>
 	</choice>
-</event>			
-<eventList name="MANTIS_LANDING_PARTY_LEAVE">
-	<event>
-		<text>As you try to leave, a patrol spots you. Wailing sirens begin to blare around the camp and the ship moves in to attack!</text>
-		<ship load="MANTIS_LANDING_PARTY" hostile="true"/>
-	</event>
-	<event>
-		<text>They must have been focused on setting up camp since you got far enough away to attempt a jump without being noticed.</text>
-	</event>
-</eventList>
-<ship name="MANTIS_LANDING_PARTY" auto_blueprint="SHIPS_MANTIS">
-	<destroyed>
-		<text>With the patrol ship destroyed you hasten to leave. It won't be long before the other ships catch up.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the patrol ship taken care of you hasten to leave. It won't be long before the other ships catch up.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-	<crew>
-		   <crewMember type="mantis" prop="0.80"/>
-		   <crewMember type="engi" prop="0.20"/>
-	</crew>
-</ship>
-
-<event name="QUEST_CREWDEAD_START" unique="true">
-	<text>You arrive to find a number of ships convening around a station. There is some unencrypted chatter between the ships, you tune in and listen for anything interesting.</text>
-	<choice>
-		<text>Continue...</text>
-		<event load="QUEST_CREWDEAD_START_2"/>
-	</choice>
 </event>
-
-
-<event name="QUEST_CREWDEAD_START_2">
-	<text>Overhearing their conversation, it seems that they need to take possession of an enemy ship intact.</text>
-	<choice hidden="true">
-		<text>Offer your services.</text>
-		<event>
-			<text>They briefly scan your ship and inform you that you are not "properly equipped" for this type of mission.</text>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Leave them alone.</text>
-		<event>
-			<text>If they wanted your help they would surely ask for it. You prepare to leave.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="teleporter" lvl="1">
-		<text>(Teleporter) Offer to board their ship.</text>
-		<event load="QUEST_CREWDEAD_CONTINUE"/>
-	</choice>
-	<choice hidden="true" req="BEAM_BIO">
-		<text>(Bio Beam) Offer to 'remove' their crew.</text>
-		<event load="QUEST_CREWDEAD_CONTINUE"/>
-	</choice>
-	<choice hidden="true" req="BOMB_FIRE">
-		<text>(Fire Bomb) Offer to burn the crew out.</text>
-		<event load="QUEST_CREWDEAD_CONTINUE"/>
-	</choice>
-</event>
-<event name="QUEST_CREWDEAD_CONTINUE">
-	<text>They quickly scan your ship and say, "It appears you could help. A bandit has made off with some very important cargo, though I doubt they have any understanding of what it is they stole. We need you to capture the ship intact.</text>
-	<choice hidden="true">
-		<text>Agree to capture the ship.</text>	
-		<event>
-			<text>"Great, we'll relay their coordinates. Remember, do NOT destroy that ship! Remember, we'll be right behind you."</text>
-			<quest event="QUEST_CREWDEAD"/>
-		</event>		
-	</choice>
-	<choice hidden="true">
-		<text>Decline.</text>
-		<event> 
-			<text>"We understand. Hopefully we can find a solution to this on our own." You prepare to jump.</text>
-		</event>
-	</choice>
-</event>	
-<event name="QUEST_CREWDEAD" unique="true">
-	<text>You find the ship that you were asked to capture intact. You're not sure why, but they stressed that it's of great importance that you kill the crew WITHOUT destroying the ship.</text>
-	<ship load="PIRATE_QUEST_CREWDEAD" hostile="true"/>
-</event>		
-<ship name="PIRATE_QUEST_CREWDEAD" auto_blueprint="SHIPS_PIRATE">  <!-- JUSTIN - TO DO - Start fires on the player ship -->
-	<destroyed>
-		<text>The explosion rocks the pirate ship and a brilliant light begins to shine from the wreckage. Before you can react the ship is consumed in a massive chain of explosions that send you careening toward a nearby planet. You struggle to put out the fires and your pilot desperately tries to get the controls online before you're dragged down to the surface. Apparently when they said the ship should not be destroyed they had good reason...</text>
-		<damage amount="13"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-		<damage amount="1" system="room" effect="all"/>
-	</destroyed>
-	<deadCrew>
-		<text>You secure the ship and wait for the merchants to arrive. Upon arrival they message you, saying "Good job. We would prefer if you did not speak of this to anyone."</text>
-		<autoReward level="HIGH">weapon</autoReward>
-	</deadCrew>
-</ship>
-		
-		
-
 
 
 <!--      ****************************
@@ -2017,46 +906,6 @@ item - scrap + that thing  -->
 		  ********************************
 -->
 
-<event name="PIRATE_SURRENDER">
-	<text load="PIRATE_SURRENDER_TEXT"/>
-	<choice>
-		<text>Accept their offer.</text>
-		<event>
-			<ship hostile="false"/>
-			<autoReward level="RANDOM">stuff</autoReward>
-		</event>
-	</choice>
-	<choice>
-		<text>We will not accept surrender!</text>
-		<event/>
-	</choice>
-</event>
-<textList name="PIRATE_SURRENDER_TEXT">
-	<text>"Alright, you win! Here's some equipment from our stores, leave us alone!"</text>
-	<text>The ship repeatedly hails you. It looks like they want to surrender.</text>
-	<text>"You are considerably more well-armed than I would have thought. We surrender."</text>
-	<text>They send you a message: "Your ship is surprisingly well equipped! Please take this and let us live."</text>
-	<text>"Please don't kill us. We will give you everything we have!"</text>
-	<text>They offer you some of their cargo if you let them live.</text>
-	<text>They offer to give you some of their goods if you don't destroy their ship.</text>
-	<text>You get a frantic message, "Take everything we have! Just don't kill us."</text>
-	<text>"You have clearly bested us. We merely request our lives."</text>
-	<text>"You have made your point, we are beaten. Take these and leave us to our shame."</text>
-	<text>"Take everything we have and let's both forget this happened."</text>
-	<!-- Duplicates below, just to make sure-->
-	<text>"Alright, you win! Here's some equipment from our stores, leave us alone!"</text>
-	<text>The ship repeatedly hails you. It looks like they want to surrender.</text>
-	<text>"You are considerably more well-armed than I would have thought. We surrender."</text>
-	<text>They send you a message: "I cannot believe how well equipped your ship is! Please take this and let us live."</text>
-	<text>"Please don't kill us. We'll give you everything we have!"</text>
-	<text>"The day is yours! Show us your honor by allowing us to leave with our lives."</text>
-	<text>They offer you some of their cargo if you let them live.</text>
-	<text>They offer to give you some of their goods if you don't destroy their ship.</text>
-	<text>You get a frantic message, "Take everything we have! Just don't kill us."</text>
-	<text>"You have clearly bested us. We merely request our lives."</text>
-	<text>"You have made your point, we are beaten. Take these and leave us to our shame."</text>
-	<text>"Take everything we have and let's both forget this happened."</text>
-</textList>
 	
 <!-- CONTINUE SAVED GAME
  START NEW GAME
@@ -2072,58 +921,13 @@ item - scrap + that thing  -->
 	</choice>
 </event>
 
-<event name="PIRATE_ESCAPE">
-	<text>The enemy ship appears to be powering up its FTL. It's trying to escape!</text>
-	<ship hostile="true"/>
-</event>
-			
-<eventList name="DEAD_CREW_DEFAULT">
-	<event>
-		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-	<event>
-		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-	<event>
-		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-	<event>
-		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</event>
-	<event>
-		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</event>
-	<event>
-		<text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</event>
-	<event>
-		<text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</event>
-	<event>
-		<text>Now that their ship has been emptied of hostiles, you search it. Eventually you find a prisoner who offers to join your crew.</text>
-		<crewMember amount="1"/>
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>You find a weapon system on their ship. With no crew to stop you, you can install it on your own.</text>
-		<autoReward level="LOW">weapon</autoReward>
-	</event>
-</eventList>
-
 <eventList name="DEAD_CREW_SLAVER">
 	<event>
 		<text>You find a number of slaves in the cargo hold. They look at you questioningly and one asks if they're to be released. You could use more crew but you don't want to force them all to work for you instead...</text>
 		<choice hidden="true">
 			<text>Demand the Mantis joins your crew but release the rest.</text>
 			<event>
-				<text>The Mantis seems fine with the orders, saying "I'm on board if it means we get to kill some federations!" You drop the rest off at a nearby station.</text>
+				<text>The Mantis seems fine with the orders, saying "I'm on board if it means we get to kill some federation scums!" You drop the rest off at a nearby station.</text>
 				<crewMember amount="1" class="mantis"/>  
 				<autoReward level="MED">standard</autoReward>
 			</event>
@@ -2139,7 +943,7 @@ item - scrap + that thing  -->
 		<choice hidden="true">
 			<text>Demand the Engi joins your crew but release the rest.</text>
 			<event>
-				<text>"Verify primary object is to defeat federations, re-establish peace?" You nod and it responds, "Acceptable." You drop the rest off at a nearby station and strip the ship.</text>
+				<text>"Verify primary object is to defeat federation, establish new order?" You nod and it responds, "Not acceptable." You promise to hand him to the next slaver you find if he refuses. Reluctantly he joins your crew. You drop the rest off at a nearby station and strip the ship.</text>
 				<crewMember amount="1" class="engi"/>  
 				<autoReward level="MED">standard</autoReward>
 			</event>
@@ -2181,31 +985,6 @@ item - scrap + that thing  -->
 		<autoReward level="HIGH">standard</autoReward>
 	</event>
 </eventList>
-
-<eventList name="DESTROYED_DEFAULT">
-	<event>
-		<text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-	<event>
-		<text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
-		<autoReward level="MED">standard</autoReward>
-	</event>
-</eventList>
-
-
-
-
-
-
-		
-		
-		
-		
-		
-		
-		
-
 
 
 
@@ -2255,108 +1034,6 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 
 
 
-<!-- QUESTS -->
-
-		
-<!-- Neutral -->
-
-
-<!-- Distress -->
-
-
-
-<!-- ITEM -->
-<event name="ASTEROID_DERELICT_SHIP" unique="true">
-	<text>A ship without life forms within a nearby dense asteroid field is giving off the distress call. Shall we investigate? It could be dangerous.</text>	
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Search for the ship.</text>
-		<event load="ASTEROID_DERELICT_SHIP_SEARCH"/>
-	</choice>
-	<choice hidden="true">
-		<text>Avoid the area.</text>
-		<event>
-			<text>Discretion is the better part of valor. Better not risk it.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="ROCK_ARMOR">
-		<text>(Rock Plating) Make a thorough search for the ship without fear of stray asteroids.</text>
-		<event load="ASTEROID_DERELICT_SHIP_ROCK"/>
-	</choice>
-</event>
-<eventList name="ASTEROID_DERELICT_SHIP_SEARCH">
-	<event>
-		<text>You find what appears to be pieces of a derelict ship coated with ice or crystal. Before you have a chance to dock, a few asteroids get past your shields and partially damage your engines. You'll have to pull out!</text>
-		<damage amount="4"/>
-		<damage amount="1" system="engines"/>  <!--DLC-->
-	</event>
-	<event>
-		<text>You find a pirate ship, damaged and abandoned. You salvage what you can and move on.</text>
-		<autoReward level="RANDOM">standard</autoReward>
-	</event>
-	<event>
-		<text>You find the decaying remains of some kind of ship coated with ice or crystal. You send some crew aboard to explore. Nearly everything is either destroyed or unidentifiable, but one of the weapons appears salvageable and there's a strange stasis pod that catches your eye.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>It looks like a massive asteroid is in a direct collision course with the derelict ship! You have to pull your crew out but they want to grab what they can first. What do they take?</text>
-				<choice hidden="true">
-					<text>Take the weapon and any spare scrap.</text>
-					<event>
-						<text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
-						<autoReward level="LOW">weapon</autoReward>
-					</event>
-				</choice>
-				<choice hidden="true">
-					<text>Grab the stasis chamber.</text>
-					<event>
-						<text>Your crew drags the pod back to your ship before the asteroid smashes into the ship, shattering through the crystal coating and destroying the ship.</text>
-						<choice hidden="true">
-							<text>Continue...</text>
-							<event>
-								<text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
-								<augment name="STASIS_POD"/>
-								<autoReward level="LOW">scrap_only</autoReward>
-							</event>
-						</choice>
-					</event>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<eventList name="ASTEROID_DERELICT_SHIP_ROCK">
-	<event>
-		<text>You find the decaying remains of some kind of ship coated with ice or crystal. You send some crew aboard to explore. Nearly everything is either destroyed or unidentifiable, but one of the weapons appears salvageable and there's a strange stasis pod that catches your eye.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>It looks like a massive asteroid is in a direct collision course with the derelict ship! You have to pull your crew out but they want to grab what they can first. What do they take?</text>
-				<choice hidden="true">
-					<text>Take the weapon and any spare scrap.</text>
-					<event>
-						<text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
-						<autoReward level="LOW">weapon</autoReward>
-					</event>
-				</choice>
-				<choice hidden="true">
-					<text>Grab the stasis chamber.</text>
-					<event>
-						<text>Your crew drags the pod back to your ship before the asteroid smashes into the ship, shattering through the crystal coating and destroying the ship.</text>
-						<choice hidden="true">
-							<text>Continue...</text>
-							<event>
-								<text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
-								<augment name="STASIS_POD"/>
-								<autoReward level="LOW">scrap_only</autoReward>
-							</event>
-						</choice>
-					</event>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</eventList>
 	
 <event name="ZOLTAN_CREW_STUDY">
 	<text>You arrive at a Zoltan research facility. They say they are researching genetic distortion due to stasis sleep and prolonged FTL travel. They ask if your crew has the time to undergo a few scans.</text>
@@ -2413,389 +1090,21 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 		<boarders min="2" max="2" class="random"/>
 	</event>
 </eventList>
-	
-<event name="ROCK_CRYSTAL_BEACON">
-	<text>An ancient device is orbiting within the crystal rings of a nearby gas giant. You can't discern its nature or function, but it seems to have been deactivated for a very long time. Perhaps you can get some scrap from it.</text>
-	<choice hidden="true">
-		<text>Scrap it.</text>
-		<event load="ROCK_CRYSTAL_BEACON_LIST"/>
-	</choice>
-	<choice hidden="true">
-		<text>Leave it alone.</text>
-		<event>
-			<text>Better not risk it. The Rock people are unlikely to respond well to vandalism.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="crystal">
-		<text>(Crystal Crew) Reactivate it.</text>
-		<event>
-			<text>Your Crystalline companion says, "It looks like we have found the abandoned link to the Crystal home worlds. I can reactivate it." He transmits some codes to the device and it immediately powers on.</text>
-			<item_modify>
-				<item type="fuel" min="1" max="1"/>
-			</item_modify>
-			<choice hidden="true">
-				<text>Continue.</text>
-				<event>
-					<text>Before you can react, the space around you distorts and a wormhole forms. You begin to sound the alarm, but your companion calms you and indicates that you should fly directly into the wormhole. You reluctantly do as he says.</text>
-					<secretSector/>
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-			
-<eventList name="ROCK_CRYSTAL_BEACON_LIST">
-	<event>
-		<text>You break it apart and take it for scrap. No one will miss it.</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>As you start to break it apart a Rock military ship jumps nearby, "You think you can come into our sector and just steal whatever you please?! Prepare to die, vandals!"</text>
-		<ship load="ROCK_SHIP" hostile="true"/>
-	</event>
-</eventList>
-		
-		
-		
-		
-		
-		<!-- Donor event!!!! -->
-		
-		
-<event name="DONOR_PLAGUE" unique="true">
-	<text>You arrive near a damaged and dilapidated space station. It appears to be abandoned but you detect faint life signatures on board.</text>
-	<choice hidden="true">
-		<text>Board the station and look for survivors.</text>
-		<event load="DONOR_PLAGUE_LIST"/>
-	</choice>
-	<choice hidden="true">
-		<text>Scrap some of the debris.</text>
-		<event>
-			<text>While waiting for the FTL drive to charge, you skirt around the edge of the station and collect some scrap.</text>
-			<autoReward level="RANDOM">scrap_only</autoReward>
-		</event>
-	</choice>
-</event>
-<eventList name="DONOR_PLAGUE_LIST">
-	<event>
-		<text>All around you is the stench of death and decay. The life sign readings must have been malfunctioning because you really doubt anything could be alive in here. You quickly return to the ship.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>Human corpses are scattered across the station. You find the source of the signal, a lone survivor that locked themselves in a storage closet. You quickly retreat with them in tow back to the ship, and hope they can recover enough to be of some use.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-		<crewMember amount="1" class="human"/>
-	</event>
-	<event>	
-		<text>All around you is the stench of death and decay. Suddenly, one of your crew bends over and starts retching violently. Some sort of disease must have wiped out this station. You pull back to the ship, but it looks like your crewmember is not going to make it.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text >Your crewmember insists you leave them behind, not wanting to endanger the rest of the crew. Knowing the truth of this, you hurry back to the ship.</text>
-				<removeCrew>
-					<clone>false</clone>
-					<text>You stop your crew's clone from forming, knowing that the disease would follow into his next life.</text>
-				</removeCrew>
-			</event>
-		</choice>
-		<choice hidden="true" req="medbay" lvl="2">
-			<text>(Improved Medbay) Try to cure the disease.</text>
-			<event>
-				<text>Your advanced medical suite is able to isolate the cause of the problem and administer an antidote. That was a close one.</text>
-			</event>
-		</choice>
-	</event>
-</eventList>
-
-
-<event name="DONOR_PONY" unique="true">
-	<text>Scanners are showing intelligent life forms on a nearby planet. No match for them can be found in the database.</text>
-	<choice hidden="true">
-		<text>Investigate.</text>
-		<event>
-			<text>You land a small shuttle in an enormous field, whose only occupants are small, brightly colored, six-legged, horse-like animals. Could they be what your scans picked up?</text>
-			<choice hidden="true">
-				<text>Try to communicate peacefully.</text>
-				<event load="DONOR_PONY_PEACE"/>
-			</choice>
-			<choice hidden="true">
-				<text>Bring some of the creatures on board to sell.</text>
-				<event load="DONOR_PONY_SELL"/>
-			</choice>
-			<choice hidden="true">
-				<text>Leave.</text>
-				<event>
-					<text>This isn't the time for exobiology. You head back to the ship.</text>
-				</event>
-			</choice>
-			<choice hidden="true" req="slug">
-				<text>(Slugman Crew) Attempt to communicate telepathically.</text>
-				<event>
-					<text>After a moment, your crew tells you that these are simple beings, who enjoy a peaceful life. However, this isn't the first time a ship has landed here. They inform you of a nearby crash site.</text>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event>
-							<text>You follow their directions and discover an ancient Engi ship. You find a deactivated Engi inside and reroute power from your shuttle to resuscitate it. After a while it reboots, rebuilds itself, and offers to join your crew.</text>
-							<crewMember amount="1" class="engi"/>
-						</event>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore it.</text>
-		<event>
-			<text>You ignore the readings and prepare to move on.</text>
-		</event>
-	</choice>
-</event>
-<eventList name="DONOR_PONY_PEACE">
-	<event>
-		<text>None of your attempts to communicate seem to work: they just stare at you silently. As you prepare to leave, one of the creatures canters forward and forcefully nudges you away from the ship. He seems to want you to follow him. Eventually, they guide you to an old Engi ship's crash site. Inside you are able to find and reactivate an Engi!</text>
-		<crewMember amount="1" class="engi"/>
-		<autoReward level="LOW">standard</autoReward>
-	</event>
-	<event>
-		<text>You try to communicate in every possible way you can but they just stand there, silently judging you with their large, expressionless eyes. You prepare to leave.</text>
-	</event>
-</eventList>
-<eventList name="DONOR_PONY_SELL">
-	<event>
-		<text>The seemingly docile creatures quickly turn violent when you reveal your hostile intentions. Their well-organized stampede forces you to draw weapons and make a rushed and shambolic retreat to the shuttle.</text>
-	</event>
-	<event>
-		<text>The seemingly docile creatures quickly turn violent when you show your hostile intentions. They stampede with terrifying force, trampling one of your crew before you have time to react. You fight your way back to the shuttle and prepare to jump.</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>The trampled crewmate's clone is already ready when you get back to your ship.</text>
-		</removeCrew>
-	</event>
-</eventList>
-
-
-
-		
-		
-<event name="DONOR_BLACK_RAVEN" unique="true">
-	<text>As you jump in, you immediately see an impressive Slug pirate ship with "The Black Raven" painted on one side. They hail you, "Greetingsss. I am the dreaded pirate, Captain Nights. You mussst be full of fear, no? You have heard of me... no?"</text>
-	<ship load="DONOR_BLACK_RAVEN" hostile="false"/>
-	<choice hidden="true">
-		<text>No.</text>
-		<event>
-			<text>"Well I have heard of you and I must see if you are as dangerousss as they say. I challenge you!"</text>
-			<choice hidden="true">	
-				<text>Accept his challenge.</text>
-				<event>
-					<ship hostile="true"/>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Decline.</text>
-				<event>
-					<text>"I sssee... However you have no choice in the matter!" They move in to attack.</text>
-					<ship hostile="true"/>
-				</event>
-			</choice>
-			<choice hidden="true" req="slug">
-				<text>(Slugman Crew) Engage in a duel of the mind.</text>
-				<event load="DONOR_BLACK_RAVEN_SLUG"/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="DONOR_BLACK_RAVEN_SLUG">
-	<event>
-		<text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You can only wonder what is happening. After a short time your comrade grunts in pain and collapses onto the floor, stunned. Nights responds, "Hah! It'll take more than that to defeat me! Let the real battle begin!"</text>
-		<ship hostile="true"/>
-		<boarders min="1" max="2" class="slug"/>
-	</event>
-	<event>
-		<text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You are powerless to help, but after a short time your comrade shakes off the daze and appears victorious.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>His face contorted with pain, Nights concedes his defeat: "If this is the caliber of subordinatesss you keep, there iss no way we can defeat you. Take thisss and let us leave in shame."</text>
-				<autoReward level="HIGH">weapon</autoReward>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<ship name="DONOR_BLACK_RAVEN" auto_blueprint="JELLY_TRUFFLE">
-	<surrender  chance="0" min="3" max="4"> 
-		<text>"I see the rumorsss are true. I yield, we are no match for you. Take this and let us leave in ssshame."</text>
-		<choice>
-			<text>Accept his surrender.</text>
-			<event>
-				<text>He transfers over the goods and starts to repair his ship.</text>
-				<ship hostile="false"/>
-				<autoReward level="HIGH">weapon</autoReward>
-			</event>
-		</choice>
-		<choice>
-			<text>Ignore him and attack.</text>
-			<event>
-				<text>"Wait! There is no need to be...." You cut off the transmission and prepare to fire.</text>
-			</event>
-		</choice>
-	</surrender>
-	<destroyed>
-		<text>"The Black Raven" breaks apart and you salvage the remains.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>The once-dreaded pirate Nights has been killed and you proceed to loot his ship.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-
-<event name="DONOR_MANTIS_CHASE" unique="true">
-	<text>You are immediately hailed by an impressive looking Mantis ship, "Your ship would make a mighty fine prize. Prepare for battle!"</text>
-	<ship load="DONOR_MANTIS_CHASE1" hostile="true"/>
-</event>
-<ship name="DONOR_MANTIS_CHASE1" auto_blueprint="MANTIS_FIGHTER">
-	<escape timer="5" min="5" max="5">
-		<text>You pick up more chatter from the enemy ship, "You know what... Forget this. Prepare for retreat!" Looks like they're preparing to make a hasty get away!</text>
-	</escape>
-	<gotaway>
-		<text>The ship made an emergency FTL jump, but it looks like they didn't mask their signatures. You could easily follow them if you want.</text>
-		<choice hidden="true">
-			<text>After them!</text>
-			<event>
-				<text>You input their coordinates into your map and prepare to follow.</text>
-				<quest event="DONOR_MANTIS_CHASE2"/>
-			</event>
-		</choice>
-		<choice hidden="true">
-			<text>Forget it.</text>
-			<event>
-				<text>They're not worth the trouble. You prepare to leave.</text>
-			</event>
-		</choice>
-	</gotaway>
-	<destroyed>
-		<text>Their ship breaks apart and you move in to scrap the remains.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With no more crew on board you are free to salvage what you can from the remains.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
-<event name="DONOR_MANTIS_CHASE2">
-	<text>You catch up with the Mantis ship that escaped before, only to see them transferring their crew into an even bigger ship!</text>
-	<ship load="DONOR_MANTIS_CHASE2" hostile="true"/>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event>
-			<text>"Not YOU again! Do you know how much these repairs are going to cost me? Time to take out the big guns."</text>
-		</event>
-	</choice>
-</event>
-<ship name="DONOR_MANTIS_CHASE2" auto_blueprint="MANTIS_BOMBER">
-	<escape timer="12" min="6" max="6">
-		<text>They appear to be trying to get away again. You doubt they'll forget to mask their jump signature this time.</text>
-	</escape>
-	<gotaway>
-		<text>Looks like they got away. At least you're able to scrap their abandoned fighter.</text>
-		<autoReward level="HIGH">standard</autoReward>
-	</gotaway>
-	<surrender  min="2" max="2">
-		<text>"Look, you proved your point. We don't want to die... Take this and let us go. Please?"</text>
-		<choice>
-			<text>Let them live.</text>
-			<event>
-				<text>"Thank you. But do you have any idea how much repairing TWO ships will set us back?..." What an odd Mantis. You prepare to leave.</text>
-				<autoReward level="HIGH">weapon</autoReward>
-				<ship hostile="false"/>
-			</event>
-		</choice>
-		<choice>
-			<text>Finish them off.</text>
-			<event>
-				<text>"No! Hurry up, get us out of here! They're crazy!" You cut transmissions.</text>
-			</event>
-		</choice>
-	</surrender>
-	<destroyed>
-		<text>Their ship breaks apart and you salvage the two ships.</text>
-		<weapon name="RANDOM"/>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>You find an intact weapon on their now empty ship. You take as much scrap from the ships as possible.</text>
-		<weapon name="RANDOM"/>
-		<autoReward level="HIGH">standard</autoReward>
-	</deadCrew>
-</ship>
-
-
-<event name="ALISON_MANTIS_CREW" unique="true">
-	<text>You arrive just in time to see an unusually well-armed Engi ship destroying a small pirate craft. A teleporter signal is detected...intruder on deck!</text>
-	<choice>
-		<text>Continue...</text>
-		<event>
-			<text>A young Mantis in a charred uniform has teleported onto the deck. He begs for sanctuary from the Engi, and offers to serve in exchange for your protection. The Engi have already traced the teleporter signal and are offering a deal in exchange for the prisoner.</text>
-			<choice hidden="true">
-				<text>Side with the fugitive and fight the Engi ship.</text>
-				<event load="ALISON_MANTIS_CREW_HELP"/>
-			</choice>
-			<choice hidden="true">
-				<text>Agree to offer up the Mantis in exchange for a bounty.</text>
-				<event load="ALISON_MANTIS_CREW_REJECT"/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="ALISON_MANTIS_CREW_HELP">
-	<event>
-		<text>It was a trap! The Mantis sabotages your ship before teleporting away.</text>
-		<damage amount="3"/>
-		<damage amount="1" system="random"/>  <!--DLC-->
-		<damage amount="1" system="room"/>
-		<ship load="ENGI_MANTIS_CONTROLLED" hostile="true"/>
-	</event>
-	<event>
-		<text>He expresses his thanks and prepares to help you fight his pursuer.</text>
-		<ship load="ENGI_SHIP" hostile="true"/>
-		<crewMember amount="1" class="mantis"/>	
-	</event>
-</eventList>
-<eventList name="ALISON_MANTIS_CREW_REJECT">
-	<event>
-		<text>The Engi captain is delighted, and quickly arranges for the transfer of the prisoner.</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>Fury sparks in the eyes of the Mantis. He won't go easily, and causes serious damage before he can be captured.</text>
-		<autoReward level="HIGH">scrap_only</autoReward>
-		<damage amount="4"/> <!--DLC-->
-		<damage amount="1" system="room" effect="fire"/>
-	</event>
-	<event>
-		<text>The pursuing ship responds with a completely unintelligible message. The young Mantis jerks to attention and assumes a battle stance. It was a trap!</text>
-		<boarders min="1" max="1" class="mantis"/>
-		<ship load="ENGI_MANTIS_CONTROLLED" hostile="true"/>
-	</event>
-</eventList>
 
 
 <event name="ALISON_DEFECTOR" unique="true">
 	<text>A federation ship is patrolling this beacon, and immediately turns to engage. As your crew scramble to battle readiness, sensors detect a short-range teleporter signal. An intruder is on board!</text>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>A flushed and panicky federation soldier has teleported aboard. The federation, who appears unarmed, repeatedly declares his peaceful intentions. It seems the federation life has lost its charm.</text>
+			<text>A flushed and panicky federation soldier has teleported aboard. The soldier, who appears unarmed, repeatedly declares his peaceful intentions. It seems the federative life has lost its charm.</text>
 			<choice>
-				<text>Accept his proposal, and prepare to fight the federation ship.</text>
+				<text>Accept his proposal, and prepare to fight the Federation ship.</text>
 				<event load="ALISON_DEFECTOR_HELP"/>
 			</choice>
 			<choice>
-				<text>Reject his offer. You can never trust these federations.</text>
+				<text>Reject his offer. You can never trust these Federation scums.</text>
 				<event load="ALISON_DEFECTOR_REJECT"/>
 			</choice>
 		</event>
@@ -2812,7 +1121,7 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 	<event>
 		<text>He offers to lead you to a secret cache of scrap nearby if you let him join your crew.</text>
 		<choice>
-			<text>Reluctantly accept his proposal and fight the federation ship.</text>
+			<text>Reluctantly accept his proposal and fight the Federation ship.</text>
 			<event load="ALISON_DEFECTOR_HELP_2"/>
 		</choice>
 		<choice>
@@ -2829,9 +1138,9 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 </eventList>
 <eventList name="ALISON_DEFECTOR_HELP">
 	<event>
-		<text>The dishonorable federation has deceived you. He damages your engines and steals your flight data before teleporting away. The fleet will be able to track you with ease. If they can't kill you now that is!</text> <!--DLC2-->
+		<text>The dishonorable Federation has deceived you. He damages your engines and steals your flight data before teleporting away. The fleet will be able to track you with ease. If they can't kill you now that is!</text>
 		<damage amount="2"/>
-		<damage amount="1" system="engines"/>  <!--DLC-->
+		<damage amount="1" system="engines"/>
 		<modifyPursuit amount="1"/>
 	</event>
 	<event>
@@ -2840,19 +1149,19 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 		<damage amount="3"/>
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>	
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>	
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>	
 	</event>
 	<event>
-		<text>The federation makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+		<text>The Federative makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
 		<boarders min="1" max="1" class="human"/>
 		<removeCrew>
 			<clone>true</clone>
@@ -2863,7 +1172,7 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 
 <eventList name="ALISON_DEFECTOR_HELP_2">
 	<event>
-		<text>The dishonorable federation has deceived you. He damages your ship and steals ship information before teleporting away. The fleet will be able to track you with ease. If they can't kill you now, that is!</text> <!--DLC2-->
+		<text>The dishonorable Federation has deceived you. He damages your ship and steals ship information before teleporting away. The fleet will be able to track you with ease. If they can't kill you now, that is!</text>
 		<damage amount="2"/>
 		<damage amount="1" system="engines"/>  <!--DLC-->
 		<modifyPursuit amount="1"/>
@@ -2875,22 +1184,22 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 		<damage amount="1" system="pilot"/>  <!--DLC-->
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>
 		<quest event="ALISON_DEFECTOR_QUEST"/>
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>
 		<quest event="ALISON_DEFECTOR_QUEST"/>
 	</event>
 	<event>
-		<text>Relieved and light-headed, your new crewmember gets to work as the federation ship attacks.</text>
+		<text>Relieved and light-headed, your new crewmember gets to work as the Federation ship attacks.</text>
 		<crewMember amount="1" class="human"/>
 		<quest event="ALISON_DEFECTOR_QUEST"/>
 	</event>
 	<event>
-		<text>The federation makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+		<text>The Federative makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
 		<boarders min="1" max="1" class="human"/>
 		<removeCrew>
 			<clone>true</clone>
@@ -2898,23 +1207,3 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 		</removeCrew>
 	</event>
 </eventList>
-
-<eventList name="ALISON_DEFECTOR_QUEST">
-	<event>
-		<text>Arriving at the specified coordinates you find a sizable stash of useful materials.</text>
-		<autoReward level="HIGH">stuff</autoReward>
-	</event>
-	<event>
-		<text>You arrive at the location of the hoard, but discover that it was not quite as large as advertised.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-</eventList>
-
-
-<event name="CHARACTER_TEST">	
-	<text>`abcdefghijklmno °±²³´µ¶·¸¹º»¼½ ¾¿ÀÁÂÃÄÅÆÇ ÈÉÊËÌÍÎÏ ÐÑÒÓÔÕ Ö×ØÙÚÛ ÜÝÞßàá âãäåæç èéêëìí îïðñòóô õö÷øùúûüýþ ÿŒœŠšŸƒ</text>
-</event>
-			
-			
-			
-			
