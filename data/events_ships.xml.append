@@ -46,6 +46,11 @@
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
+<ship name="FED_AND_AUTO" auto_blueprint="SHPS_FED_AND_AUTO">
+	<destroyed load="DESTROYED_DEFAULT"/>
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
+
 <ship name="FED_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
