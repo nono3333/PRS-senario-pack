@@ -1,43 +1,10 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	START_BEACON_ZOLTAN
-	STORE_ZOLTAN
-	NOTHING_ZOLTAN
-	
-Item:	
-	ZOLTAN_FREE_AUGMENT
-	ZOLTAN_FREE_MAP
-	ZOLTAN_ODD_MOON   (ZOLTAN_ODD_MOON_CHECK)
-	
-Hostile:
-	ZOLTAN_FIGHT
-	ZOLTAN_PIRATE
-	ZOLTAN_MANTIS
-	ZOLTAN_ENGI
-
-	
-Neutral:
-	ZOLTAN_LIFERAFT  (ZOLTAN_LIFERAFT_HIRE)
-	
-Environmnt:
---->
-
 <!-- Event ideas --
 Condescending scientist who asks to join your ship for a fee because he wants to study your barbarian culture.
 
 shield research center - jams shields
 
 -asteroids, sun
-
 -->
-
-
 
 <eventList name="HOSTILE_ZOLTAN">
 	<event load="ZOLTAN_FIGHT"/>
@@ -50,11 +17,6 @@ shield research center - jams shields
 	<event load="federation"/>
 	<event load="federation_AUTO"/>
 </eventList>
-
-	
-	
-	
-	
 
 <eventList name="NEUTRAL_ZOLTAN">
 	<event load="ZOLTAN_LIFERAFT"/>
@@ -74,10 +36,6 @@ shield research center - jams shields
 </eventList>
 
 
-
-
-
-
 <eventList name="ITEM_ZOLTAN">
 	<event load="ZOLTAN_FREE_AUGMENT"/>
 	<event load="ZOLTAN_FREE_MAP"/>
@@ -91,16 +49,11 @@ shield research center - jams shields
 	<event load="TRADER_CIV"/>
 </eventList>
 
-
-
-
 <eventList name="BOARDERS_ZOLTAN">
 	<event load="ZOLTAN_BOARDERS"/>
 	<event load="ZOLTAN_BOARDERS_MANTIS"/>
 
-
 	<event load="BOARDERS_HACKING"/>
-
 </eventList>
 
 
@@ -109,7 +62,6 @@ shield research center - jams shields
 	<event load="ZOLTAN_DISTRESS_SHELL"/>
 	
 	<event load="REFUGEE_DISTRESS_ZOLTAN"/> <!--DLC - In newEvents-->
-	
 	
 	<event load="DISTRESS_SATELLITE_DEFENSE"/>
 	<event load="DISTRESS_STATION_FIRE"/>
@@ -125,7 +77,7 @@ shield research center - jams shields
 	<event load="ZOLTAN_QUEST_PRIMITIVES"/>
 	
 	
-	<event load="rebel_PLANET_SIGNAL"/>
+	<event load="FEDERATION_PLANET_SIGNAL"/>
 	<event load="QUEST_MANTIS_INVASION_START"/>
 	<event load="QUEST_CREWDEAD_START"/>
 </eventList>
@@ -143,7 +95,7 @@ shield research center - jams shields
 	<event load="NEBULA_AUTO"/>
 </eventList>
 	
-		
+
 
 
 
@@ -171,8 +123,6 @@ shield research center - jams shields
 	<text>The Zoltan are fascinated by other species, and have set up something of an alien knick-knack shop here. Why not take a look?</text>
 	<text>A human ship hails: "My friends! Please, there is nothing I don't have, and there is nothing worth wanting that I can't get. Why not take a look around my shop?"</text>
 	<text>A Mantis crew here has hunkered down in the abdomen of a long-dead space-whale - the only way, presumably, for them to operate their black-market trade without detection. Worth a look?</text>
-	
-	
 </textList>
 
 <event name="NOTHING_ZOLTAN">
@@ -329,7 +279,7 @@ shield research center - jams shields
 				<text>Protect the aliens' way of life - Attack the federation ship.</text>
 				<event>
 					<text>These creatures should be left to develop at their own pace. You direct all weapons on the federation ship and begin the firing sequence.</text>
-					<ship load="ZOLTAN_PRIMITIVES_federation" hostile="true"/>
+					<ship load="ZOLTAN_PRIMITIVES_REBEL" hostile="true"/>
 				</event>
 			</choice>
 			<choice hidden="true">
@@ -801,7 +751,7 @@ shield research center - jams shields
 
 <event name="ZOLTAN_PEACE_QUEST2">
 	<text>You arrive at the location specified by the peace-loving Zoltan, but the only thing nearby is a federation ship, closing in fast! "We've found you! You're not getting away this time!"</text>
-	<ship load="federation" hostile="false"/>
+	<ship load="FED_SHIP" hostile="false"/>
 	<choice hidden="true">
 		<text>Attack.</text>
 		<event>
