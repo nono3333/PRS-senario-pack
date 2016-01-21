@@ -1,36 +1,6 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-
-Items:
-	
-Hostile:
-	
-Neutral:
-	
-Environment:
-	
-Boarders:
-
-Special
---->
-
-
-<!--
-
--->
-	
-
-	
-<!-------------------CRYSTAL EVENTLIST     
-''   " " "
---------------------------------->
-
+<!-------------------
+CRYSTAL EVENTLIST
+--------------------->
 
 <eventList name="ITEMS_CRYSTAL">
 	<event load="CRYSTAL_CACHE"/>
@@ -318,12 +288,12 @@ Special
 	
 <event name="CRYSTAL_federation" unique="false">
 	<text>As soon as you arrive, a federation ship jumps in after you; they must be really hot on your tail.</text>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 </event>
 
 <event name="CRYSTAL_AUTO" unique="true">
-	<text>The federations must have sent their automated scouts to find you. One jumps in and immediately moves to attack.</text>
-	<ship load="federation_AUTO" hostile="true"/>
+	<text>The federation must have sent their automated scouts to find you. One jumps in and immediately moves to attack.</text>
+	<ship load="FED_AUTO" hostile="true"/>
 </event>
 
 
@@ -338,7 +308,7 @@ Special
 		<text>Attack the federation.</text>
 		<event>
 			<text>You message the Crystalline ship your intentions and move in to intercept the federation ship.</text>
-			<ship load="federation_CRYSTAL_federation_CRYSTAL" hostile="true"/>
+			<ship load="REBEL_CRYSTAL_REBEL_CRYSTAL" hostile="true"/>
 		</event>
 	</choice>
 	<choice hidden="true">
@@ -581,7 +551,7 @@ Special
 <eventList name="CRYSTAL_CHATTY_LIST">
 	<event>
 		<text>You speak at length about nothing particularly interesting. "Wow, thanks. Oh look, another alien ship! I wonder if they're as nice as you." Seeing the federation decals you doubt they're friendly. They spot you and move in to attack, while the Crystalline civilian jumps away.</text>
-		<ship load="federation" hostile="true"/>
+		<ship load="FED_SHIP" hostile="true"/>
 	</event>
 	<event>
 		<text>You speak at length about nothing particularly interesting. "Wow, thanks! I don't know if this is of any use to you, but we have some supplies we can offer you. Perhaps you can use them on your trip!"</text>
@@ -708,16 +678,6 @@ Special
 		</event>
 	</choice>
 </event>
-		
-		
-		
-<!-----------DISTRESS!!!	
-	Events that have a distress beacon  
------------->
-
-
-
-
 
 
 <!-----------SPECIAL!!!
