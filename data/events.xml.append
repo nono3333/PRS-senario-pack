@@ -90,7 +90,7 @@ item - scrap + that thing  -->
 
 
 <event name = "FLEET_EASY">
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text>The Federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
@@ -98,27 +98,27 @@ item - scrap + that thing  -->
 
 
 <event name = "FLEET_EASY_DLC">
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text>The Federation fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
 
 <event name = "FLEET_EASY_BEACON">
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text>You've found the exit beacon but the Federation got here first! You must survive long enough to be able to jump to the next sector.</text>
 	<ship load="LONG_FLEET" hostile ="true"/>
 </event>
 
 <event name = "FLEET_EASY_BEACON_DLC">
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text>You've found the exit beacon but the federation got here first! You must survive long enough to be able to jump to the next sector.</text>
 	<ship load="LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
 
 <event name = "FLEET_HARD">
-	<fleet>fed</fleet>
+	<fleet>rebel</fleet>
 	<text>The Federation fleet has found you, and a nearby scout turns to engage. You must flee before their cruisers open fire!</text>
 	<ship load = "LONG_FLEET" hostile ="true"/>
 </event>
