@@ -1,41 +1,3 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	START_BEACON_federation
-	STORE_federation
-	NOTHING_federation
-	
-Hostile:
-	AUTO_BAIT
-	AUTO_ASTEROID
-	AUTO_WARNING
-	federation_AUTO
-	AUTO_HACKER
-	federation
-	SQUAT_WARNING
-	
-Neutral:
-	AUTO_CIVILIAN
-	SQUAT_REFUEL_STATION
-	AUTO_REFUEL_STATION
-	AUTO_DEFENSE_MAP
-	AUTO_DEFENSE_ITEM
-	AUTO_DEFENSE_RADAR
-	federation_TRANSPORT
-	BROKEN_federation_DRONE
-	
-	
-Environmnt:
-	NEBULA_federation_BOARDING
-
---->
-
-
 <eventList name="HOSTILE_federation">
 	<event load="federation"/>
 	<event load="federation_AUTO"/>
@@ -65,7 +27,7 @@ Environmnt:
 
 <eventList name="DISTRESS_BEACON_federation">
 	<event load="CIVILIAN_ASTEROIDS_BEACON"/>  
-	<event load="federation_VS_rebel"/> 
+	<event load="REBEL_VS_FEDERATION"/> 
 	<event load="ESCORT_BEACON"/>
 	<event load="FRIENDLY_BEACON"/>
 	<event load="TRAP_BEACON"/>
@@ -90,7 +52,7 @@ Environmnt:
 
 <eventList name="QUESTS_federation">
 	<event load="MERCHANT_REQUEST"/>
-	<event load="rebel_PLANET_SIGNAL"/>
+	<event load="FEDERATION_PLANET_SIGNAL"/>
 </eventList>
 
 
@@ -143,17 +105,17 @@ Environmnt:
 
 <event name="AUTO_BAIT" unique="true">
 	<text load="federation_AUTO"/>
-	<ship load="federation_AUTO_BAIT" hostile="true"/>
+	<ship load="REBEL_AUTO_BAIT" hostile="true"/>
 </event>
 
 <event name="federation_AUTO">
 	<text load="federation_AUTO"/>
-	<ship load="federation_AUTO" hostile="true"/>
+	<ship load="FED_AUTO" hostile="true"/>
 </event>
 
 <event name="AUTO_WARNING" unique = "true">
 	<text load="federation_AUTO"/>
-	<ship load="federation_AUTO_WARNING" hostile="true"/>
+	<ship load="REBEL_AUTO_WARNING" hostile="true"/>
 </event>
 <textList name="federation_AUTO">
 	<text>You discover one of the federation's autonomous scouts. The ship's AI wastes no time in engaging your ship.</text>
@@ -169,7 +131,7 @@ Environmnt:
 
 <event name="AUTO_HACKER" unique="true">
 	<text>Your arrival is greeted by numerous computer alerts. The nearby automated federation scout has used a local satellite to deploy a virus to disrupt your Shields System. Hopefully it won't cause further problems before you can destroy it.</text>
-	<ship load="federation_AUTO_HACKSHIELDS" hostile="true"/>
+	<ship load="REBEL_AUTO_HACKSHIELDS" hostile="true"/>
 	<choice>
 		<text>Continue...</text>
 		<event>	
@@ -188,19 +150,19 @@ Environmnt:
 
 <event name="federation">
 	<text load="federation"/>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 </event>
 <textList name="federation">
 	<text>Your ship is hailed. "We've found you at last. Prepare to die!"</text>
 	<text>A small federation ship is docked at a small station. You try to lay low but it spots you. Power up the weapons!</text>
 	<text>A federation ship has been patrolling this region. As soon as you arrive it begins its assault.</text>
-	<text>A federation ship hails you: "rebel scum! We've waited a long time for this!"</text>
-	<text>You receive a transmission: "Sorry sir, this is nothing personal but we're under orders." The federation ship's weapons go hot.</text>
-	<text>By the time you notice the federation ship behind the beacon, it's too late to avoid a fight.</text>
-	<text>A federation ship hails. "We did not fight a war to let a single rebel ship shatter our dreams of a better galaxy!" He locks weapons.</text>
-	<text>A federation ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the rebel. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your shields!"</text>
-	<text>You're hailed by a federation ship: "When the federationlion is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
-	<text>A federation ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
+	<text>A federation ship hails you: "Rebel scum! We've waited a long time for this!"</text>
+	<text>You receive a transmission: "Sorry sir, this is nothing personal but we're under orders." The Federation ship's weapons go hot.</text>
+	<text>By the time you notice the Federation ship behind the beacon, it's too late to avoid a fight.</text>
+	<text>A Federation ship hails. "We did not fight a war to let a single rebel ship shatter our dreams of a peaceful galaxy!" He locks weapons.</text>
+	<text>A federation ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the rebellion. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your shields!"</text>
+	<text>You're hailed by a federation ship: "When the federation is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
+	<text>A federative ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
 </textList>
 
 <event name="SQUAT_WARNING" unique="true">
@@ -227,7 +189,7 @@ Environmnt:
 		<text>Aid the civilian ship.</text>
 		<event>
 			<text>You power up your weapons and engage the automated ship.</text>
-			<ship load="federation_AUTO_CIVILIAN" hostile="true"/>
+			<ship load="REBEL_AUTO_CIVILIAN" hostile="true"/>
 		</event>
 	</choice>
 	<choice>
@@ -260,7 +222,7 @@ Environmnt:
 <event name="AUTO_REFUEL_STATION" unique="true">  
 	<img planet="PLANET_POPULATED_SMALL"/>
 	<text>You detect an automated federation scout attacking a small refueling outpost.</text>
-	<ship load="federation_AUTO_REFUEL" hostile="false"/>
+	<ship load="REBEL_AUTO_REFUEL" hostile="false"/>
 	<choice>
 		<text>Intervene to defend the outpost.</text>
 		<event>
@@ -279,7 +241,7 @@ Environmnt:
 <event name="AUTO_DEFENSE_MAP" unique="true">
 	<img planet="PLANET_POPULATED"/>
 	<text>You detect a federation automated ship nearby. It does not engage and seems to be patrolling around a long-range sensor station.</text>
-	<ship load="federation_AUTO_MAP" hostile="false"/>
+	<ship load="REBEL_AUTO_MAP" hostile="false"/>
 	<choice>
 		<text>Attack the automated ship to get to the sensor station.</text>
 		<event>
@@ -315,7 +277,7 @@ Environmnt:
 
 <event name="AUTO_DEFENSE_ITEM" unique="true">
 	<text>An advanced federation automated ship remains stationed near a small federation space-station. Sensors indicate it's a storage vessel for military goods.</text>
-	<ship load="federation_AUTO_ITEM" hostile="false"/>
+	<ship load="REBEL_AUTO_ITEM" hostile="false"/>
 	<choice>
 		<text>Attack the automated ship to get to the storage cache.</text>
 		<event>
@@ -364,7 +326,7 @@ Environmnt:
 
 <event name="AUTO_DEFENSE_RADAR" unique="true">
 	<text>A federation automated ship sits dormant near a federation forward radar station.</text>
-	<ship load="federation_AUTO_RADAR" hostile="false"/>
+	<ship load="REBEL_AUTO_RADAR" hostile="false"/>
 	<choice>
 		<text>Approach the station.</text>
 		<event>
@@ -518,7 +480,7 @@ Environmnt:
 
 <event name="BROKEN_federation_DRONE" unique="true">
 	<text>You find a federation automated scout floating near this beacon. Despite its pristine condition, it appears to be de-activated.</text>
-	<ship load="federation_AUTO" hostile="false"/>
+	<ship load="FED_AUTO" hostile="false"/>
 	<choice hidden="true">
 		<text>Attempt to download the ship's data stores.</text>
 		<event load="DOWNLOAD_DRONE_DATA"/>
@@ -542,7 +504,7 @@ Environmnt:
 	</event>
 	<event>
 		<text>You accidentally reactivate the ship's AI. Its weapons immediately go online; prepare for a fight!</text>
-		<ship load="federation_AUTO" hostile="true"/>
+		<ship load="FED_AUTO" hostile="true"/>
 	</event>
 </eventList>
 <eventList name="BROKEN_federation_DRONE_SENSORS">
@@ -595,7 +557,7 @@ Environmnt:
 <event name="BOARDERS_federation_SHIP">
 	<text load="BOARDERS_federation_SHIP"/>
 	<boarders min="2" max="3" class="human"/>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 </event>
 <textList name="BOARDERS_federation_SHIP" unique="false">
 	<text>You receive a message from a nearby federation station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
