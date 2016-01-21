@@ -1,59 +1,15 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-
-Structure:
-	NO_FUEL_FLEET
-	
-No Beacon:    	NO_FUEL (this is a list)
-	FUEL_FLEET_DELAY
-	FUEL_NOTHING
-	FUEL_TRADER
-	FUEL_EXPLORE
-	FUEL_APPROACH
-	
-Beacon:    NO_FUEL_DISTRESS (this is a list)
-	FUEL_FLEET_DISTRESS
-	FUEL_NOTHING_DISTRESS
-	FUEL_SELLER_DISTRESS
-	FUEL_TRADER_DISTRESS
-
-Sector Specific:
-	
---->
-
-
-
-
-
-
-
-
-<!-- NO FUEL stuff -->
-
 <event name="NO_FUEL_FLEET">
 	<text>The federation fleet has caught up to you. You detect significant fuel reserves in one of their closer fighters and move in to attack. Maybe you can still pull this off.</text>
-	<ship load = "federation_FLEET_FUEL" hostile ="true"/>
-	<fleet>federation</fleet>
+	<ship load = "REBEL_FLEET_FUEL" hostile ="true"/>
+	<fleet>rebel</fleet>
 </event>
 
 <event name="NO_FUEL_FLEET_DLC">
 	<text>Your pilot deftly avoids incoming artillery fire from the surrounding fleet while you try to sort out exactly what your plan is... One of the many approaching fighters gets into weapon range and your scanners detect it has surplus fuel. Maybe you can still pull this off.</text>
-	<ship load = "federation_FLEET_FUEL" hostile ="true"/>
-	<fleet>federation</fleet>
+	<ship load = "REBEL_FLEET_FUEL" hostile ="true"/>
+	<fleet>rebel</fleet>
 	<environment type="PDS" target="player"/>
 </event>
-	
-	
-	
-	
-	
-
-
 
 
 
@@ -198,7 +154,7 @@ Beacon Off.....
 	</event>
 	<event>
 		<text>You wander within scanning range of a small federation automated scout!</text>
-		<ship load="federation_AUTO_FUEL" hostile="true"/>
+		<ship load="REBEL_AUTO_FUEL" hostile="true"/>
 	</event>
 </eventList>
 	
@@ -522,7 +478,7 @@ Beacon On!!!!
 
 <event name="FUEL_ON_federation_ATTACK">
 	<text load="FUEL_ON_federation_ATTACK"/>
-	<ship load="federation_FUEL" hostile="true"/>
+	<ship load="REBEL_FUEL" hostile="true"/>
 </event>
 <textList name="FUEL_ON_federation_ATTACK">
 	<text>A federation ship hails you, "Hello citizen. We are responding to your distress call and can assist... Wait a second... You're that ship! Prepare to die!"</text>
@@ -534,7 +490,7 @@ Beacon On!!!!
 
 <event name="FUEL_ON_federation_WARNING">
 	<text>A ship responding to your distress moves in. Unfortunately it turns out to be an automated federation scout. It immediately reverses thrust after scanning your ship.</text>
-	<ship load="federation_AUTO_WARNING" hostile="true"/>
+	<ship load="REBEL_AUTO_WARNING" hostile="true"/>
 </event>	
 
 
