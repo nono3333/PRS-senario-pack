@@ -1,21 +1,3 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	
-Hostile:
-	
-Neutral:
-	
-Environmnt:
-
---->
-
-
 <eventList name="HOSTILE_ROCK">
 	<event load="ROCK_SHIP"/>
 	<event load="ROCK_PIRATE"/>
@@ -60,7 +42,7 @@ Environmnt:
 	<event load="STRANDED_BEACON"/>
 	<event load="PIRATE_CIVILIAN_BEACON"/>
 	<event load="CIVILIAN_ASTEROIDS_BEACON"/>  
-	<event load="federation_VS_rebel"/> 
+	<event load="REBEL_VS_FEDERATION"/> 
 	<event load="ESCORT_BEACON"/>
 	<event load="DISTRESS_TRAPPED_MINER"/>
 	<event load="DISTRESS_INFESTATION"/>
@@ -79,7 +61,7 @@ Environmnt:
 	<event load="ROCK_QUEST_MARRIAGE_START"/>
 	
 	<event load="QUEST_ESCORT"/>
-	<event load="rebel_PLANET_SIGNAL"/>
+	<event load="FEDERATION_PLANET_SIGNAL"/>
 	<event load="MERCENARY_WORK_START"/>
 	<event load="QUEST_CREWDEAD_START"/>
 </eventList>
