@@ -1,51 +1,3 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--     ' " "
-			SUMMARY  - 
-A list of all main events to be called by lists
-	(does not include sub-events)
-	
-	
-	
-	NOTE: we need to make all lists with "NEBULA_" in it trigger the creation of a nebula
-
-	
-Structure:
-	FLEET_EASY_NEBULA
-	NEBULA_EMPTY
-	
-Hostile:
-	NEBULA_federation
-	NEBULA_AUTO
-	NEBULA_AUTO_WARNING
-	NEBULA_PIRATE    				NEW
-	NEBULA_MANTIS_FIGHT				NEW
-	
-Neutral:
-	NEBULA_federation_UNDETECTED
-	NEBULA_PIRATE_SMUGGLE
-	NEBULA_AUTO_DEFENSE_ITEM
-	NEBULA_LOST_SHIP
-	NEBULA_WEAPONS_TRADER			NEW
-	NEBULA_ROCK_RACIST				NEW
-	NEBULA_MANTIS_CHOICE			NEW
-	NEBULA_federation_CHASE				NEW
-	
-Boarders:
-	NEBULA_BOARDING
-
-Items:
-	NEBULA_TRADER
-
-Storm Environment:
-	STORM_AUTO
-	STORM_federation
-	STORM_BOARDING
-	STORM_ITEMS
-
---->
-
-
 <eventList name="NEBULA_HOSTILE">
 	<event load="NEBULA_federation"/>
 	<event load="NEBULA_AUTO"/>
@@ -134,7 +86,7 @@ Storm Environment:
 
 <event name="NEBULA_federation">
 	<text load="NEBULA_federation_LIST"/>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 	<environment type="nebula"/>
 </event>
 <textList name="NEBULA_federation_LIST">
@@ -150,7 +102,7 @@ Storm Environment:
 
 <event name="NEBULA_AUTO">
 	<text load="NEBULA_AUTO_LIST"/>
-	<ship load="federation_AUTO" hostile="true"/>
+	<ship load="FED_AUTO" hostile="true"/>
 	<environment type="nebula"/>
 </event>
 <textList name="NEBULA_AUTO_LIST">
@@ -164,7 +116,7 @@ Storm Environment:
 
 <event name="NEBULA_AUTO_WARNING" unique = "true">
 	<text>It appears that an automated federation scout was positioned within the nebula to warn of your passing.</text>
-	<ship load="federation_AUTO_WARNING" hostile="true"/>
+	<ship load="REBEL_AUTO_WARNING" hostile="true"/>
 	<environment type="nebula"/>
 </event>
 
@@ -210,7 +162,7 @@ Storm Environment:
 
 <event name="NEBULA_federation_UNDETECTED" unique="true">  <!-- give player option to hide, -->
 	<text>Your ship emerges quite far away from the beacon. You see a federation ship waiting nearby, undoubtedly stationed to look for you.</text>
-	<ship load="federation" hostile="false"/>
+	<ship load="FED_SHIP" hostile="false"/>
 	<environment type="nebula"/>
 	<choice>
 		<text>Attack the ship.</text>
@@ -294,7 +246,7 @@ Storm Environment:
 
 <event name="NEBULA_AUTO_DEFENSE_ITEM" unique="true">
 	<text>An advance federation automated ship remains stationed near a small federation space-station. However, without functioning sensors it is impossible to tell what is inside.</text>
-	<ship load="federation_AUTO_ITEM" hostile="false"/>  <!-- ship is in other xmls -->
+	<ship load="REBEL_AUTO_ITEM" hostile="false"/>  <!-- ship is in other xmls -->
 	<choice>
 		<text>Attack the automated ship to get to the station.</text>
 		<event>
@@ -403,7 +355,7 @@ Storm Environment:
 	</event>
 	<event>
 		<text>While searching fruitlessly through the nebula, you stumble upon the federation ship which the rebel loyalists were likely hiding from. You prepare for a fight.</text>
-		<ship load="federation" hostile="true"/>
+		<ship load="FED_SHIP" hostile="true"/>
 	</event>
 	<event>
 		<text>You get lucky and find them floating not too deep into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
@@ -537,7 +489,7 @@ Storm Environment:
 
 <event name="NEBULA_federation_CHASE" unique="true">
 	<text>You spot a federation ship in the nebula ahead and stay off their radar. Try to engage?</text>
-	<ship load="federation" hostile="false"/>
+	<ship load="FED_SHIP" hostile="false"/>
 	<environment type="nebula"/>
 	<choice>
 		<text>Stay hidden.</text>
@@ -644,7 +596,7 @@ Storm Environment:
 	<choice>
 		<text>Prepare to fight.</text>
 		<event>
-			<ship load = "federation_AUTO" hostile="true"/>
+			<ship load = "FED_AUTO" hostile="true"/>
 		</event>
 	</choice>
 	<choice req="engines" lvl="3" max_group="0" hidden="true">
@@ -670,13 +622,13 @@ Storm Environment:
 	</event>
 	<event>
 		<text>Despite your advanced engines you are unable to shake them; you turn and prepare for a fight.</text>
-		<ship load = "federation_AUTO" hostile="true"/>
+		<ship load = "FED_AUTO" hostile="true"/>
 	</event>
 </eventList>
 
 <event name="STORM_federation" unique = "true">
 	<text>You arrive in the middle of a plasma storm. Despite the harsh conditions, a federation scout seems to be waiting for you.</text>
-	<ship load = "federation" hostile = "true"/>
+	<ship load = "FED_SHIP" hostile = "true"/>
 	<environment type="storm"/>
 </event>
 
