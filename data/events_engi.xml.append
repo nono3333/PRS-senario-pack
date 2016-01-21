@@ -1,41 +1,6 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--   
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	START_BEACON_ENGI
-	STORE_ENGI
-	NOTHING_ENGI
-
-Items:
-	ENGI_GIFT
-	ENGI_FLEET_DELAY
-	ENGI_MONSTER
-	
-Hostile:
-	ENGI_MANTIS_FIGHT		NEW!!!
-	ENGI_federation_FIGHT		NEW!!!
-	ENGI_PIRATE_FIGHT		NEW!!!
-	
-Neutral:
-	ENGI_STATION_DISTRESS    (could be quest or distress - uses SAVE_ENGI_STATION)
-	
-Environment:
-	
-Boarders:
-
-Special
---->
-
-
 <!--
 Idea - make an event where you're fighting to save an engi ship but theres mantis on board. - super bonus if its crewDead.
-
 -->
-	
 
 <!--------------------------------
 	ENGI EVENTLIST     ''   " " "
@@ -109,7 +74,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 <eventList name="QUESTS_ENGI">
 	<event load="QUEST_ESCORT"/>
 	<event load="MERCHANT_REQUEST"/>
-	<event load="rebel_PLANET_SIGNAL"/>
+	<event load="FEDERATION_PLANET_SIGNAL"/>
 	<event load="MERCENARY_WORK_START"/>
 </eventList>
 
@@ -274,7 +239,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 
 <event name="ENGI_federation_FIGHT">
 	<text>The federation fighter here would seem to suggest elements of the federation fleet are already making incursions on Engi space. You move to engage.</text>
-	<ship load="federation" hostile="true"/>
+	<ship load="FED_SHIP" hostile="true"/>
 </event>
 
 <event name="ENGI_PIRATE_FIGHT">
@@ -348,7 +313,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 			<event>
 				<text>They respond, "Understood. Re-establishment of rebel highest import. Transmitting hidden base coordinates. Repairing hull and attaching ship to ship ordnance."</text>
 				<autoReward level="LOW">weapon</autoReward>
-				<quest event="HIDDEN_rebel_BASE_LIST"/>
+				<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
 				<damage amount="-10"/>
 			</event>
 		</choice>
@@ -370,7 +335,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 <event name="DISTRESS_ENGI_federation" unique="true">
 	<text>The distress signal originates from a small Engi ship under attack by a federation fighter - but when the federations see rebel markings they turn to attack!</text> 
 	<distressBeacon/>
-	<ship load="DISTRESS_ENGI_federation" hostile="true"/>
+	<ship load="DISTRESS_ENGI_REBEL" hostile="true"/>
 </event>
 <event name="DISTRESS_ENGI_federation_RESULT">
 	<text>The Engi vessel turns out to be very poorly equipped - barely a runabout, really. They're trying to outrun the federations, and need all the help they can get.</text>
@@ -570,7 +535,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 </event>
 <event name="ENGI_UNLOCK_2FAKE">
 	<text>You arrive at one of the federation bases that the Engies told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them.</text>
-	<ship load="federation_ENGI_UNLOCK_2FAKE" hostile="true"/>
+	<ship load="REBEL_ENGI_UNLOCK_2FAKE" hostile="true"/>
 </event>
 <event name="ENGI_UNLOCK_2FAKE_SURRENDER">
 	<text>"Stop! I don't want to die here."</text>
@@ -595,7 +560,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 </event>
 <event name="ENGI_UNLOCK_2REAL">
 	<text>You arrive at one of the federation bases that the Engi told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them."</text>
-	<ship load="federation_ENGI_UNLOCK_2REAL" hostile="true"/>
+	<ship load="REBEL_ENGI_UNLOCK_2REAL" hostile="true"/>
 </event>
 <event name="ENGI_UNLOCK_2REAL_SURRENDER">
 	<text>"Stop! This isn't worth dying for..."</text>
