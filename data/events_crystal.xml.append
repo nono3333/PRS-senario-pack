@@ -17,7 +17,7 @@ CRYSTAL EVENTLIST
 	<event load="CRYSTAL_FIGHT"/>
 	<event load="CRYSTAL_FIGHT"/>
 	<event load="CRYSTAL_CONVOY"/>
-	<event load="CRYSTAL_federation"/>
+	<event load="CRYSTAL_REBEL"/>
 	<event load="CRYSTAL_HUNTER"/>
 	<event load="CRYSTAL_AUTO"/>
 	
@@ -286,14 +286,14 @@ CRYSTAL EVENTLIST
 	<ship load="CRYSTAL_HUNTER" hostile="true"/>
 </event>
 	
-<event name="CRYSTAL_federation" unique="false">
-	<text>As soon as you arrive, a federation ship jumps in after you; they must be really hot on your tail.</text>
-	<ship load="FED_SHIP" hostile="true"/>
+<event name="CRYSTAL_REBEL" unique="false">
+	<text>As soon as you arrive, a Federation ship jumps in after you; they must be really hot on your tail.</text>
+	<ship load="REBEL" hostile="true"/>
 </event>
 
 <event name="CRYSTAL_AUTO" unique="true">
-	<text>The federation must have sent their automated scouts to find you. One jumps in and immediately moves to attack.</text>
-	<ship load="FED_AUTO" hostile="true"/>
+	<text>The Federatives must have sent their automated scouts to find you. One jumps in and immediately moves to attack.</text>
+	<ship load="REBEL_AUTO" hostile="true"/>
 </event>
 
 
@@ -402,9 +402,9 @@ CRYSTAL EVENTLIST
 <event name="CRYSTAL_FED" unique="false">
 	<text>There appears to be a fight going on nearby. A Crystalline border guard is chasing a small rebel ship!</text>
 	<choice hidden="true">
-		<text>Save the rebel ship.</text>
+		<text>Save the Rebel ship.</text>
 		<event>
-			<text>It doesn't look like the Fed ship can stand much more pressure. You fly in and intercept the Crystalline ship.</text>
+			<text>It doesn't look like the Rebel ship can stand much more pressure. You fly in and intercept the Crystalline ship.</text>
 			<ship load="CRYSTAL_FED" hostile="true"/>
 		</event>
 	</choice>
@@ -434,7 +434,7 @@ CRYSTAL EVENTLIST
 	<choice hidden="false">
 		<text>Offer supplies.</text>
 		<event>
-			<text>You send over some supplies to help them on their way and in return they upload their flight plan to your computer, allowing you to map the sector! "The rebel fleet's still standing - get there while you can!"</text>
+			<text>You send over some supplies to help them on their way and in return they upload their flight plan to your computer, allowing you to map the sector! "The Rebel fleet's still standing - get there while you can!"</text>
 			<item_modify>
 				<item type="fuel" min="-3" max="-1"/>
 				<item type="scrap" min="-25" max="-15"/>
@@ -445,7 +445,7 @@ CRYSTAL EVENTLIST
 	<choice hidden="true">
 		<text>Attack the traitors.</text>
 		<event>
-			<text>Deserters cannot be tolerated. You open fire on the cowards - though it doesn't please you to do so. The rebel needs every soldier it can get.</text>
+			<text>Deserters cannot be tolerated. You open fire on the cowards - though it doesn't please you to do so. The Rebellion needs every soldier it can get.</text>
 			<ship hostile="true"/>
 		</event>
 	</choice>
