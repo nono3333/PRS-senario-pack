@@ -99,6 +99,14 @@ item - scrap + that thing  -->
 	<text>You will have to be cautious in this sector. The Federatives have their outposts here and are no doubt looking for you.</text>
 </textList>
 
+<event name="START_BEACON_FEDERATION">
+	<text load="START_BEACON_FEDERATION"/>
+</event>
+<textList name="START_BEACON_FEDERATION">
+	<text>FEDERATION STRONGHOLD SECTOR START BEACON TEXT.</text>
+
+</textList>
+
 
 <event name = "FLEET_EASY">
 	<fleet>rebel</fleet>
