@@ -1,13 +1,13 @@
 <sectorType name="CIVILIAN">
-        <sector>REBEL_SECTOR</sector>
-        <sector>MANTIS_SECTOR</sector>
-	<sector>MANTIS_HOME</sector>
+    <sector>REBEL_SECTOR</sector>
 	<sector>CIVILIAN_SECTOR</sector>
 </sectorType>
 
 <sectorType name="HOSTILE">
 	<sector>REBEL_SECTOR_MINIBOSS</sector>
 	<sector>PIRATE_SECTOR</sector>
+    <sector>MANTIS_SECTOR</sector>
+	<sector>MANTIS_HOME</sector>
 	<sector>ROCK_SECTOR</sector>
 	<sector>ROCK_HOME</sector>
 	<sector>ENGI_SECTOR</sector>
@@ -20,6 +20,8 @@
 <sectorType name="OVERRIDE_HOSTILE">
 	<sector>REBEL_SECTOR_MINIBOSS</sector>
 	<sector>PIRATE_SECTOR</sector>
+    <sector>MANTIS_SECTOR</sector>
+	<sector>MANTIS_HOME</sector>
 	<sector>ROCK_SECTOR</sector>
 	<sector>ROCK_HOME</sector>
 	<sector>ENGI_SECTOR</sector>
@@ -28,7 +30,6 @@
 	<sector>ZOLTAN_HOME</sector>
 	<sector>LANIUS_SECTOR</sector>
 </sectorType>
-<!----------------------------------->
 
 
 
@@ -87,7 +88,7 @@
 		<track>milkyway</track>
 		<track>lostship</track>
 	</trackList>
-<!--	<startEvent>START_BEACON_CIVILIAN</startEvent>   JUSTIN TO DO-->
+	<startEvent>START_BEACON_CIVILIAN</startEvent>
 	<event name="STORE" min="2" max="3"/>
 	<event name="ITEMS" min="2" max="3"/>
 	<event name="NEUTRAL_CIVILIAN" min="2" max="4"/>
@@ -103,10 +104,10 @@
 
 <sectorDescription name="REBEL_SECTOR_MINIBOSS" minSector="4" unique="true">   <!-- This is the unique sector that has the mini-boss fight-->
 	<nameList>
-		<name>Federation Stronghold B12</name>
-		<name>Federation Stronghold N333</name>
-		<name>Federation Stronghold Alpha 15</name>
-		<name>Federation Stronghold Beta 045</name>
+		<name>Federation Sector B12</name>
+		<name>Federation Sector N333</name>
+		<name>Federation Sector Alpha 15</name>
+		<name>Federation Sector Beta 045</name>
 	</nameList>
 	<trackList>
 		<track>colonial</track>
