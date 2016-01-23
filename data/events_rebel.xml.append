@@ -64,15 +64,15 @@
 	Requred structural 
 ------------>
 
-<event name="START_BEACON_federation">
-	<text load="START_BEACON_federation"/>
+<event name="START_BEACON_REBEL">
+	<text load="START_BEACON_REBEL"/>
 </event>
-<textList name="START_BEACON_federation">
-	<text>This sector was bustling with activity just a few years ago. Now, more than half of the jump beacons have been destroyed, many settlements have been abandoned and the federations patrol constantly.</text>
-	<text>This sector was hit hard by the federationlion. The many alien settlements and stations located here are now watched over by almost an equal number of federation bases, heavy-handedly 'keeping the peace'.</text>
-	<text>Once the rebel forces were scattered, the federations came down hard on the locals here. Between the 'tax collectors' and military bases, the federation presence in this sector is high.</text>
-	<text>At one point this was one of the most commonly traveled sectors. Knowing that, the federations have stationed a number of fleets here. Be careful.</text>
-	<text>You will have to be very cautious in this sector. The federations have full control and are no doubt looking for you.</text>
+<textList name="START_BEACON_REBEL">
+	<text>This sector was a chaotic place just a few years ago. Now, order has been established thanks to the Rebellion.</text>
+	<text>This sector was recently taken over by the Rebellion. The many alien settlements and stations located here are now watched over by of Rebel bases, keeping the peace.</text>
+	<text>Once the federative forces were scattered, the Rebels came down hard on the locals here. Between the 'tax collectors' and military bases, the Rebel presence in this sector is high.</text>
+	<text>At one point this was one of the most commonly traveled sectors. Knowing that, the Rebels stationed a number of fleets here.</text>
+	<text>This sector should be safe to travel. The Rebels have full control and you could stock up on supplies.</text>
 </textList>
 
 <event name="STORE_federation">
