@@ -510,12 +510,12 @@ item - scrap + that thing  -->
 <event name="AUTO_ASTEROID">
 	<img back="BG_DARK" planet="NONE"/>
 	<text>You arrive in an asteroid belt to discover that a Federation automated-scout has been stationed here. Prepare for a fight!</text>
-	<ship load="FED_AUTO" hostile="true"/>
+	<ship load="REBEL_AUTO" hostile="true"/>
 	<environment type="asteroid"/>
 </event>
 <event name="AUTO_SUN" unique = "true">
 	<text>You arrive at the beacon to find yourself dangerously close to a star. An automated federation ship, impervious to the heat, moves in to engage.</text>
-	<ship load="FED_AUTO" hostile="true"/>
+	<ship load="REBEL_AUTO" hostile="true"/>
 	<environment type="sun"/>
 </event>
 
@@ -606,7 +606,7 @@ item - scrap + that thing  -->
 		<boarders min="2" max="3" class="human"/>
 	</event>
 </eventList>
-<eventList name="HIDDEN_FEDERATION_BASE_LIST">   <!-- JUSTIN - USE THIS ELSEWHERE -->
+<eventList name="HIDDEN_FEDERATION_BASE_LIST">
 	<event>
 		<text>You find the planet at the indicated coordinates. Your initial scans show the planet to be barren and devoid of life, but you get a prompt reply when you broadcast on rebel frequencies. "Hello! So nice to see friends. We'll bring you up some supplies."</text>
 		<autoReward level="HIGH">drone</autoReward>
@@ -654,11 +654,11 @@ item - scrap + that thing  -->
 <eventList name="FEDERATION_BASE_ASSIST">
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_FEDERATION_BASE" hostile="true"/>
+		<ship load="AUTO_REBEL_BASE" hostile="true"/>
 	</event>
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
+		<ship load="AUTO_REBEL_BASE2" hostile="true"/>
 	</event>
 </eventList>
 
@@ -696,7 +696,7 @@ item - scrap + that thing  -->
 <eventList name="QUEST_ESCORT_ARRIVE">
 	<event>
 		<text>You escort the ship to the requested beacon. Much to your dismay you are ambushed by a federation ship. You walked right into their trap!</text>
-		<ship load="FED_SHIP" hostile="true"/>
+		<ship load="REBEL" hostile="true"/>
 	</event>
 	<event>
 		<text>Shortly after you arrive, the ship you were escorting jumps nearby. They thank you for your help and offer you a reward.</text>
@@ -1087,7 +1087,7 @@ Someone asks you to help them on a land-based combat mission, borrow the crewmem
 
 <event name="ALISON_DEFECTOR" unique="true">
 	<text>A federation ship is patrolling this beacon, and immediately turns to engage. As your crew scramble to battle readiness, sensors detect a short-range teleporter signal. An intruder is on board!</text>
-	<ship load="FED_SHIP" hostile="true"/>
+	<ship load="REBEL" hostile="true"/>
 	<choice>
 		<text>Continue...</text>
 		<event>
