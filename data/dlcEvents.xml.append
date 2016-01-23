@@ -52,11 +52,11 @@ New Item Events
 	</event>
 	<event>
 		<text>You apparently spoke to the wrong person in your search for a store. Warnings go off and you detect an automated Federation ship moving in to attack.</text>
-		<ship load="FED_AUTO" hostile="true"/>
+		<ship load="REBEL_AUTO" hostile="true"/>
 	</event>
 	<event>
 		<text>You apparently spoke to the wrong person in your search for a store. Warnings go off and you detect an automated federation ship moving in to attack.</text>
-		<ship load="FED_AUTO" hostile="true"/>
+		<ship load="REBEL_AUTO" hostile="true"/>
 	</event>
 </eventList>
 
@@ -71,7 +71,7 @@ HOSTILE ENVIRONMENT!
 
 <event name="REBEL_PULSAR" unique="true">
 	<text load="REBEL_PULSAR_TEXT"/>
-	<ship load="FED_SHIP" hostile="true"/>
+	<ship load="REBEL" hostile="true"/>
 	<environment type="pulsar"/>
 </event>
 <textList name="REBEL_PULSAR_TEXT">
@@ -84,7 +84,7 @@ HOSTILE ENVIRONMENT!
 <event name="REBEL_PDS" unique="true">
 	<text load="REBEL_PDS_TEXT"/>
 	<environment type="PDS" target="player"/>
-	<ship load="FED_SHIP" hostile="true"/>
+	<ship load="REBEL" hostile="true"/>
 	<choice>
 		<text>Prepare to fight.</text>
 		<event/>
@@ -118,7 +118,7 @@ HOSTILE ENVIRONMENT!
 <event name="REBEL_AUTO_PDS" unique="true">
 	<text load="REBEL_AUTO_PDS_TEXT"/>
 	<environment type="PDS" target="player"/>
-	<ship load="FED_AUTO" hostile="true"/>
+	<ship load="REBEL_AUTO" hostile="true"/>
 	<choice>
 		<text>Prepare to fight.</text>
 		<event/>
