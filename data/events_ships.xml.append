@@ -41,6 +41,11 @@
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
+<ship name="FED_SHIP" auto_blueprint="SHIPS_REBEL">
+	<destroyed load="DESTROYED_DEFAULT"/>
+	<deadCrew load="DEAD_CREW_DEFAULT"/>
+</ship>
+
 <ship name="REBEL_AUTO" auto_blueprint="SHIPS_AUTO">
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
