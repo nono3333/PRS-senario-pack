@@ -263,11 +263,11 @@ shield research center - jams shields
 </eventList>
 
 <event name="ZOLTAN_QUEST_PRIMITIVES" unique="true">
-	<text>You arrive at the primitive planet that you heard about at the cantina and are surprised to see a Zoltan ship facing off against a federation assault craft.</text>
+	<text>You arrive at the primitive planet that you heard about at the cantina and see a Zoltan ship facing off against a Rebel assault craft.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>You tap into their frequency and hear the federation captain yelling, "We are liberating this planet in the name of the new Galactic government! These aliens will not be left in ignorance where they cannot be of use!"</text>
+			<text>You tap into their frequency and hear the Rebel captain yelling, "We are liberating this planet in the name of the new Galactic government! These aliens will not be left in ignorance where they cannot be of use!"</text>
 			<choice hidden="true">
 				<text>Interfere - make first contact with the primitive aliens.</text>
 				<event>
@@ -276,16 +276,16 @@ shield research center - jams shields
 				</event>
 			</choice>
 			<choice hidden="true">
-				<text>Protect the aliens' way of life - Attack the federation ship.</text>
+				<text>Distract the Zoltan ship.</text>
 				<event>
-					<text>These creatures should be left to develop at their own pace. You direct all weapons on the federation ship and begin the firing sequence.</text>
-					<ship load="ZOLTAN_PRIMITIVES_REBEL" hostile="true"/>
+					<text>You engage the Zoltan ship, allowing the other Rebel ship to annihilate the planet.</text>
+					<ship load="ZOLTAN_PRIMITIVES_ZOLTAN" hostile="true"/>
 				</event>
 			</choice>
 			<choice hidden="true">
 				<text>Leave.</text>
 				<event>
-					<text>You don't want to alert the federations of your presence and you don't want to anger the Zoltan in their territory. The best solution is to leave.</text>
+					<text>The Rebel ship can handle itself and you don't want to anger the Zoltan in their territory. The best solution is to leave.</text>
 				</event>
 			</choice>
 		</event>
