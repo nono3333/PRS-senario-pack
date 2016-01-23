@@ -517,25 +517,14 @@
 
 <ship name="ZOLTAN_PRIMITIVES_ZOLTAN" auto_blueprint="SHIPS_ZOLTAN">   
 	<destroyed>
-		<text>The federation contacts you. "Lovely, you've done our job for us! We'll let you live as thanks. However, I can't promise the fleet will show you the same courtesy." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
-		<modifyPursuit amount="1"/>
+		<text>The Rebel contacts you. "Thanks. We know your mission. I guess we could help to delay the fleet, since you helped us." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
+		<modifyPursuit amount="-1"/>
 		<autoReward level="LOW">standard</autoReward>
 	</destroyed>
 	<deadCrew>
-		<text>The federation contacts you. "Lovely, you've done our job for us! We'll let you live as thanks. However, I can't promise the fleet will show you the same courtesy." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
-		<modifyPursuit amount="1"/>
+		<text>The Rebel contacts you. "Thanks. We know your mission. I guess we could help to delay the fleet, since you helped us." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
+		<modifyPursuit amount="-1"/>
 		<autoReward level="RANDOM">standard</autoReward>
-	</deadCrew>
-</ship>
-
-<ship name="ZOLTAN_PRIMITIVES_REBEL" auto_blueprint="SHIPS_REBEL">
-	<destroyed>
-		<text>The Zoltan hail once the smoke disperses. "Thank you. We were led to believe Rebel ideals died along with the rebel itself. Let us aid you a little, for old times' sake." You accept their reward and scrap, then collect some remains from the federation ship.</text>
-		<autoReward level="LOW">weapon</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>The Zoltan hail once the smoke disperses. "Thank you. We were led to believe rebel ideals died along with the rebel itself. Let us aid you a little, for old times' sake." You accept their reward and scrap, then collect some remains from the federation ship.</text>
-		<autoReward level="MED">weapon</autoReward>
 	</deadCrew>
 </ship>
 
