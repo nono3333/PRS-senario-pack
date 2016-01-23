@@ -192,11 +192,11 @@ Smaller Event Lists
 <eventList name="OVERRIDE_FEDERATION_BASE_ASSIST">
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_FEDERATION_BASE" hostile="true"/>
+		<ship load="AUTO_REBEL_BASE" hostile="true"/>
 	</event>
 	<event>
 		<text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the rebel base you were told about!</text>
-		<ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
+		<ship load="AUTO_REBEL_BASE2" hostile="true"/>
 	</event>
 	<!-- the new ones-->
 	<event> 
@@ -206,12 +206,12 @@ Smaller Event Lists
 	</event>
 	<event>
 		<text>You arrive in the sector to see a small rebel outpost using their Anti-Ship Battery to fire at an automated drone. Debris from other ships is strewn around the area. It looks like the brunt of the battle is already over. You move in to assist.</text>
-		<ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
+		<ship load="AUTO_REBEL_BASE2" hostile="true"/>
 		<environment type="PDS" target="enemy"/>
 	</event>
 </eventList>
 
-<ship name="REBEL_FEDERATION_PDS" auto_blueprint="SHIPS_FED_ELITE">
+<ship name="REBEL_FEDERATION_PDS" auto_blueprint="SHIPS_REBEL_ELITE">
 	<escape  chance="0.8" min="4" max="6">
 		<text>After watching their squadron get destroyed, it looks like their leader is prepared to turn tail and run.</text>
 	</escape>
