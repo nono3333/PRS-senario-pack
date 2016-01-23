@@ -28,58 +28,9 @@
 	<deadCrew load="federation_TRANSPORT_CAPTURED"/>
 </ship>
 
-
-
 <!--------------------------------
 
-	FEDERATION SHIPS
-	
----------------------------------->
-
-<ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-<ship name="FED_AUTO" auto_blueprint="SHIPS_AUTO">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-<ship name="FED_AND_AUTO" auto_blueprint="SHPS_FED_AND_AUTO">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-<ship name="FED_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<destroyed>
-		<text>The ship explodes, leaving behind a collection of useful scrap material.</text>
-		<autoReward level="MED">fuel</autoReward>
-	</destroyed>
-</ship>
-
-<ship name="FED_FUEL" auto_blueprint="SHIPS_FED"> 
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<destroyed>
-		<text>The ship explodes, leaving behind a collection of useful scrap material.</text>
-		<autoReward level="MED">fuel</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>With the crew dead you are free to scrap the ship.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</deadCrew>
-</ship>
-
-<!--------------------------------
-
-	REBEL SHIPS
+	REBEL/FED SHIPS
 	
 ---------------------------------->
 
@@ -94,7 +45,6 @@
 	<destroyed load="DESTROYED_DEFAULT"/>
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
-
 
 <ship name="REBEL_AUTO_FUEL" auto_blueprint="SHIPS_AUTO"> 
 	<escape timer="80" min="30" max="30"/>
@@ -268,14 +218,14 @@
 	</destroyed>
 </ship>
 		
-<ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_FED">
+<ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
 		<text>The ship breaks apart and you quickly salvage what you can.</text>
 		<autoReward level="MED">standard</autoReward>
 		<choice hidden="true">
 			<text>Continue...</text>
 			<event>
-				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebels. Take this for the help."</text>
+				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated some rebels. Take this for the help."</text>
 				<autoReward level="MED">fuel</autoReward>
 			</event>
 		</choice>
@@ -286,42 +236,14 @@
 		<choice hidden="true">
 			<text>Continue...</text>
 			<event>
-				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated the rebels. Take this for the help."</text>
+				<text>The outpost hails you, "The pompous bastards expected free service just because they defeated some rebels. Take this for the help."</text>
 				<autoReward level="MED">fuel</autoReward>
 			</event>
 		</choice>
 	</deadCrew>
 </ship>
 
-<ship name="SQUAT_WARNING" auto_blueprint="SHIPS_FED">
-	<escape timer="40" min="22" max="22" >
-		<text>They are powering up their FTL! If they get away, they will no doubt warn the fleet of your position!</text>
-		<ship hostile="true"/>
-	</escape>
-	<gotaway>
-		<text>The scout jumps away. They are sure to have informed the fleet of your position. You must get to the next Sector as soon as possible!</text>
-		<modifyPursuit amount="1"/>
-	</gotaway>
-	<destroyed>
-		<text>Their ship breaks apart and you are relieved to know that you are still one step ahead of the fleet.</text>
-		<autoReward level="MED">standard</autoReward>
-	</destroyed>
-	<deadCrew>
-		<text>Their ship goes silent and you are relieved to know that you are still one step ahead of the fleet.</text>
-		<autoReward level="MED">standard</autoReward>
-	</deadCrew>
-</ship>
-
-<ship name="SQUAT_TRANSPORT" auto_blueprint="SHIPS_FED">
-	<escape timer="40" min="14" max="14" >
-		<text>They look like they don't want to fight. They are trying to escape.</text>
-		<ship hostile="true"/>
-	</escape>
-	<destroyed load="federation_TRANSPORT_DESTROYED"/>
-	<deadCrew load="federation_TRANSPORT_CAPTURED"/>
-</ship>
-
-<ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_FED">
+<ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
 		<text>The outpost hails you, "Thank you! I don't know what we did to anger the Federation, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
 		<autoReward level="MED">scrap_only</autoReward>
@@ -366,7 +288,7 @@
 	</destroyed>
 </ship>
 
-<ship name="REBEL_VS_FEDERATION" auto_blueprint="SHIPS_FED">
+<ship name="REBEL_VS_FEDERATION" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
 		<text>With the ship destroyed, you quickly collect useful resources.</text>
 		<autoReward level="MED">standard</autoReward>
@@ -386,7 +308,7 @@
 </ship>
 
 
-<ship name="LONG_ELITE" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="LONG_ELITE" auto_blueprint="SHIPS_REBEL_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<destroyed>
 		<text>You are able to salvage scrap from the ship's debris.</text>
 		<autoReward level="HIGH">standard</autoReward>
@@ -394,7 +316,7 @@
 	<deadCrew load="DEAD_CREW_DEFAULT"/>
 </ship>
 
-<ship name="LONG_FLEET" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="LONG_FLEET" auto_blueprint="SHIPS_REBEL_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<destroyed>
 		<text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
 		<item_modify>
@@ -410,7 +332,7 @@
 </ship>
 
 
-<ship name="REBEL_FLEET_FUEL" auto_blueprint="SHIPS_FED_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
+<ship name="REBEL_FLEET_FUEL" auto_blueprint="SHIPS_REBEL_ELITE"> <!-- NEEDS ELITE BLUEPRINT -->
 	<escape timer="80" min="30" max="30"/>
 	<gotaway>
 		<text>The ship jumps away without a word. You assume they just went to get reinforcements...</text>
@@ -430,7 +352,7 @@
 </ship>
 
 
-<ship name="REBEL_ENGI_UNLOCK_2FAKE" auto_blueprint="SHIPS_FED">
+<ship name="REBEL_ENGI_UNLOCK_2FAKE" auto_blueprint="SHIPS_REBEL">
 	<escape timer="40" min="18" max="18" >
 		<text>As soon as they see you, they power up their engines to jump away. Stop them!</text>
 		<ship hostile="true"/>
@@ -448,7 +370,7 @@
 		<autoReward level="MED">standard</autoReward>
 	</deadCrew>
 </ship>
-<ship name="REBEL_ENGI_UNLOCK_2REAL" auto_blueprint="SHIPS_FED">
+<ship name="REBEL_ENGI_UNLOCK_2REAL" auto_blueprint="SHIPS_REBEL">
 	<escape timer="40" min="18" max="18" >
 		<text>As soon as they see you they power up their engines to jump away. Stop them!</text>
 		<ship hostile="true"/>
@@ -470,7 +392,7 @@
 
 
 
-<ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_FED">
+<ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
 		<text>The federation ship destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
 		<autoReward level="LOW">standard</autoReward>
@@ -601,9 +523,9 @@
 	</deadCrew>
 </ship>
 
-<ship name="ZOLTAN_PRIMITIVES_REBEL" auto_blueprint="SHIPS_FED">
+<ship name="ZOLTAN_PRIMITIVES_REBEL" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
-		<text>The Zoltan hail once the smoke disperses. "Thank you. We were led to believe rebel ideals died along with the rebel itself. Let us aid you a little, for old times' sake." You accept their reward and scrap, then collect some remains from the federation ship.</text>
+		<text>The Zoltan hail once the smoke disperses. "Thank you. We were led to believe Rebel ideals died along with the rebel itself. Let us aid you a little, for old times' sake." You accept their reward and scrap, then collect some remains from the federation ship.</text>
 		<autoReward level="LOW">weapon</autoReward>
 	</destroyed>
 	<deadCrew>
@@ -613,47 +535,10 @@
 </ship>
 
 
-
-
-
-
-<!--------------------------------
-
-	CIVILIAN SHIPS
-	
----------------------------------->
-
-<ship name="CIVILIAN_SHIP" auto_blueprint="SHIPS_CIVILIAN">
-	<destroyed load="DESTROYED_DEFAULT"/>
-	<deadCrew load="DEAD_CREW_DEFAULT"/>
-</ship>
-
-
-
-<ship name="AUTO_FUEL_SELLER" auto_blueprint="SHIPS_AUTO">  <!-- needs "WEAK" tag-->
-	<escape timer="80" min="30" max="30"/>
-	<gotaway>
-		<text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
-	</gotaway>
-	<destroyed>
-		<text>As the ship breaks apart, you frantically try to salvage the remaining fuel from its cargo.</text>
-		<autoReward level="MED">fuel</autoReward>
-	</destroyed>
-	<escape chance="0.5" min="2" max="5" >
-		<text>It is apparent that the ship was not intended for combat. It seems to be trying to jump away.</text>
-		<ship hostile="true"/>
-	</escape>
-</ship>
-
-
-
-
 <!--------------------------------
 
 	CRYSTAL SHIPS
-	
-	and ships used in the crystal sector
-	
+
 ---------------------------------->
 
 
@@ -721,7 +606,7 @@
 	</deadCrew>
 </ship>
 
-<ship name="REBEL_CRYSTAL_REBEL_CRYSTAL" auto_blueprint="SHIPS_FED">
+<ship name="REBEL_CRYSTAL_REBEL_CRYSTAL" auto_blueprint="SHIPS_REBEL">
 	<destroyed>
 		<text>The federation ship destroyed, you pick the bones of their ship.</text>
 		<autoReward level="MED">standard</autoReward>
@@ -747,7 +632,7 @@
 	
 ---------------------------------->
 
-<ship name="CIVILIAN_ESCORT_SHIP" auto_blueprint="SHIPS_CIVILIAN">
+<ship name="CIVILIAN_ESCORT_SHIP" auto_blueprint="SHIPS_REBEL">
 	<surrender  chance="0.5" min="2" max="4">
 		<text>"Alright, we surrender! You can have our supplies."</text>
 		<choice>
