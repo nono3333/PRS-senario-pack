@@ -110,7 +110,7 @@
 
 <event name="federation_AUTO">
 	<text load="federation_AUTO"/>
-	<ship load="FED_AUTO" hostile="true"/>
+	<ship load="REBEL_AUTO" hostile="true"/>
 </event>
 
 <event name="AUTO_WARNING" unique = "true">
@@ -480,7 +480,7 @@
 
 <event name="BROKEN_federation_DRONE" unique="true">
 	<text>You find a federation automated scout floating near this beacon. Despite its pristine condition, it appears to be de-activated.</text>
-	<ship load="FED_AUTO" hostile="false"/>
+	<ship load="REBEL_AUTO" hostile="false"/>
 	<choice hidden="true">
 		<text>Attempt to download the ship's data stores.</text>
 		<event load="DOWNLOAD_DRONE_DATA"/>
@@ -504,7 +504,7 @@
 	</event>
 	<event>
 		<text>You accidentally reactivate the ship's AI. Its weapons immediately go online; prepare for a fight!</text>
-		<ship load="FED_AUTO" hostile="true"/>
+		<ship load="REBEL_AUTO" hostile="true"/>
 	</event>
 </eventList>
 <eventList name="BROKEN_federation_DRONE_SENSORS">
@@ -557,7 +557,7 @@
 <event name="BOARDERS_federation_SHIP">
 	<text load="BOARDERS_federation_SHIP"/>
 	<boarders min="2" max="3" class="human"/>
-	<ship load="FED_SHIP" hostile="true"/>
+	<ship load="REBEL" hostile="true"/>
 </event>
 <textList name="BOARDERS_federation_SHIP" unique="false">
 	<text>You receive a message from a nearby federation station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
