@@ -587,11 +587,11 @@
 	-->
 
 <event name="FLAGSHIP_CONSTRUCTION" unique="true">
-	<text>You arrive at the beacon to find yourself in a huge federation shipyard, scaffolding and construction drones filling the sector! The entire system looks devoted to ship construction, the nearby planets and moons ruthlessly mined to harvest resources for a ship of immense size...</text>
+	<text>You arrive at the beacon to find yourself in a huge Federation shipyard, scaffolding and construction drones filling the sector! The entire system looks devoted to ship construction, the nearby planets and moons ruthlessly mined to harvest resources for a ship of immense size...</text>
 	<choice>
 		<text>Look around.</text>
 		<event>
-			<text>Warning lights flash as scans identify the gigantic ship under construction - it's a second federation Flagship! This must be the secret shipyards where the first one was built, and you've accidentally stumbled across it! Even in its weakened state, the federation ship powers up... get ready, you've got a hell of a fight on your hands.</text>
+			<text>Warning lights flash as scans identify the gigantic ship under construction - it's a second Federation Flagship! This must be the secret shipyards where the first one was built, and you've accidentally stumbled across it! Even in its weakened state, the federation ship powers up... get ready, you've got a hell of a fight on your hands.</text>
 			<ship load="FLASHSHIP_CONSTRUCTION_SHIP" hostile="true"/>
 		</event>
 	</choice>
@@ -614,8 +614,8 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>As you are leaving you detect an interesting rebel ship signal. Apparently the federations were reverse engineering the advanced weaponry on a prototype rebel cruiser. You don't know how they captured the ship intact but you program its FTL drive to return the ship to the nearest rebel base. You just hope it gets there unharmed.</text>
-			<unlockShip id="4">The rebel Cruiser has been unlocked and added to the hangar!</unlockShip>
+			<text>As you are leaving you detect another interesting Federation ship signal. The ship itself is without crew, but it would be a waste to leave it here. You program its FTL drive to return the ship to the nearest Rebel base. You just hope it gets there unharmed.</text>
+			<unlockShip id="4">The Federation Cruiser has been unlocked and added to the hangar!</unlockShip>
 		</event>
 	</choice>
 </event>
