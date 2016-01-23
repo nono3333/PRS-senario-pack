@@ -86,7 +86,7 @@
 
 <event name="NEBULA_federation">
 	<text load="NEBULA_federation_LIST"/>
-	<ship load="FED_SHIP" hostile="true"/>
+	<ship load="REBEL" hostile="true"/>
 	<environment type="nebula"/>
 </event>
 <textList name="NEBULA_federation_LIST">
@@ -102,7 +102,7 @@
 
 <event name="NEBULA_AUTO">
 	<text load="NEBULA_AUTO_LIST"/>
-	<ship load="FED_AUTO" hostile="true"/>
+	<ship load="REBEL_AUTO" hostile="true"/>
 	<environment type="nebula"/>
 </event>
 <textList name="NEBULA_AUTO_LIST">
@@ -355,7 +355,7 @@
 	</event>
 	<event>
 		<text>While searching fruitlessly through the nebula, you stumble upon the federation ship which the rebel loyalists were likely hiding from. You prepare for a fight.</text>
-		<ship load="FED_SHIP" hostile="true"/>
+		<ship load="REBEL" hostile="true"/>
 	</event>
 	<event>
 		<text>You get lucky and find them floating not too deep into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
@@ -596,7 +596,7 @@
 	<choice>
 		<text>Prepare to fight.</text>
 		<event>
-			<ship load = "FED_AUTO" hostile="true"/>
+			<ship load = "REBEL_AUTO" hostile="true"/>
 		</event>
 	</choice>
 	<choice req="engines" lvl="3" max_group="0" hidden="true">
@@ -622,13 +622,13 @@
 	</event>
 	<event>
 		<text>Despite your advanced engines you are unable to shake them; you turn and prepare for a fight.</text>
-		<ship load = "FED_AUTO" hostile="true"/>
+		<ship load = "REBEL_AUTO" hostile="true"/>
 	</event>
 </eventList>
 
 <event name="STORM_federation" unique = "true">
 	<text>You arrive in the middle of a plasma storm. Despite the harsh conditions, a federation scout seems to be waiting for you.</text>
-	<ship load = "FED_SHIP" hostile = "true"/>
+	<ship load = "REBEL" hostile = "true"/>
 	<environment type="storm"/>
 </event>
 
