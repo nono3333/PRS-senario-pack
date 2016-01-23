@@ -4,7 +4,6 @@
 	<event load="SLUG_PIRATE"/>
 	<event load="SLUG_federation"/>
 	<event load="DONOR_BLACK_RAVEN"/>
-	
 </eventList>
 
 
@@ -15,8 +14,6 @@
 	<event load="NEBULA_SLUG_DOORS"/>
 	<event load="NEBULA_SLUG_OXYGEN"/>
 	<event load="NEBULA_SLUG_MEDBAY"/>
-
-
 </eventList>
 
 <eventList name="NEUTRAL_SLUG">
