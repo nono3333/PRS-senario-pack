@@ -3,10 +3,8 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 -->
 
 <!--------------------------------
-	ENGI EVENTLIST     ''   " " "
+	ENGI EVENTLIST
 ---------------------------------->
-
-
 
 <eventList name="ITEMS_ENGI">
 	<event load="ENGI_GIFT"/>
