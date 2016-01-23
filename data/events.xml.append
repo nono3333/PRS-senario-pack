@@ -88,6 +88,17 @@ item - scrap + that thing  -->
 	<text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing federation ships catch you!</text>
 </event>
 
+<event name="START_BEACON_CIVILIAN">
+	<text load="START_BEACON_CIVILIAN"/>
+</event>
+<textList name="START_BEACON_CIVILIAN">
+	<text>Although this sector is home to many civilians, the Federation is also constantly on guard here.</text>
+	<text>The Federatives patrol this sector, trying to keep out the Rebels. Fortunately, most of their ships have left to defend their base.</text>
+	<text>This sector used to be heavely guarded by the Federation, but now there are only a handful of them left here thanks to the Rebellion.</text>
+	<text>Some civilian sectors are already under Rebel control, this one is still desperately being protected by the Federation</text>
+	<text>You will have to be cautious in this sector. The Federatives have their outposts here and are no doubt looking for you.</text>
+</textList>
+
 
 <event name = "FLEET_EASY">
 	<fleet>rebel</fleet>
@@ -95,7 +106,6 @@ item - scrap + that thing  -->
 	<ship load = "LONG_FLEET" hostile ="true"/>
 	<environment type="PDS" target="player"/>
 </event>
-
 
 <event name = "FLEET_EASY_DLC">
 	<fleet>rebel</fleet>
