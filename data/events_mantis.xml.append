@@ -1,45 +1,3 @@
-<!-- Copyright (c) 2012 by Subset Games. All rights reserved -->
-
-<!--     ' ,  " " "
-			SUMMARY  - 
-A list of all main events to be called by lists
-	does not include sub-events)
-	
-Structure:
-	START_BEACON_MANTIS
-	STORE_MANTIS
-	NOTHING_MANTIS
-	
-Items:
-	MANTIS_CAPTURE_COMMANDO			NEW!!
-	MANTIS_GAMBLE					NEW!!
-	
-Hostile:
-	MANTIS_FIGHT
-	
-Neutral:
-	MANTIS_FIGHT_CHOICE
-	MANTIS_CIVILIAN
-	MANTIS_CREW
-	
-Environment:
-						???	MANTIS_NEBULA_FIGHT
-	MANTIS_SUN_FIGHT
-	
-Boarders:
-	MANTIS_BOARDERS
-
-Special
-	MANTIS_NAMED_THIEF
---->
-
-
-
-
-
-
-
-
 <!--------------------------------
 	MANTIS EVENTLISTS
 ---------------------------------->
@@ -502,7 +460,7 @@ Special
 			<ship hostile="true"/>
 		</event>
 	</choice>
-</text>
+</event>
 <event name="MANTIS_NAMED_THIEF_DEFEAT">
 	<text>No more life signs are detected aboard their ship. You appear to have won.</text>
 	<choice hidden="true">
