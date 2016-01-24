@@ -43,9 +43,14 @@
 		<power>Combat damage inflicted is halved</power>
 	</powerList>
 	<colorList>
-		<layer> 
-		        <!-- Layer 1 - color -->
-		        <color r="161" g="150" b="152" a="0.7"/>
+		<layer>
+			<!-- Layer 1 - color -->
+			<color r="161" g="150" b="152" a="0.7"/>
+			
+<!-- NB! I believe you need layer images for the engi.
+The game doesn't have them so it makes black boxes.
+Try using the layer images in CE resources and see if it works.-->
+			
 			<!-- bordeaux -->
 			<color r="106" g="29" b="41" a="0.7" />
 			<!-- white -->
@@ -173,11 +178,12 @@
 			<color r="55" g="40" b="255" a="0.2" />
 			<color r="115" g="131" b="138" a="0.1" />
 			<!-- orange -->
-			<color r="217" g="66" b="42" a="0.1" />
+			<color r="217" g="66" b="42" a="0.6" />
+			<!-- a is transparency, 0.0 is invisible, 1.0 is completely visible-->
 			<!-- red -->
-			<color r="231" g="22" b="22" a="0.1" />
+			<color r="231" g="22" b="22" a="0.6" />
 			<!-- green -->
-			<color r="56" g="183" b="39" a="0.1" />
+			<color r="56" g="183" b="39" a="0.5" />
 		</layer>
 	</colorList>
 </crewBlueprint>
