@@ -174,7 +174,7 @@
 		<text>Attempt to remain concealed.</text>
 		<event load="NEBULA_federation_UNDETECTED_LIST"/>
 	</choice>
-	<choice req="cloaking" hidden="true" hidden="true"> 
+	<choice req="cloaking" hidden="true"> 
 		<text>(Cloaking) Cloak to stay hidden.</text>
 		<event>
 			<text>You use your cloaking system to slip further into the nebula undetected.</text>
