@@ -557,16 +557,13 @@ Beacon On!!!!
 		</item_modify>
 	</event>
 </eventList>
-		
 
-		
-		
 
 <!-----------
 		ENGI
 		Specific no fuel events that should eventually be tied to the engi sector
 ------------>
-	
+
 <event name="FUEL_ON_MANTIS_ATTACK">
 	<text load="FUEL_ON_MANTIS_ATTACK"/>
 	<ship load="MANTIS_FUEL" hostile="true"/>
@@ -581,9 +578,9 @@ Beacon On!!!!
 	<text>Before long a ship jumps nearby, no doubt responding to your beacon. However any relief you felt disappears as soon as you recognize that the ship is of Mantis design. Prepare for a fight.</text>
 	<text>You detect a Mantis ship approaching and hack into their comm channel and hear, "...hope they put up more of a fight than the last rebel ship. This has been a disappointing day so far." Looks like they're not here to help.</text>
 	<text>A Mantis ship jump nearby. Sensors detect weapon locks and all hope of avoiding a fight fades away.</text>
-</event>
-		
-		
+</textList>
+
+
 <!-----------
 		ROCKS
 		Specific no fuel events that should eventually be tied to the rock sector
