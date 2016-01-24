@@ -192,7 +192,7 @@
 			<ship load="JELLY_STATUS_OXYGEN" hostile="true"/>
 			<status type="divide" target="player" system="oxygen" amount="2"/>
 		</event>
-	</event>
+	</choice>
 	<choice hidden="true">
 		<text>Weapons.</text>
 		<event>
