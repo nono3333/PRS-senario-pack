@@ -407,7 +407,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 		<text>(Long Ranged Scanners) Run another scan.</text>
 		<event load="DISTRESS_ENGI_REACTOR_SCAN"/>
 	</choice>
-</choice>
+</event>
 <eventList name="DISTRESS_ENGI_REACTOR_LIST1">
 	<event>
 		<text>You send an away team to investigate, but there's nothing save for the acidic stench of burnt Engi parts. This place is dead.</text>
