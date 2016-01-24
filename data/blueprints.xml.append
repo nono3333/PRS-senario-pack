@@ -41,6 +41,7 @@
 	<powerList>
 		<power>Repair speed is doubled</power>
 		<power>Combat damage inflicted is halved</power>
+	</powerList>
 	<colorList>
 		<layer>
 			<!-- Bordeaux -->
@@ -54,7 +55,7 @@
 			<!-- blue -->
 			<color r="17" g="29" b="71" a="0.7"/>-->
 		</layer>
-	</powerList>
+	</colorList>
 </crewBlueprint>
 <crewBlueprint name="mantis">
 	<desc>The Mantis disregard for individual lives led to their evolution as a vicious warrior race.</desc>
