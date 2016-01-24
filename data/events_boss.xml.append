@@ -77,7 +77,7 @@ Neutral
 
 <event name="BOSS_SCOUT" unique="false">
 	<text load="BOSS_SCOUT"/>
-	<ship load="FED_AND_AUTO" hostile="true"/>
+	<ship load="REBEL_AND_AUTO" hostile="true"/>
 </event>
 <textList name="BOSS_SCOUT">
 	<text>Although this sector is still under rebel control, a small scout has slipped by the fleet. You move in to engage.</text>  <!--image- Fleet background-->
