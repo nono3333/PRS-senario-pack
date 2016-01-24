@@ -480,7 +480,7 @@ shield research center - jams shields
 		</item_modify>
 		<crewMember amount="1" class="energy"/>
 	</event>
-</event>
+</eventList>
 
 	
 <event name="ZOLTAN_SCIENCE_DOCK" unique="true">
