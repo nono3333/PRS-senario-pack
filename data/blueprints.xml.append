@@ -47,13 +47,13 @@
 			<!-- Bordeaux -->
 			<color r="106" g="29" b="41" a="0.7" />
 			<!-- grey -->
-			<color r="161" g="150" b="152" a="0.7"/>-->
+			<color r="161" g="150" b="152" a="0.7"/>
 			<!-- white -->
-			<color r="255" g="255" b="255" a="0.7"/>-->
+			<color r="255" g="255" b="255" a="0.7"/>
 			<!-- green -->
-			<color r="32" g="79" b="37" a="0.7"/>-->
+			<color r="32" g="79" b="37" a="0.7"/>
 			<!-- blue -->
-			<color r="17" g="29" b="71" a="0.7"/>-->
+			<color r="17" g="29" b="71" a="0.7"/>
 		</layer>
 	</colorList>
 </crewBlueprint>
@@ -72,13 +72,13 @@
 	</powerList>
 	<colorList>
 		<layer>
-			<!-- Layer 1 - color 
+			<!-- Layer 1 - color -->
 			<color r="17" g="103" b="100" a="0.7"/>
 			<color r="223" g="95" b="2" a="0.5"/>
 			<color r="119" g="200" b="45" a="0.6"/>
 			<color r="119" g="165" b="45" a="0" />
 			<color r="156" g="156" b="35" a="0.5" />
-			<!--
+
 			<color r="80" g="98" b="33" a="0.7"/>
 			<color r="51" g="241" b="0" a="0.9" />
 			<color r="111" g="241" b="207" a="0.9" />
