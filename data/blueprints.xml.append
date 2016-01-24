@@ -1,7 +1,7 @@
 <!-- 
 
 		*********************
-		   CREW BLUEPRINTS 
+		  PRS CREW BLUEPRINTS 
 		*********************
 -->
 <crewBlueprint name="human">
@@ -41,6 +41,19 @@
 	<powerList>
 		<power>Repair speed is doubled</power>
 		<power>Combat damage inflicted is halved</power>
+	<colorList>
+		<layer>
+			<!-- Bordeaux -->
+			<color r="106" g="29" b="41" a="0.7" />
+			<!-- grey -->
+			<color r="161" g="150" b="152" a="0.7"/>-->
+			<!-- white -->
+			<color r="255" g="255" b="255" a="0.7"/>-->
+			<!-- green -->
+			<color r="32" g="79" b="37" a="0.7"/>-->
+			<!-- blue -->
+			<color r="17" g="29" b="71" a="0.7"/>-->
+		</layer>
 	</powerList>
 </crewBlueprint>
 <crewBlueprint name="mantis">
@@ -152,6 +165,7 @@
 			<color r="55" g="40" b="255" a="0.4" />
 			<color r="55" g="40" b="255" a="0.2" />
 			<color r="115" g="131" b="138" a="0.1" />
+			<color r="217" g="66" b="42" a="0.1" />
 		</layer>
 	</colorList>
 </crewBlueprint>
