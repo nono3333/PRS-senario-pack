@@ -104,8 +104,8 @@
 
 <sectorDescription name="REBEL_SECTOR_MINIBOSS" minSector="4" unique="true">   <!-- This is the unique sector that has the mini-boss fight-->
 	<nameList>
-		<name>Federation Stronghold B12</name>
-		<name>Federation Stronghold N333</name>
+		<name>Federation Sector B12</name>
+		<name>Federation Sector N333</name>
 		<name>Federation Sector Alpha 15</name>
 		<name>Federation Sector Beta 045</name>
 	</nameList>
@@ -130,12 +130,12 @@
 
 <sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
 	<nameList>
-		<name>Rebel Controlled Sector SGP</name>
-		<name>Rebel Controlled Sector AHSA</name>
-		<name>Rebel Controlled Sector V2K3</name>
-		<name>Rebel Controlled Sector MF</name>
-		<name>Rebel Controlled Sector FTL 86</name>
-		<name>Rebel Controlled Sector T-34 C</name>
+		<name>Rebel Sector SGP</name>
+		<name>Rebel Sector AHSA</name>
+		<name>Rebel Sector V2K3</name>
+		<name>Rebel Sector MF</name>
+		<name>Rebel Sector FTL 86</name>
+		<name>Rebel Sector T-34 C</name>
 	</nameList>
 	<trackList>
 		<track>colonial</track>
