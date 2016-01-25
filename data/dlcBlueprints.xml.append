@@ -14,8 +14,8 @@
 	<colorList>
 		<layer><!-- Layer 1 - color -->
 			<color r="196" g="117" b="232" a="0.3"/>
-			<color r="1" g="1" b="1" a="0"/>
-			<color r="1" g="1" b="1" a="0.2"/>
+			<color r="47" g="12" b="12" a="0.8"/>
+			<color r="165" g="166" b="225" a="0.8"/>
 			<color r="232" g="220" b="117" a="0.5"/>
 		</layer>
 	</colorList>
