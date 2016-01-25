@@ -1,0 +1,24 @@
+<!------------------------------------------>
+
+<crewBlueprint name="anaerobic">
+	<desc>These anaerobic beings seem friendly enough.</desc>
+	<title>Lanius</title>
+	<short>Lanius</short>
+	<cost>50</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Drains oxygen from rooms.</power>
+		<power>Slow movement but no damage from lack of oxygen.</power>
+	</powerList>
+	<colorList>
+		<layer><!-- Layer 1 - color -->
+			<color r="196" g="117" b="232" a="0.3"/>
+			<color r="1" g="1" b="1" a="0"/>
+			<color r="1" g="1" b="1" a="0.2"/>
+			<color r="232" g="220" b="117" a="0.5"/>
+		</layer>
+	</colorList>
+</crewBlueprint>
+
+<!------------------------------------------>
