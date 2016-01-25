@@ -1,6 +1,6 @@
 <!---------------------- SHIP LISTS --------------------->
 
-<blueprintList name="SHPS_REBEL_AND_AUTO">
+<blueprintList name="SHIPS_REBEL_AND_AUTO">
 	<name>AUTO_BASIC</name>
 	<name>AUTO_ASSAULT</name>
 	<name>REBEL_FAT</name>
