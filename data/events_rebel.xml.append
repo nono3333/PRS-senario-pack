@@ -1,4 +1,4 @@
-<eventList name="HOSTILE_federation">
+<eventList name="HOSTILE_REBEL">
 	<event load="federation"/>
 	<event load="federation_AUTO"/>
 	<event load="AUTO_ASTEROID"/>
@@ -6,8 +6,7 @@
 	<event load="SQUAT_WARNING"/>
 </eventList>
 
-
-<eventList name="NEUTRAL_federation">
+<eventList name="NEUTRAL_REBEL">
 	<event load="AUTO_CIVILIAN"/>
 	<event load="SQUAT_REFUEL_STATION"/>
 	<event load="AUTO_DEFENSE_MAP"/>
@@ -18,14 +17,13 @@
 	<event load="ALISON_DEFECTOR"/>
 </eventList>
 
-
-<eventList name="BOARDERS_federation">
+<eventList name="BOARDERS_REBEL">
 	<event load="BOARDERS_SUN"/>
-	<event load="BOARDERS_federation_SHIP"/>
+	<event load="BOARDERS_REBEL_SHIP"/>
 </eventList>
 
 
-<eventList name="DISTRESS_BEACON_federation">
+<eventList name="DISTRESS_BEACON_REBEL">
 	<event load="CIVILIAN_ASTEROIDS_BEACON"/>  
 	<event load="REBEL_VS_FEDERATION"/> 
 	<event load="ESCORT_BEACON"/>
@@ -35,7 +33,7 @@
 </eventList>
 
 
-<eventList name="NEBULA_federation">
+<eventList name="NEBULA_REBEL">
 	<event load="NEBULA_EMPTY"/>
 	<event load="NEBULA_federation"/>  
 	<event load="NEBULA_AUTO"/>
@@ -50,7 +48,7 @@
 	<event load="NEBULA_federation_BOARDING"/>
 </eventList>
 
-<eventList name="QUESTS_federation">
+<eventList name="QUESTS_REBEL">
 	<event load="MERCHANT_REQUEST"/>
 	<event load="FEDERATION_PLANET_SIGNAL"/>
 </eventList>
@@ -551,26 +549,17 @@
 	Events with boarder calls
 ------------>
 
-
-
-
-<event name="BOARDERS_federation_SHIP">
-	<text load="BOARDERS_federation_SHIP"/>
+<event name="BOARDERS_REBEL_SHIP">
+	<text load="BOARDERS_REBEL_SHIP"/>
 	<boarders min="2" max="3" class="human"/>
 	<ship load="REBEL" hostile="true"/>
 </event>
-<textList name="BOARDERS_federation_SHIP" unique="false">
+<textList name="BOARDERS_REBEL_SHIP" unique="false">
 	<text>You receive a message from a nearby federation station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
 	<text>Your sensors warn of an incoming federation ship at the same time as you hear the telltale signs of a teleporter. You hear someone taunt from within the ship, "Ready to die? I sure am ready to get a promotion!"</text>
 	<text>Incoming message, "Hello Captain," says a federation in an officer's garb. "How very generous of you to turn yourself in. Prepare to be boarded. Come quietly and we may be lenient."</text>
 	<text>You receive a message on a low-band channel. "You're surrounded, just like the last of your rebel friends. Just die already." The enemy has teleported onto your ship!</text>
 </textList>
-
-
-
-
-
-
 
 
 <!-----------
