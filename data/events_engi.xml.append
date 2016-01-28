@@ -19,7 +19,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 
 <eventList name="HOSTILE_ENGI">
 	<event load="ENGI_MANTIS_FIGHT"/>
-	<event load="ENGI_federation_FIGHT"/>
+	<event load="ENGI_REBEL_FIGHT"/>
 	<event load="ENGI_PIRATE_FIGHT"/>
 	
 	<event load="PIRATE"/>
@@ -58,7 +58,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 
 <eventList name="DISTRESS_BEACON_ENGI">
 	<event load="ENGI_STATION_DISTRESS"/>
-	<event load="DISTRESS_ENGI_federation"/>
+	<event load="DISTRESS_ENGI_REBEL"/>
 	<event load="DISTRESS_ENGI_REACTOR"/>
 	
 	<event load="CIVILIAN_ASTEROIDS_BEACON"/>  
@@ -86,24 +86,6 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	Others events necessary for strucrtural stuff
 ------------>
 
-<event name="START_BEACON_ENGI">
-	<text load="START_BEACON_ENGI"/>
-</event>
-<textList name="START_BEACON_ENGI">
-	<text>You have arrived in Engi space. The Mantis have been threatening the Engi core worlds, but you should be able to stock up for your journey.</text>
-	<text>You have arrived in Engi space. The fall of the rebel has brought tough times for these robotic lifeforms, but they're usually willing to help.</text>
-</textList>
-
-<event name="STORE_ENGI">
-	<text load="STORE_ENGI"/>
-	<store/>
-</event>
-<textList name="STORE_ENGI">
-	<text>The Engi can do remarkable things with just a pile of scrap. The Engi hive at this beacon are selling equipment for just that.</text>
-	<text>A message arrives: "Your scrap, ours. Our weapons for you." You're about to raise the shields when you realize it's just an Engi trader looking for a trade.</text>
-	<text>An Engi ship hails: "Engine upgrade necessary for travel home. Sale of equipment necessary for engine upgrade."</text>
-</textList>
-
 <event name="NOTHING_ENGI">
 	<text load="NOTHING_ENGI"/>
 </event>
@@ -115,15 +97,10 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	<text>You see a number of Engi space stations and fleets nearby. Despite looking like piles of junk loosely tied together they are actually a model of efficiency. They just lack a certain aesthetic emphasis in their constructions.</text>
 	<text>This system appears quite peaceful. You're not sure how long it'll last between the combined threats of the federations and Mantis.</text>
 	<text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi.</text>
-	<text>You see a small federation carrier in the distance. You lay low and try to blend in with the other traffic. However it's surprising to see a federation military ship alone deep in Engi space.</text>
+	<text>You see a small Federation carrier in the distance. You lay low and try to blend in with the other traffic. However it's not surprising to see a Federation military ship in Engi space.</text>
 	<text>The Engi seem to have avoided this particular node, along with every other life-form. You keep your eyes peeled for reasons why, but spin up the FTL without event.</text>
 	<text>A cluster of Engi satellites in orbit of a nearby planet are the only clue the mechanical species was ever here. You have other places to be.</text>
 </textList>
-
-
-
-
-
 
 
 
@@ -137,14 +114,14 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	<autoReward level="RANDOM">standard</autoReward>
 </event>
 <textList name="ENGI_GIFT">
-	<text>An Engi vessel hails you. "Identity: rebel? Outlier probability. Implies... revival. Implies... hope. Assistance suggested." They offer some supplies.</text>
+	<text>An Engi vessel, having defeated a Mantis ship, prepares to jump. There are still supplies remaining in the Mantis ship wreck. You take what you can.</text>
 	<text>You cross paths with an Engi cargo vessel hurrying home before the Mantis fleets attempt to take over this sector. They're happy to offload some of their cargo to get home faster.</text>
 	<text>You make contact with an isolated Engi science station who are staying put despite the likelihood of Mantis invasion. They suggest you trial some experimental technology.</text>
 	<text>This was the site of a recent battle. Either a show of Mantis force, or the Engi here weren't disposed to go peacefully. You pick through the pieces.</text>
 </textList>
 
 <event name="ENGI_FLEET_DELAY" unique="true">
-	<text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the rebel-Mantis War, and they suggest it might be used to lure the pursuing federation fleet.</text>
+	<text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing Federation fleet.</text>
 	<choice>
 		<text>Booby trap the cache.</text>
 		<event>
@@ -164,38 +141,8 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	</choice>
 </event>
 
-<event name="ENGI_MONSTER" unique="true">  <!-- TO DO - Need black image!!!!!! JUSTIN!!!! -->
-	<img back="BG_DARK" planet="NONE"/>
-	<text>As you jump in you're hailed urgently by an Engi science vessel in the distance. "We propose that you do not see the creature." There's nothing on the scanner, which is when you realize you can't see the creature because you're inside it!</text>
-	<choice hidden="true">
-		<text>Jump away ASAP.</text>
-		<event/>
-	</choice>
-	<choice hidden="true" req="sensors" lvl="3">
-		<text>(Improved Sensors) Scan the monstrosity.</text>
-		<event>
-			<text>You detect a faint, arrhythmic sub-wave pattern. Could the creature be communicating? You forward your observations to the Engi vessel and they thank you in turn.</text>
-			<autoReward level="LOW">augment</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true" req="ADV_SCANNERS">
-		<text>(Long-Ranged Scanners) Scan the monstrosity.</text>
-		<event>
-			<text>You detect a faint, arrhythmic sub-wave pattern. Could the creature be communicating? You forward your observations to the Engi vessel and they thank you in turn.</text>
-			<autoReward level="LOW">augment</autoReward>
-		</event>
-	</choice>
-</event>
-
-
-
-
 <event name="ENGI_SURRENDER" unique="true">
 	<text>An Engi ship in the vicinity, seeing you jump in armed to the teeth, immediately broadcasts its surrender: "Subject goal: wealth. Engi motivation: survival. Transfer of goods acceptable?"</text>
-	<choice hidden="true">
-		<text>Explain that you're friendly.</text>
-		<event load="ENGI_SURRENDER_LIST"/>
-	</choice>
 	<choice hidden="true">
 		<text>Accept their offer of surrender.</text>
 		<event>
@@ -203,19 +150,20 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 			<autoReward level="RANDOM">standard</autoReward>
 		</event>
 	</choice>
+	<choice hidden="true">
+		<text>Explain that you're friendly.</text>
+		<event load="ENGI_SURRENDER_LIST"/>
+	</choice>
 </event>
 <eventList name="ENGI_SURRENDER_LIST">
 	<event>
 		<text>The Engi seem relieved, and eager to get underway. They set off without saying goodbye.</text>
 	</event>
 	<event>
-		<text>The Engi are satisfied with your explanation. "Beneficial. Subject goal: long, long journey. Remains compatible with transfer of goods from Engi." They send over the gear willingly, and you feel better for it.</text>
+		<text>The Engi are satisfied with your explanation. "Beneficial. Subject goal: long, long journey. Remains compatible with transfer of goods from Engi." They send over the gear willingly.</text>
 		<autoReward level="RANDOM">standard</autoReward>
 	</event>
 </eventList>
-
-
-
 
 
 
@@ -224,28 +172,10 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	Events that call up a fight for sure
 ------------>
 
-<event name="ENGI_MANTIS_FIGHT">
-	<text load="ENGI_MANTIS_FIGHT"/>
-	<ship load="MANTIS_FIGHT" hostile="true"/>
-</event>
-<textList name="ENGI_MANTIS_FIGHT">
-	<text>A mixed radar signal turns out to be a Mantis attack ship scavenging the remains of an Engi carrier. They turn and fight.</text>
-	<text>You come across a Mantis raider taking pot shots at a defenceless Engi supply station. Discovering its weapons aren't much of a match for the station's armour, it turns on your ship. Battle stations!</text>
-	<text>The area looks clear, and you prepare to jump off, but a Mantis scout jumps in behind you! They're as surprised as you are, but their weapons are already online.</text>
-	<text>You find a Mantis ship harrying a small squad of Engi. They make it to the node and jump off, leaving you toe to toe with their pursuer!</text>
-</textList>
-
-<event name="ENGI_federation_FIGHT">
-	<text>The federation fighter here would seem to suggest elements of the federation fleet are already making incursions on Engi space. You move to engage.</text>
+<event name="ENGI_REBEL_FIGHT">
+	<text>The Federation fighter here would seem to suggest elements of the Federation fleet are already in patrol in Engi space. You move to engage.</text>
 	<ship load="FED_SHIP" hostile="true"/>
 </event>
-
-<event name="ENGI_PIRATE_FIGHT">
-	<text>There must have been rich pickings for pirates around here up until war broke out. The pirate you encounter here looks worn down, but hungry. You'll have to fight!</text>
-	<ship load="PIRATE" hostile="true"/>
-</event>
-
-
 
 
 <!-----------
@@ -306,15 +236,6 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 				<autoReward level="LOW">drone</autoReward>
 			</event>
 		</choice>
-		<choice req="engi" hidden="true">
-			<text>(Engi Crew) Threat unresolved. Current mission imperative: Protocol 52.34.</text>
-			<event>
-				<text>They respond, "Understood. Re-establishment of rebel highest import. Transmitting hidden base coordinates. Repairing hull and attaching ship to ship ordnance."</text>
-				<autoReward level="LOW">weapon</autoReward>
-				<quest event="HIDDEN_FEDERATION_BASE_LIST"/>
-				<damage amount="-10"/>
-			</event>
-		</choice>
 	</event>
 	<event>
 		<text>They thank you for the assistance and when you tell them of your mission, one of the Engi asks if he can assist your crew. You welcome him aboard.</text>
@@ -330,13 +251,13 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	Events that havea distress beacon  
 ------------>
 
-<event name="DISTRESS_ENGI_federation" unique="true">
-	<text>The distress signal originates from a small Engi ship under attack by a federation fighter - but when the federations see rebel markings they turn to attack!</text> 
+<event name="DISTRESS_ENGI_REBEL" unique="true">
+	<text>The distress signal originates from a small Engi ship under attack by a Rebel fighter. At the same time a Federation ship arrives. They notice you beforehand and turn to engage.</text> 
 	<distressBeacon/>
 	<ship load="DISTRESS_ENGI_REBEL" hostile="true"/>
 </event>
 <event name="DISTRESS_ENGI_federation_RESULT">
-	<text>The Engi vessel turns out to be very poorly equipped - barely a runabout, really. They're trying to outrun the federations, and need all the help they can get.</text>
+	<text>The Engi vessel turns out to be very poorly equipped - barely a runabout, really. They're trying to outrun pirates, and need all the help they can get.</text>
 	<choice hidden="true">
 		<text>Give them 25 scrap.</text>
 		<event load="DISTRESS_ENGI_federation_LIST1"/>
@@ -347,9 +268,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	</choice>
 	<choice hidden="true">
 		<text>Give them nothing.</text>
-		<event>
-			<text>Engi can't feel fear, so they bear you no ill will when you explain you're unwilling to help. They set off on their journey and you do the same.</text>
-		</event>
+		<event/>
 	</choice>
 </event>
 <eventList name="DISTRESS_ENGI_federation_LIST1">
@@ -383,109 +302,6 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	</item_modify>
 	<augment name="NANO_MEDBAY"/>
 </event>
-		
-		
-		
-<event name="DISTRESS_ENGI_REACTOR" unique="true">
-	<text>You arrive at a smoldering Engi research station, its distress call unanswered - attacked by pirates or Mantis most likely. There may be someone left alive, or else something of value left on board.</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Board the station.</text>
-		<event load="DISTRESS_ENGI_REACTOR_LIST1"/>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore it.</text>
-		<event>
-			<text>The place looks in bad state, probably nothing of use there. Time to move on.</text>
-		</event>
-	</choice>
-	<choice hidden="true" req="sensors" lvl="2">
-		<text>(Improved Sensors) Run another scan.</text>
-		<event load="DISTRESS_ENGI_REACTOR_SCAN"/>
-	</choice>
-	<choice hidden="true" req="ADV_SCANNERS">
-		<text>(Long Ranged Scanners) Run another scan.</text>
-		<event load="DISTRESS_ENGI_REACTOR_SCAN"/>
-	</choice>
-</event>
-<eventList name="DISTRESS_ENGI_REACTOR_LIST1">
-	<event>
-		<text>You send an away team to investigate, but there's nothing save for the acidic stench of burnt Engi parts. This place is dead.</text>
-	</event>
-	<event>
-		<text>Your away team reports a wounded Engi and a functioning drone schematic. Then someone yells. The station reactor is overloading and they're running out of time!</text>
-		<choice hidden="true">
-			<text>Save the Engi!</text>
-			<event load="DISTRESS_ENGI_REACTOR_ENGI"/>
-		</choice>
-		<choice hidden="true">	
-			<text>Save the drone schematic.</text>
-			<event load="DISTRESS_ENGI_REACTOR_DRONE"/>
-		</choice>
-		<choice hidden="true">
-			<text>Save yourselves!</text>
-			<event>
-				<text>It's a tough order, but your crew's lives are the priority. They drop everything and return to ship unharmed. You put some distance on the station before it blows.</text>
-				<autoReward level="LOW">scrap_only</autoReward>
-			</event>
-		</choice>
-	</event>
-</eventList>
-<eventList name="DISTRESS_ENGI_REACTOR_ENGI">
-	<event>
-		<text>One of your crew valiantly grabs the Engi and throws it into the airlock right before the reactor blows and the automatic blast doors slam shut. You have no choice but to mourn their sacrifice and move on.</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>The brave crewmember's clone strides from the Clone Bay, rather full of themself after such a heroic act.</text>
-		</removeCrew>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>The Engi who was saved offers to join your crew.</text>
-				<crewMember amount="1" class="engi"/>  
-				<autoReward level="LOW">scrap_only</autoReward>
-			</event>
-		</choice>
-	</event>
-	<event>
-		<text>Your crew return safely to the airlock with the injured Engi and you put some distance on the station before it blows. The Engi, impressed by your crew, volunteers to join you.</text>
-		<crewMember amount="1" class="engi"/>  
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-</eventList>
-<eventList name="DISTRESS_ENGI_REACTOR_DRONE">
-	<event>
-		<text> Your away team heads home with the goods, but as they transfer back to the ship a small explosion blows the airlock and one of the crew is sucked out into space!</text>
-		<removeCrew>
-			<clone>true</clone>
-			<text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them.</text>
-		</removeCrew>
-		<autoReward level="LOW">scrap_only</autoReward>
-	</event>
-	<event>
-		<text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your crew return safely to the airlock with the drone control and you put some distance on the station before it blows.</text>
-		<autoReward level="LOW">drone</autoReward>
-	</event>
-</eventList>
-<event name="DISTRESS_ENGI_REACTOR_SCAN">
-	<text>Scans reveal the station's reactor is overloading! Not only that, but an injured Engi and a functioning drone schematic are still on board! There's not time for both...</text>
-	<choice hidden="true">
-		<text>Save the Engi!</text>
-		<event>
-			<text>Your away team heads straight for the Engi and returns with time to spare. You put some distance on the station before it blows and the Engi is so impressed by your crew that they volunteer to join you!</text>
-			<crewMember amount="1" class="engi"/>  
-			<autoReward level="LOW">scrap_only</autoReward>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Save the Drone Schematic!</text>
-		<event>
-			<text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your away team heads straight for the goods and returns with time to spare. You put some distance on the station before it blows.</text>
-			<autoReward level="LOW">drone</autoReward>
-		</event>
-	</choice>
-</event>
-
 
 <!-----------
 		SPECIAL!!!
@@ -497,7 +313,7 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	<choice>
 		<text>Message them and ask if you can help.</text>
 		<event>
-			<text>Slightly shocked at your question, their leader quickly responds, "Declined offer with apologetic gratitude. Topic of discussion private matter, no concern of rebel."</text>
+			<text>Slightly shocked at your question, their leader quickly responds, "Declined offer with apologetic gratitude. Topic of discussion private matter, no concern of rebels."</text>
 		</event>
 	</choice>
 	<choice>
