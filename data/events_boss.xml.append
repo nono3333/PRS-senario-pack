@@ -204,7 +204,7 @@ Fleets - some with minor fights
 <event name="BOSS_FLEETS_BOTH_FIGHT">  <!-- nodes that have ships fighting  -  also inside the /!\ symbol but can be elswhere too. -->
 	<fleet>battle</fleet>
 	<text load="BOSS_FLEETS_BOTH"/>
-	<ship load="BOSS_FLEETS_FED" hostile="true"/>
+	<ship load="BOSS_FLEETS_REBEL" hostile="true"/>
 </event>
 <textList name="BOSS_FLEETS_BOTH">
 	<text>You arrive in the middle of a raging battle. Both sides are taking heavy losses. A small squadron flies past and a fighter breaks off, moving toward your position.</text>
@@ -230,9 +230,9 @@ Fleets - some with minor fights
 <event name="BOSS_FLEETS_REBEL"> <!-- areas that the fleet took over (or will take over soon) have the /!\ symbol on the map-->
 	<fleet>rebel</fleet>
 	<text load="BOSS_FLEETS_REBEL"/>
-	<ship load="BOSS_FLEETS_FED" hostile="true"/>
+	<ship load="BOSS_FLEETS_REBEL" hostile="true"/>
 </event>
-<textList name="BOSS_FLEETS_federation">
+<textList name="BOSS_FLEETS_REBEL">
 	<text>Although you were expecting the federation, you never imagined their fleet to be that big. You scanners can hardly register them all before a fighter stationed nearby moves in to attack.</text>
 	<text>This system is flooded with federation warships. Luckily your ship's signature is disguised as a civilian transport. Most heavy vessels ignore you but a small fighter is approaching with weapons hot!</text> <!-- no environment?--> 
 	<text planet="PLANET_POPULATED">You arrive to find a federation battalion encircling a nearby planet, launching landing parties. A small scout moves toward your position. Prepare for a fight!</text>
@@ -249,7 +249,7 @@ Fleets - some with minor fights
 	<text planet="PLANET_POPULATED">What was once a great series of space stations is now nothing but a small ring of debris around the nearby moon. There's no time to mourn the dead; an enemy approaches!</text>
 	<text>The rebels seem to have put up a good fight. A number of federation ships lie broken or wounded. However their numbers force the remaining rebel forces to retreat. Hopefully you can get away in time as well.</text>
 </textList>
-<ship name="BOSS_FLEETS_FED" auto_blueprint="SHIPS_FED">
+<ship name="BOSS_FLEETS_REBEL" auto_blueprint="SHIPS_FED">
 	<destroyed>
 		<text>There's no time to salvage all of the wreck, the fleet is still nearby. Get ready to jump!</text>
 		<autoReward level="LOW">scrap_only</autoReward>
