@@ -329,13 +329,13 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 			<choice>
 				<text>Offer your help.</text>
 				<event>
-					<text>"Secret technologies stolen by Mantis. Implicit connection to federations. Implicit. Tracked Mantis to hidden federation base, uploading coordinates."</text>
+					<text>"Secret technologies stolen by Mantis. Implicit connection to Federation. Implicit. Tracked Mantis to hidden Federation base, uploading coordinates."</text>
 					<quest event="ENGI_UNLOCK_2REAL"/>
 					<choice>
 						<text>Continue...</text>
 						<event>
 							<quest event="ENGI_UNLOCK_2FAKE"/>
-							<text>"However, tracked second ship to different base. Would calculate probability but data insufficient. Cannot risk obvious federation-Engi conflict. Also, need time to acquire military ships. Assist in finding technology?"</text>
+							<text>"However, tracked second ship to different base. Would calculate probability but data insufficient. Also, need time to acquire military ships. Assist in finding technology?"</text>
 							<choice>
 								<text>Agree.</text>
 								<event/>
@@ -348,280 +348,28 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	</choice>
 </event>
 <event name="ENGI_UNLOCK_2FAKE">
-	<text>You arrive at one of the federation bases that the Engies told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them.</text>
+	<text>You arrive at one of the Federation bases that the Engies told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them.</text>
 	<ship load="REBEL_ENGI_UNLOCK_2FAKE" hostile="true"/>
 </event>
-<event name="ENGI_UNLOCK_2FAKE_SURRENDER">
-	<text>"Stop! I don't want to die here."</text>
-	<choice>
-		<text>Demand information on the stolen technology.</text>
-		<event>
-			<text>"Ah, so that's what you're after. Too bad, you followed the wrong ship. The envoy that passed through here was a fake, to trick fools like you. Now let us go!"</text>
-			<choice>
-				<text>Let them go.</text>
-				<event>
-					<ship hostile="false"/>
-				</event>
-			</choice>
-			<choice>
-				<text>Ignore him and attack.</text>
-				<event>
-					<text>"No, wait..." You cut the transmission and continue the assault.</text>
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
 <event name="ENGI_UNLOCK_2REAL">
-	<text>You arrive at one of the federation bases that the Engi told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them."</text>
+	<text>You arrive at one of the Federation bases that the Engi told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them."</text>
 	<ship load="REBEL_ENGI_UNLOCK_2REAL" hostile="true"/>
 </event>
-<event name="ENGI_UNLOCK_2REAL_SURRENDER">
-	<text>"Stop! This isn't worth dying for..."</text>
-	<choice>
-		<text>Demand information on the stolen technology.</text>
-		<event>
-			<text>"Of course, that's why you're here. Yes, they passed by here but I had nothing to do with it, I don't know what they were carrying. I'll transmit coordinates. Now just let us go..."</text>
-			<quest event="ENGI_UNLOCK_3"/>
-			<choice>
-				<text>Let them go.</text>
-				<event>
-					<text>You prepare an FTL message containing the coordinates to send to the Engi and get ready to jump.</text>
-					<ship hostile="false"/>
-				</event>
-			</choice><!--   REMOVED THIS TO PREVENT DOUBLE QUESTS
-			<choice>
-				<text>Ignore him and attack.</text>
-				<event>
-					<text>"But we..." You cut the transmission and prepare an FTL message containing the coordinates to send to the Engies. You then focus on the battle.</text>
-				</event>
-			</choice>-->
-		</event>
-	</choice>
-</event>
+
 <event name="ENGI_UNLOCK_3">
-	<text>You have finally caught up with the ships you've been hunting. A hangar-sized cargo ship is being escorted by a number of Mantis ships. As you reconsider the assault, a squadron of Engi ships with pirate emblems jump in and assist you. You prepare to fight the Mantis but scans indicate they are manned by federations!</text>
+	<text>You have finally caught up with the ships you've been hunting. A hangar-sized cargo ship is being escorted by a number of Mantis ships. As you reconsider the assault, a squadron of Engi ships with pirate emblems jump in and assist you. You prepare to fight the Mantis.</text>
 	<ship load="MANTIS_ENGI_UNLOCK_3" hostile="true"/>
 </event>
 <event name="ENGI_UNLOCK_4">
-	<text>The Engi emerge victorious from their battles with only minor losses. They message you, "Project X-ME56 commissioned by rebel military research division. Advanced stealth cruiser. Project finished during federationlion. Unable to reconnect with rebel military command."</text>
-	<choice>
-		<text>Ask about the Mantis ships.</text>
-		<event>
-			<text>"Likely ploy by federations to avoid breaking non-aggression pact with Engi. 97.56 percent likely. Your mission to assist last rebel fleet, correct? Coordinates?"</text>
-			<choice hidden="true">
-				<text>Transmit coordinates of rebel command.</text>
-				<event>
-					<text>"Satisfactory. Delivery of tech will assist in rebel cause. Gratitude alone insufficient. Commencing ship repair and compensation." Their crews deliver an advanced augmentation for installation but you're more pleased to hear that the rebel will have an improved arsenal.</text>
-					<damage amount="-20"/>
-					<autoReward level="HIGH">standard</autoReward>
-					<augment name="SYSTEM_CASING"/>
-					<unlockShip id="1">The Engi secret tech has been delivered to the hangar. The stealth ship has been unlocked!</unlockShip>
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-
-
-
-
-
-
-
-<!-----------
-
-***************************************
-		DLC!!!
-	Events added with the DLC
-***************************************
-	
-	------------>
-	
-	
-
-<event name="ENGI_SEX" unique="true">
-	<text>What appeared to be a single damaged ship is in fact two ships that have smashed into each other... there is a flurry of comm signals and damage, and it's hard to determine what occurred. The vessels appear to be... Engi? They look locked together by the impact and can't free themselves.</text>
+	<text>The Engi emerge victorious from their battles with only minor losses. They message you, "Project X-ME56 commissioned by Mantis military research division. Advanced stealth cruiser."</text>
 	<choice hidden="true">
-		<text>Attempt to help the ships by prying them apart.</text>
-		<event>
-			<text>To your surprise, one of the Engi vessels attacks! One ship detaches itself, surprisingly still quite whole, and opens fire - it looks like it's somehow identified you as hostile!</text>
-			<ship load="ENGI_SEX_SHIP" hostile="true"/>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore the damaged vessels.</text>
-		<event/>
-	</choice>
-	<choice req="engi">
-		<text>[Engi Crew] Have your Engi crewmember hail the vessel and assess the damage.</text>
-		<event>
-			<text>Your Engi crewmember refuses. In a halting use of adjectives and nouns, followed by some animated holographic aids, the Engi explains the ships are... using each other to, loosely translated, "achieve a union." For some reason, this consolidation of ship matter sounds embarrassing and personal.</text>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You elect to leave the two Engi ships... to their "business." After questioning your Engi crewmember, however, you do manage to salvage what scrap parts you can from the perimeter, even though you feel slightly dirty for doing so.</text>
-					<autoReward level="MEDIUM">stuff</autoReward>
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-<ship name="ENGI_SEX_SHIP" auto_blueprint="SHIPS_CIRCLE">
-	<destroyed>
-		<text>With the ship destroyed, the remaining Engi ship hails you frantically and explains the situation to you.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ENGI_SEX_SHIP_DONE"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>With the ship disabled, the remaining Engi ship hails you frantically and explains the situation to you.</text>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ENGI_SEX_SHIP_DONE"/>
-		</choice>
-	</deadCrew>
-</ship>
-<event name="ENGI_SEX_SHIP_DONE">
-	<text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
-</event>
-
-
-<!-- Right now you can get this more than once in a game.  Dunno how good that is -->
-<event name="ENGI_VIRUS" unique="true">
-	<text>The Engi are awaiting you at the beacon, with their weapons on-line! They explain a computer virus that is wanted for hostile acts against the Engi (multiple counts of binary scrambling, nano-dissolution, and variable interference) is aboard your vessel.</text>
-	<choice>
 		<text>Continue...</text>
 		<event>
-			<text>They insist they must destroy your ship to prevent the virus from escaping!</text>
-			<choice hidden="true">
-				<text>Hold on! Let us try to purge the system code!</text>
-				<event>
-					<text>Wiping your engine core and shields proves useless... eventually you trap the virus in the weapons systems to purge it, but before you do, the Engi grow restless and attack!</text>
-					<status type="divide" target="player" system="shields" amount="2"/>
-					<status type="divide" target="player" system="engines" amount="2"/>
-					<ship load="ENGI_VIRUS_SHIP" hostile="true"/>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Attack the Engi vessel!</text>
-				<event>
-					<text>The Engi be damned, no one threatens your ship. You prepare for a fight!</text>
-					<ship load="ENGI_VIRUS_SHIP" hostile="true"/>
-				</event>
-			</choice>
-			<choice req="hacking" lvl="1" max_group="0" hidden="true">
-				<text>[Hacking System] Isolate and quarantine the virus.</text>
-				<event>
-					<text>It takes some time, and the virus is slippery, but you eventually confine it to a useless sub-system prison where it frantically begins calculating insults at you. You eject the system from the ship and then silence the little binary criminal with your weapons.</text>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event>
-							<text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
-							<autoReward level="LOW">standard</autoReward>
-							<augment name="DRONE_SPEED"/>
-						</event>
-					</choice>
-				</event>
-			</choice>
-			<choice req="hacking" lvl="2" max_group="0" hidden="true">
-				<text>[Improved Hacking] Reprogram the virus.</text>
-				<event>
-					<text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event>
-							<text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
-							<damage amount="-15"/>
-							<upgrade amount="1" system="reactor"/>
-							<choice hidden="true">
-								<text>Continue...</text>
-								<event>
-									<text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
-									<augment name="DRONE_SPEED"/>
-								</event>
-							</choice>
-						</event>
-					</choice>
-				</event>
-			</choice>
-			<choice req="hacking" lvl="3" max_group="0" hidden="true">
-				<text>[Advanced Hacking] Reprogram the virus.</text>
-				<event>
-					<text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event>
-							<text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
-							<damage amount="-30"/>
-							<upgrade amount="1" system="reactor"/>
-							<choice hidden="true">
-								<text>Continue...</text>
-								<event>
-									<text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
-									<augment name="DRONE_SPEED"/>
-								</event>
-							</choice>
-						</event>
-					</choice>
-				</event>
-			</choice>
-			<choice req="anaerobic" hidden="true">
-				<text>[Lanius Crew] Your Lanius crewmember gestures frantically.</text>
-				<event>
-					<text>Oddly enough, the Lanius seems aware of which computer the virus is present in, and proceeds to... digest the terminal. There is a burst of O2, and the Engi ship powers down its weapons, no longer sensing the virus on board. The Engi send some parts over to repair your damaged computer, along with a unique ship augmentation as a reward for terminating the virus.</text>
-					<autoReward level="MEDIUM">scrap_only</autoReward>
-					<augment name="DRONE_SPEED"/>
-				</event>
-			</choice>
-			<choice req="engi" hidden="true">
-				<text>[Engi Crew] Have your Engi crewmember negotiate with the Engi ship.</text>
-				<event>
-					<text>As the Engi attempts to contact the vessel and negotiate, your Engi crewmember suddenly dissolves into nanites - the virus has murdered again! Detecting activity on board your ship, the Engi vessel opens fire!</text>
-					<ship load="ENGI_VIRUS_SHIP_ALT" hostile="true"/>
-					<removeCrew class="engi">
-						<clone>false</clone>
-						<text>The virus appears to have disrupted your clone bay's capability to revive the lost crewmember!</text>
-					</removeCrew>
-				</event>
-			</choice>
+			<text>"Gratitude alone insufficient. Commencing ship repair and compensation." Their crews deliver an advanced augmentation for installation but you're more pleased to hear that the Rebellion will have an improved arsenal.</text>
+			<damage amount="-20"/>
+			<autoReward level="HIGH">standard</autoReward>
+			<augment name="SYSTEM_CASING"/>
+			<unlockShip id="1">The Engi secret tech has been delivered to the hangar. The stealth ship has been unlocked!</unlockShip>
 		</event>
 	</choice>
-</event>
-<ship name="ENGI_VIRUS_SHIP" auto_blueprint="SHIPS_CIRCLE">
-	<destroyed>
-		<text>With the ship destroyed, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of the wreckage. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
-		<autoReward level="MEDIUM">standard</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="shields" amount="100"/>
-	</destroyed>
-	<deadCrew>
-		<text>With the Engi crew dead, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of Engi vessel. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
-		<autoReward level="MEDIUM">standard</autoReward>
-		<status type="clear" target="player" system="engines" amount="100"/>
-		<status type="clear" target="player" system="shields" amount="100"/>
-	</deadCrew>
-</ship>
-<ship name="ENGI_VIRUS_SHIP_ALT" auto_blueprint="SHIPS_CIRCLE">
-	<destroyed>
-		<text>With the ship destroyed, you scrap it and prepare to jump away.</text>
-		<autoReward level="MEDIUM">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ENGI_VIRUS_REBORN"/>
-		</choice>
-	</destroyed>
-	<deadCrew>
-		<text>With all the Engi dead, you take what you can and prepare to jump away.</text>
-		<autoReward level="MEDIUM">standard</autoReward>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="ENGI_VIRUS_REBORN"/>
-		</choice>
-	</deadCrew>
-</ship>
-<event name="ENGI_VIRUS_REBORN">
-	<text>To your surprise your Engi crewmember reforms. It looks as if the virus reconstituted, repurposed, and reprogrammed the Engi host and wants to travel with you... and it seems to have learned a great deal from its time on your ship.</text>
-	<crewMember amount="1" class="engi" all_skills="2">Virus</crewMember>
 </event>
