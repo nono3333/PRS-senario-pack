@@ -108,7 +108,7 @@
 	</choice>
 	<choice>
 		<text>Attempt to remain concealed.</text>
-		<event load="NEBULA_FED_UNDETECTED_LIST"/>
+		<event load="NEBULA_REBEL_UNDETECTED_LIST"/>
 	</choice>
 	<choice req="cloaking" hidden="true"> 
 		<text>(Cloaking) Cloak to stay hidden.</text>
