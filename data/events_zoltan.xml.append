@@ -14,8 +14,8 @@ shield research center - jams shields
 	<event load="ZOLTAN_ASTEROID"/>
 	
 
-	<event load="federation"/>
-	<event load="federation_AUTO"/>
+	<event load="REBEL"/>
+	<event load="REBEL_AUTO"/>
 </eventList>
 
 <eventList name="NEUTRAL_ZOLTAN">
