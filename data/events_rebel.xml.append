@@ -115,7 +115,7 @@
 	<text load="REBEL_AUTO"/>
 	<ship load="REBEL_AUTO_WARNING" hostile="true"/>
 </event>
-<textList name="federation_AUTO">
+<textList name="REBEL_AUTO">
 	<text>You discover one of the federation's autonomous scouts. The ship's AI wastes no time in engaging your ship.</text>
 	<text>Your ship is hailed: "This is an automated message. Resisting our takeover is pointless. Prepare to die." It appears this federation ship is run by an AI.</text>
 	<text>A federation autonomous scout is exploring this beacon. You attempt to hide behind a nearby moon, but the ship finds you and begins its assault.</text>
@@ -150,7 +150,7 @@
 	<text load="REBEL"/>
 	<ship load="FED_SHIP" hostile="true"/>
 </event>
-<textList name="federation">
+<textList name="REBEL">
 	<text>Your ship is hailed. "We've found you at last. Prepare to die!"</text>
 	<text>A small federation ship is docked at a small station. You try to lay low but it spots you. Power up the weapons!</text>
 	<text>A federation ship has been patrolling this region. As soon as you arrive it begins its assault.</text>
