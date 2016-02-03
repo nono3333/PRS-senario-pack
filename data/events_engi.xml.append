@@ -17,20 +17,6 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	<event load="REFUEL_STATION"/>
 </eventList>
 
-<eventList name="HOSTILE_ENGI">
-	<event load="ENGI_MANTIS_FIGHT"/>
-	<event load="ENGI_REBEL_FIGHT"/>
-	<event load="ENGI_PIRATE_FIGHT"/>
-	
-	<event load="PIRATE"/>
-	<event load="PIRATE_CHOICE"/>
-	<event load="federation"/>
-	<event load="SQUAT_WARNING"/>
-	<event load="PIRATE_ASTEROID"/>
-	<event load="PIRATE_SUN"/>
-	<event load="PIRATE_NO_ESCAPE"/>
-</eventList>
-
 <eventList name="NEUTRAL_ENGI">
 	<!--<event load="ENGI_UNLOCK_1"/> -->
 	<event load="ENGI_STATION_DISTRESS"/>
@@ -75,7 +61,6 @@ Idea - make an event where you're fighting to save an engi ship but theres manti
 	<event load="FEDERATION_PLANET_SIGNAL"/>
 	<event load="MERCENARY_WORK_START"/>
 </eventList>
-
 
 
 
