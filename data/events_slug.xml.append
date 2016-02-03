@@ -44,7 +44,7 @@
 	<event load="STORM_SLUG_FIGHT"/>
 
 
-	<event load="STORM_federation"/>
+	<event load="STORM_REBEL"/>
 	<event load="STORM_BOARDING"/>
 </eventList>
 
