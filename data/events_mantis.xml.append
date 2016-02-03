@@ -9,7 +9,7 @@
 	<event load="MANTIS_SUN_FIGHT"/>
 	<event load="DONOR_MANTIS_CHASE"/>
 	
-	<event load="federation"/>
+	<event load="REBEL"/>
 	<event load="AUTO_ASTEROID"/>
 	<event load="AUTO_WARNING"/>
 </eventList>
