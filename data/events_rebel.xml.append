@@ -1,6 +1,6 @@
 <eventList name="HOSTILE_REBEL">
-	<event load="federation"/>
-	<event load="federation_AUTO"/>
+	<event load="REBEL"/>
+	<event load="REBEL_AUTO"/>
 	<event load="AUTO_ASTEROID"/>
 	<event load="AUTO_WARNING"/>
 	<event load="SQUAT_WARNING"/>
@@ -102,17 +102,17 @@
 
 
 <event name="AUTO_BAIT" unique="true">
-	<text load="federation_AUTO"/>
+	<text load="REBEL_AUTO"/>
 	<ship load="REBEL_AUTO_BAIT" hostile="true"/>
 </event>
 
-<event name="federation_AUTO">
-	<text load="federation_AUTO"/>
+<event name="REBEL_AUTO">
+	<text load="REBEL_AUTO"/>
 	<ship load="REBEL_AUTO" hostile="true"/>
 </event>
 
 <event name="AUTO_WARNING" unique = "true">
-	<text load="federation_AUTO"/>
+	<text load="REBEL_AUTO"/>
 	<ship load="REBEL_AUTO_WARNING" hostile="true"/>
 </event>
 <textList name="federation_AUTO">
@@ -146,8 +146,8 @@
 	</choice>
 </event>	
 
-<event name="federation">
-	<text load="federation"/>
+<event name="REBEL">
+	<text load="REBEL"/>
 	<ship load="FED_SHIP" hostile="true"/>
 </event>
 <textList name="federation">
@@ -158,19 +158,14 @@
 	<text>You receive a transmission: "Sorry sir, this is nothing personal but we're under orders." The Federation ship's weapons go hot.</text>
 	<text>By the time you notice the Federation ship behind the beacon, it's too late to avoid a fight.</text>
 	<text>A Federation ship hails. "We did not fight a war to let a single rebel ship shatter our dreams of a peaceful galaxy!" He locks weapons.</text>
-	<text>A federation ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the rebellion. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your shields!"</text>
-	<text>You're hailed by a federation ship: "When the federation is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
-	<text>A federative ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
+	<text>A Federation ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the rebellion. But I just couldn't bear it anymore. The endless slaughter of civilians... must come to an end!"</text>
+	<text>A Federative ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
 </textList>
 
 <event name="SQUAT_WARNING" unique="true">
-	<text>You stumble across a forward scout of the federation fleet.</text>
+	<text>You stumble across a forward scout of the Federation fleet.</text>
 	<ship load="SQUAT_WARNING" hostile="true"/>
 </event>
-
-
-
-
 
 
 
