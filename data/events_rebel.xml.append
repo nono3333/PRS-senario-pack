@@ -40,7 +40,7 @@
 	<event load="NEBULA_AUTO_WARNING"/>
 	<event load="NEBULA_AUTO_DEFENSE_ITEM"/>
 	<event load="NEBULA_TRADER"/>
-	<event load="STORM_federation"/>
+	<event load="STORM_REBEL"/>
 	<event load="STORM_AUTO"/>
 	<event load="STORM_ITEMS"/>
 	<event load="NEBULA_federation_UNDETECTED"/>  
