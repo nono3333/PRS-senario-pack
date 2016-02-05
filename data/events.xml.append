@@ -103,7 +103,7 @@ item - scrap + that thing  -->
 	<text load="START_BEACON_FEDERATION"/>
 </event>
 <textList name="START_BEACON_FEDERATION">
-	<text>FEDERATION STRONGHOLD SECTOR START BEACON TEXT.</text>
+	<text>You need to be careful here, this is an Federation sector.</text>
 
 </textList>
 
