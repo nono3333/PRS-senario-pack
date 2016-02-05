@@ -55,6 +55,29 @@
 			<!-- blue -->
 			<color r="43" g="100" b="228" a="0.7"/>
 		</layer>
+		<layer>
+			<!-- Layer 2 - screen -->
+			<!-- light red -->
+			<color r="239" g="24" b="34" a="0.7"/>
+			<!-- green -->
+			<color r="55" g="239" b="24" a="0.7"/>
+		</layer>
+		<layer>
+			<!-- Layer 3 - shield -->
+			<!-- light red -->
+			<color r="239" g="24" b="34" a="0.7"/>
+			<!-- green -->
+			<color r="55" g="239" b="24" a="0.7"/>
+			<!-- light blue -->
+			<color r="49" g="180" b="228" a="0.7"/>
+		</layer>
+		<layer>
+			<!-- Layer 4 - laser -->
+			<!-- light red -->
+			<color r="239" g="24" b="34" a="0.7"/>
+			<!-- green -->
+			<color r="55" g="239" b="24" a="0.7"/>
+		</layer>
 	</colorList>
 </crewBlueprint>
 <crewBlueprint name="mantis">
