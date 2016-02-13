@@ -122,7 +122,7 @@
 	</powerList>
 	<colorList>
 		<layer>
-			<!-- Layer 1 - color 
+			<!-- Layer 1 - color -->
 			<color r="227" g="172" b="39" a="0.1"/>
 			<color r="227" g="172" b="39" a="0.7"/>
 			<color r="255" g="230" b="175" a="0.8" />
@@ -155,7 +155,7 @@
 	</powerList>
 	<colorList>
 		<layer>
-			<!-- Layer 1 - color 
+			<!-- Layer 1 - color -->
 			<color r="106" g="51" b="37" a="0.5"/>
 			<color r="116" g="152" b="182" a="0.2"/>
 			<color r="116" g="152" b="182" a="0.5"/>
