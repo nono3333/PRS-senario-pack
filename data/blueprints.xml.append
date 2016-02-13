@@ -257,6 +257,7 @@
 			<!-- green -->
 			<color r="55" g="239" b="24" a="0.7"/>
 		</layer>
+		</colorList>
 	<rarity>0</rarity>
 	<powerList/>
 </crewBlueprint>
