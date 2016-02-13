@@ -236,3 +236,34 @@
 	</colorList>
 </crewBlueprint>
 
+
+
+<!--    ************************
+          PRS DRONE BLUEPRINTS
+        ************************
+-->
+
+<crewBlueprint name="battle">
+	<desc>Dummy blueprint needed now.</desc>
+	<cost>50</cost>
+	<bp>2</bp>
+	<title>Battle</title>
+	<short>Battle</short>
+	<colorList>
+		<layer>
+			<!-- Layer 1 - color -->
+			
+		</layer>
+	<rarity>0</rarity>
+	<powerList/>
+</crewBlueprint>
+
+<crewBlueprint name="repair">
+	<desc>Dummy blueprint needed now.</desc>
+	<cost>50</cost>
+	<bp>2</bp>
+	<title>Repair</title>
+	<short>Repair</short>
+	<rarity>0</rarity>
+	<powerList/>
+</crewBlueprint>
