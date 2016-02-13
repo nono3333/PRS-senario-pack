@@ -252,7 +252,10 @@
 	<colorList>
 		<layer>
 			<!-- Layer 1 - color -->
-			
+			<!-- light red -->
+			<color r="255" g="0" b="0" a="0.7"/>
+			<!-- green -->
+			<color r="55" g="239" b="24" a="0.7"/>
 		</layer>
 	<rarity>0</rarity>
 	<powerList/>
