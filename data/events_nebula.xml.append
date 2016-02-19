@@ -19,9 +19,56 @@
 	<event load="NEBULA_ROCK_RACIST"/>
 	<event load="NEBULA_MANTIS_CHOICE"/>
 	<event load="NEBULA_federation_CHASE"/>
+	<event load="SPS_PRS"/>
 </eventList>
 
+<!--   		***************************************  
+					PRS EVENTS 
+			********************************************   
+-->
 
+<event name="SPS_PRS">
+<text>You found here a little station, they are selling all of there items for free ! They are saying you "This sector is empty of any life ! We are going to quit it. Interested to a buy anything ?</text>
+
+<choice>
+
+<text>Earn a crew member for free</text>
+<event>
+<text>After earn the crew member you thank them and prepare to jump</text>
+<crewMember amount="1">JOHN CENA</crewMember>
+</event>
+</choice>
+
+<choice>
+<text>Earn some missiles for free</text>
+<event>
+<text>After earn the missiles you thank them and prepare to jump</text>
+<item_modify>
+<item type="missiles" min="3" max="10"/>
+</item_modify>
+</event>
+</choice>
+
+<choice>
+<text>Earn some drones parts for free</text>
+<event>
+<text>After earn the drone parts you thank them and prepare to jump</text>
+<item_modify>
+<item type="drones" min="3" max="10"/>
+</item_modify>
+</event>
+</choice>
+
+<choice req="teleporter" hidden="true">
+			<text>(Teleporter) Try to steal some materials</text>
+			<event>
+<text>After salvage the reserves of the station you prepare to jump away</text>
+<autoReward level="HIGH">standard</autoReward>
+</event>
+</choice>
+
+
+<event/>
 
 
 <!-----------
