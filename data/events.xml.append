@@ -30,6 +30,63 @@ item - scrap + that thing  -->
 -->
 
 
+<event name="RS_PRS">
+<text>You jump and discover a ship floatting in the space</text>
+
+<choice hidden="true">
+<text>lets see whats inside</text>
+<event>
+<text>You didn't found anything, unless scraps and an augmentation for your ship !</text>
+<autoReward level="RANDOM">augment</autoreward>
+
+<choice>
+<text>Continue</text>
+<event>
+</event>
+</choice>
+
+<choice req="teleporter" hidden="true">
+<text>(Teleporter) Teleport all life sign in the ship</text>
+<event>
+<text>You bring back your crew and à little child who was in the hull.</text>
+
+<choice>
+<text>Kill him, the Rebellion don't like childs.</text>
+<event>
+<text>You kill him for the glory of the Rebellion and you put out his body in space.</text>
+</event>
+</choice>
+
+<choice>
+<text>Bring him back to his parents.</text>
+<event>
+<text>He explain you that his parents died in the ship.</text>
+
+<choice hidden="true">
+<text>Adopte him.</text>
+<event>
+<text>He accepte your proposition, when he talk with you, he call you "Daddy", you cry.</text>
+<crewMember class="human" amount="1">son</crewMember>
+</event>
+</choice>
+
+<choice>
+<text>Sell him has a slave.</text>
+<event>
+<text>You sell him has a slave to a slavetrader for some scraps.</text>
+<autoReward level="HIGHT">item</autoreward>
+</event>
+</choice>
+
+</event>
+</choice>
+
+</event>
+</choice>
+
+</choice>
+
+<event/>
 
 
 <event name="POTATO_P1">
