@@ -24,6 +24,92 @@ augment
 drone
 item - scrap + that thing  -->
 
+<!--   		***************************************  
+					PRS EVENTS 
+			********************************************   
+-->
+
+<event name="POTATO_P1">
+
+<text>You jumps in a nebula and you discovered a men, aparetly a slug who is floting in the space.</text>
+
+<choice>
+<text>Contact him.</text>
+<event>
+<text>You sucessfully contact him and he respond you "Do you like Potato ?"</text>
+
+<choice hidden="true">
+<text>"Yes."</text>
+<event>
+<text>"Good choice my friend", he join your crew.</text>
+<crewMember amount="1" class="slug">I like Potato</crewMember>
+
+<item_modify>
+<item type="fuel" min="4" max="10"/>
+<item type="drones" min="4" max="10"/>
+<item type="missiles" min="4" max="10"/>
+</item_modify>
+</event>
+
+</choice>
+
+<choice hidden="true">
+<text>"No."</text>
+<event>
+<text>What You didn't love potatoes ?!</text>
+<item_modify>
+<item type="fuel" min="-4" max="-10"/>
+<item type="missiles" min="-4" max="-5"/>
+</item_modify>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>"What's that question ?!"</text>
+<event>
+<text>"You don't want to answer ? What's the best nickname in the world ?"</text>
+
+<choice hidden="true">
+<text>Steve</text>
+<event>
+<text>"seriously ?!"</text>
+<modifyPursuit amount="2"/>
+<item_modify>
+<item type="fuel" min="-4" max="-10"/>
+<item type="missiles" min="-4" max="-5"/>
+</item_modify>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>nono333</text>
+<event>
+<text>"Good ! here some scraps for you."</text>
+<item_modify>
+<item type="scrap" min="20" max="40"/>
+</item_modify>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Biohazard063</text>
+<event>
+<text>"Not bad but its not that."</text>
+<modifyPursuit amount="2"/>
+<item_modify>
+<item type="fuel" min="-4" max="-10"/>
+<item type="missiles" min="-4" max="-5"/>
+</item_modify>
+</event>
+</choice>
+
+</event>
+</choice>
+
+</event>
+</choice>
+<event/>
+
 <event name="TEST_EVENT">
 	<text>This looks good...</text>
 	<choice>
