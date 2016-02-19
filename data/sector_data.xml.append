@@ -326,6 +326,7 @@ NEBULA SECTORS
 	<event name="NEBULA_HOSTILE" min="5" max="6"/>
 	<event name="NEBULA_NEUTRAL" min="7" max="8"/>
 	<event name="DISTRESS_BEACON" min="1" max="3"/>
+	<event name="SPS_PRS" min="4" max="5">
 </sectorDescrption>
 
 <sectorDescription name="SLUG_HOME" minSector="3" unique="true">    
@@ -359,6 +360,7 @@ NEBULA SECTORS
 	<event name="STORM_SLUG" min="1" max="3"/>
 	<event name="NEBULA_NEUTRAL_SLUG" min="3" max="5"/>
 	<event name="NEUTRAL" min="1" max="2"/>
+	<event name="SPS_PRS" min="4" max="5">
 	
 	
 </sectorDescrption>
@@ -393,6 +395,7 @@ NEBULA SECTORS
 	<event name="STORM_SLUG" min="1" max="3"/>
 	<event name="NEBULA_NEUTRAL_SLUG" min="3" max="5"/>
 	<event name="NEUTRAL" min="1" max="2"/>
+	<event name="SPS_PRS" min="4" max="5">
 	
 	
 </sectorDescrption>
