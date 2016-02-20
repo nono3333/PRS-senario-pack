@@ -328,6 +328,7 @@ NEBULA SECTORS
 	<event name="DISTRESS_BEACON" min="1" max="3"/>
 	<event name="SPS_PRS" min="4" max="5">
 	<event name="RS_PRS" min="15" max="15">	
+	<event name="PUB_PRS" min="1" max="3"/>
 
 
 </sectorDescrption>
@@ -365,7 +366,7 @@ NEBULA SECTORS
 	<event name="NEUTRAL" min="1" max="2"/>
 	<event name="SPS_PRS" min="4" max="5">
 	<event name="RS_PRS" min="15" max="15">	
-
+<event name="PUB_PRS" min="1" max="3"/>
 
 	
 </sectorDescrption>
@@ -402,7 +403,7 @@ NEBULA SECTORS
 	<event name="NEUTRAL" min="1" max="2"/>
 	<event name="SPS_PRS" min="4" max="5">
 	<event name="RS_PRS" min="15" max="15">	
-
+<event name="PUB_PRS" min="1" max="3"/>
 
 	
 </sectorDescrption>
@@ -436,7 +437,7 @@ HOSTILE SECTORS
 	<event name="ITEMS" min="1" max="2"/>
 	<event name="NEUTRAL_MANTIS" min="6" max="7"/>
 	<event name="RS_PRS" min="15" max="15">	
-
+<event name="PUB_PRS" min="1" max="3"/>
 
 </sectorDescrption>
 
@@ -467,7 +468,7 @@ HOSTILE SECTORS
 	<event name="ITEMS" min="1" max="2"/>
 	<event name="NEUTRAL_MANTIS" min="6" max="7"/>
 	<event name="RS_PRS" min="15" max="15">	
-
+<event name="PUB_PRS" min="1" max="3"/>
 
 </sectorDescrption>
 
@@ -492,7 +493,7 @@ HOSTILE SECTORS
 	<event name="QUESTS_PIRATE" min="0" max="1"/> <!-- need more -->
 	<event name="NEUTRAL_PIRATE" min="5" max="6"/>
 	<event name="RS_PRS" min="15" max="15">	
-
+<event name="PUB_PRS" min="1" max="3"/>
 
 </sectorDescrption>
 
@@ -524,6 +525,7 @@ HOSTILE SECTORS
 	<event name="QUESTS_ENGI" min="1" max="1"/>
 	<event name="NEUTRAL_ENGI" min="4" max="6"/>
 	<event name="HOSTILE_ENGI" min="5" max="7"/>
+	<event name="PUB_PRS" min="1" max="3"/>
 </sectorDescrption>
 
 <sectorDescription name="ENGI_HOME" minSector="2" unique="true"> 
@@ -553,6 +555,7 @@ HOSTILE SECTORS
 	<event name="QUESTS_ENGI" min="1" max="1"/>
 	<event name="NEUTRAL_ENGI" min="5" max="7"/>
 	<event name="HOSTILE_ENGI" min="5" max="7"/>
+	<event name="PUB_PRS" min="1" max="3"/>
 </sectorDescrption>
 
 <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
@@ -583,7 +586,8 @@ HOSTILE SECTORS
 	<event name="PT_PRS_A" min="2" max="2"/>
         <event name="PT_PRS_B" min="2" max="2"/>
         <event name="PT_PRS_C" min="2" max="2"/>
-        <event name="PT_PRS_D" min="2" max="2"/>	
+        <event name="PT_PRS_D" min="2" max="2"/>
+        <event name="PUB_PRS" min="1" max="3"/>
 </sectorDescription>
 
 <!--FINAL -- The sector with the boss -->
