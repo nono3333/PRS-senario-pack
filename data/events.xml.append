@@ -29,6 +29,152 @@ item - scrap + that thing  -->
 			********************************************   
 -->
 
+<event name="PT_PRS_A">
+<text>A station aparently abandonned is near a nearby moon.</text>
+
+<choice hidden="true">
+<text>Go inside</text>
+<event>
+<text>You didn't found anything, unless some items.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Wait for your FTL charging</text>
+<event>
+</event>
+</choice>
+
+<choice req="BATTLE" hidden="true">
+<text>(Battle Drone) Send your battle drone to explore the station.</text>
+<event>
+<text>Your battle drone found the supply room of the station, you salvage it.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+<event/>
+
+
+
+<event name="PT_PRS_B">
+<text>A station aparently abandonned is near a nearby moon.</text>
+
+<choice hidden="true">
+<text>Go inside</text>
+<event>
+<text>When your crew go inside the station you found pirates inside ! You go to the ship but the pirates boarder are already here ! </text>
+<boarders min="3" max="5" class="random"/>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Wait for your FTL charging</text>
+<event>
+</event>
+</choice>
+
+<choice req="BATTLE" hidden="true">
+<text>(Battle Drone) Send your battle drone to explore the station.</text>
+<event>
+<text>Your battle drone found the supply room of the station, you salvage it.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+<event/>
+
+
+
+<event name="PT_PRS_C">
+<text>A station aparently abandonned is near a nearby moon.</text>
+
+<choice hidden="true">
+<text>Go inside</text>
+<event>
+<text>When entering the station the alarm system is start sendding your coords to the federation !</text>
+
+<choice>
+<text>Shut down the computer !</text>
+<event>
+<text>You shut down the computer, the coords hasn't been send.</text>
+</event>
+</choice>
+
+<choice req="hacking" lvl="1">
+<text>(Simple Hacking) Hack the system</text>
+<event>
+<text>You hack the computer and you send wrongs coords.</text>
+<modifyPursuit amount="-2"/>
+</event>
+</choice>
+
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Wait for your FTL charging</text>
+<event>
+</event>
+</choice>
+
+<choice req="BATTLE" hidden="true">
+<text>(Battle Drone) Send your battle drone to explore the station.</text>
+<event>
+<text>Your battle drone found the supply room of the station, you salvage it.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+<event/>
+
+
+<event name="PT_PRS_D">
+<text>A station aparently abandonned is near a nearby moon.</text>
+
+<choice hidden="true">
+<text>Go inside</text>
+<event>
+<text>When entering the station the alarm system is starting to send your coords the the federation !</text>
+
+<choice>
+<text>Shut down the computer !</text>
+<event>
+<text>You shut down the computer but its too late, the federation know your position now !</text>
+<modifyPursuit amount="2"/>
+</event>
+</choice>
+
+<choice req="hacking" lvl="1">
+<text>(Simple Hacking) Hack the system</text>
+<event>
+<text>You hack the computer and you send wrongs coords.</text>
+<modifyPursuit amount="-2"/>
+</event>
+</choice>
+
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Wait for your FTL charging</text>
+<event>
+</event>
+</choice>
+
+<choice req="BATTLE" hidden="true">
+<text>(Battle Drone) Send your battle drone to explore the station.</text>
+<event>
+<text>Your battle drone found the supply room of the station, you salvage it.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+<event/>
+
+
+
 
 <event name="RS_PRS">
 <text>You jump and discover a ship floatting in the space</text>
