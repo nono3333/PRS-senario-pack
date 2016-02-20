@@ -29,6 +29,62 @@ item - scrap + that thing  -->
 			********************************************   
 -->
 
+<event name="PUB_PRS">
+<text>A little ship contact you they said "Hey guy I'm an advertiser, can I put some publicity on your ship ? It will be quick, and I will paid you."</text>
+
+<choice>
+<text>Accept the offer.</text>
+<event>
+<text>He put his publicity on your ship and he pay you.</text>
+<autoReward level="LOW">standard</autoreward>
+</event>
+</choice>
+
+<choice>
+<text>"No I'm not human billboard !"</text>
+<event>
+<text>"As you want".</text>
+</event>
+</choice>
+
+<choice hidden="true">
+<text>Negotiate a better price.</text>
+<event>
+<text>He propose a new price.</text>
+
+<choice>
+<text>Yes.</text>
+<event>
+<text>He put his publicity on your ship and he pay you.</text>
+<autoReward level="MED">standard</autoreward>
+</event>
+</choice>
+
+<choice>
+<text>No.</text>
+<event>
+<text>"As you want".</text>
+</event>
+</choice>
+
+</event>
+</choice>
+
+<choice req="slug" hidden="true">
+<text>(Slug CrewMember) "We need some scraps, give us your scraps."</text>
+<event>
+<text>He give you a great number of scraps.</text>
+<autoReward level="HIGH">standard</autoreward>
+</event>
+</choice>
+
+
+<event/>
+
+
+
+
+
 <event name="PT_PRS_A">
 <text>A station aparently abandonned is near a nearby moon.</text>
 
