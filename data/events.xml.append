@@ -74,7 +74,7 @@ item - scrap + that thing  -->
 <text>Sell him has a slave.</text>
 <event>
 <text>You sell him has a slave to a slavetrader for some scraps.</text>
-<autoReward level="HIGHT">item</autoreward>
+<autoReward level="HIGH">item</autoreward>
 </event>
 </choice>
 
