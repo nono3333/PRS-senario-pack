@@ -580,7 +580,10 @@ HOSTILE SECTORS
 	<event name="HOSTILE1" min="2" max="2"/>
 	<event name="HOSTILE_BOARDING" min="0" max="0"/>
 	<event name="POTATO_P1" min="2" max="2"/>
-	
+	<event name="PT_PRS_A" min="2" max="2"/>
+        <event name="PT_PRS_B" min="2" max="2"/>
+        <event name="PT_PRS_C" min="2" max="2"/>
+        <event name="PT_PRS_D" min="2" max="2"/>	
 </sectorDescription>
 
 <!--FINAL -- The sector with the boss -->
@@ -596,6 +599,10 @@ HOSTILE SECTORS
 	<event name="BOSS_REPAIR_STATION" min="3" max="3"/>
 	<event name="BOSS_HOSTILE" min="6" max="6"/>
 	<event name="BOSS_NEUTRAL" min="7" max="10"/>
+		<event name="PT_PRS_A" min="2" max="2"/>
+        <event name="PT_PRS_B" min="2" max="2"/>
+        <event name="PT_PRS_C" min="2" max="2"/>
+        <event name="PT_PRS_D" min="2" max="2"/>
 </sectorDescription>
 
 <sectorDescription name="CIVILIAN_SECTOR" minSector="0" unique="false"> 
@@ -622,6 +629,10 @@ HOSTILE SECTORS
 <!--	<event name="HOSTILE_BOARDING" min="0" max="1"/>-->
 	<event name="QUESTS" min="0" max="2"/>
 	<event name="HOSTILE1" min="2" max="2"/>
+		<event name="PT_PRS_A" min="2" max="2"/>
+        <event name="PT_PRS_B" min="2" max="2"/>
+        <event name="PT_PRS_C" min="2" max="2"/>
+        <event name="PT_PRS_D" min="2" max="2"/>
 </sectorDescription>
 
 
@@ -649,6 +660,10 @@ HOSTILE SECTORS
 	<event name="NOTHING_REBEL" min="1" max="2"/>
 	<event name="QUESTS_REBEL" min="0" max="2"/>
 	<event name="NEUTRAL_REBEL" min="5" max="6"/>
+		<event name="PT_PRS_A" min="2" max="2"/>
+        <event name="PT_PRS_B" min="2" max="2"/>
+        <event name="PT_PRS_C" min="2" max="2"/>
+        <event name="PT_PRS_D" min="2" max="2"/>
 </sectorDescription>
 
 <sectorDescription name="REBEL_SECTOR" minSector="0" unique="false">  
